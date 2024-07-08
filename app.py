@@ -7,7 +7,7 @@ import pandas as pd
 
 
 class TickReceiver:
-    def __init__(self, symbol, interval=2):
+    def __init__(self, symbol, interval):
         self.symbol = symbol
         self.interval = interval
         self.scheduler = sched.scheduler(time.time, time.sleep)
@@ -55,8 +55,8 @@ class TickReceiver:
 
 # Exemplo de uso
 if __name__ == "__main__":
-    tick_receiver = TickReceiver(symbol="WIN$D", interval=2)
+    tick_receiver = TickReceiver(symbol="WIN$D", interval=1)
     tick_receiver.initialize()
-    tick_receiver.load_until_now()
+    # tick_receiver.load_until_now()
     print(f"{'Time'.ljust(20)} {'Ticker'.ljust(8)} {'Last'.ljust(10)} {'Volume'.ljust(12)}".upper())
     tick_receiver.run()
