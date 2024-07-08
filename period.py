@@ -48,7 +48,7 @@ class TickReceiver:
 # Exemplo de uso
 if __name__ == "__main__":
     INTERVAL = 5*60
-    TICKER = "WIN$D"
+    TICKER = "VALE3"
     print(f"Updating {TICKER} every {INTERVAL} sec.")
     tick_receiver = TickReceiver(TICKER, INTERVAL)
     tick_receiver.initialize()
