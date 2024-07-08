@@ -1,6 +1,6 @@
 import sched
 import time
-from datetime import datetime, timedelta
+from datetime import datetime
 
 import MetaTrader5 as mt5
 import pandas as pd
@@ -27,7 +27,7 @@ class TickReceiver:
         bars = mt5.copy_rates_from_pos(self.symbol, mt5.TIMEFRAME_M5, 0, num_bars)
         df = pd.DataFrame(bars)
         df['time'] = pd.to_datetime(df['time'], unit='s')
-       # Definir a coluna 'time' como índice
+        # Definir a coluna 'time' como índice
         df.set_index('time', inplace=True)
         print(df)
 
