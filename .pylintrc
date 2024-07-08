@@ -1,0 +1,4 @@
+[MESSAGES CONTROL]
+disable=
+    missing-docstring,
+    global ticks_frame

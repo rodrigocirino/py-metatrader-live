@@ -1,0 +1,11 @@
+# https://flake8.pycqa.org/en/latest/user/configuration.html
+
+[flake8]
+exclude = .git,__pycache__,docs/source/conf.py,old,build,dist
+max-complexity = 10
+extend-ignore =
+    E303 # E303: too many blank lines
+    E702 # E702 :multiple statements on one line (semicolon)
+    C0114 # Missing module docstringPylintC0114:missing-module-docstring
+    C0115
+    C0116
