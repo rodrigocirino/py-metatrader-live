@@ -1,28 +1,29 @@
-import sched
-import time
-from datetime import datetime
-
 import MetaTrader5 as mt5
 import pandas as pd
+
+from util.initialize_mt5 import MQL5
+from util.scheduler import Scheduler
 
 
 class TickReceiver:
     def __init__(self, symbol, interval):
         self.symbol = symbol
-        self.interval = interval
-        self.scheduler = sched.scheduler(time.time, time.sleep)
-        self.from_date = datetime.now()
+        # Init Scheduler
+        self.scheduler = Scheduler(interval)
+        # Init MQL5 Connection
+        MQL5().initialize();
 
-    def initialize(self):
-        if not mt5.initialize():
-            print("initialize() falhou")
-            exit()
+    def run_scheduler(self):
+        try:
+            self.scheduler.create_scheduler(self.get_data)
+        except KeyboardInterrupt:
+            print("Interrupção pelo usuário. Encerrando o programa...")
+        finally:
+            # Init MQL5 Connection
+            MQL5().finalize();
 
-    def create_scheduler(self):
-        self.scheduler.enter(self.interval, 1, self.load_until_now)
-
-    def load_until_now(self):
-        num_bars = 10000  # número de barras de dados para recuperar
+    def get_data(self):
+        num_bars = 1000  # número de barras de dados para recuperar
         # Obter os dados OHLC
         bars = mt5.copy_rates_from_pos(self.symbol, mt5.TIMEFRAME_M5, 0, num_bars)
         df = pd.DataFrame(bars)
@@ -31,26 +32,12 @@ class TickReceiver:
         df.set_index('time', inplace=True)
         print(df)
         # RENEW SCHEDULER
-        self.scheduler.enter(self.interval, 1, self.load_until_now)
+        self.run_scheduler()
 
-    def finalize(self):
-        mt5.shutdown()
 
-    def run(self):
-        try:
-            self.create_scheduler()
-            self.scheduler.run()
-        except KeyboardInterrupt:
-            print("Interrupção pelo usuário. Encerrando o programa...")
-        finally:
-            self.finalize()
-
-# Exemplo de uso
 if __name__ == "__main__":
-    INTERVAL = 5*60
-    TICKER = "VALE3"
+    INTERVAL = 2 # 5*60
+    TICKER = "WIN$D"
     print(f"Updating {TICKER} every {INTERVAL} sec.")
     tick_receiver = TickReceiver(TICKER, INTERVAL)
-    tick_receiver.initialize()
-    tick_receiver.load_until_now()
-    tick_receiver.run()
+    tick_receiver.get_data()

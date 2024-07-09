@@ -1,4 +1,5 @@
 [MESSAGES CONTROL]
 disable=
+    missing-class-docstring,
     missing-docstring,
     global ticks_frame
