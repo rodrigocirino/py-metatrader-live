@@ -3,11 +3,13 @@ import MetaTrader5 as mt5
 
 class MQL5:
 
-    def initialize(self):
+    @staticmethod
+    def initialize():
         if not mt5.initialize():
-            print("initialize() falhou")
+            print("initialize() fail")
             exit()
         return mt5
 
-    def finalize(self):
+    @staticmethod
+    def finalize():
         mt5.shutdown()

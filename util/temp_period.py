@@ -6,12 +6,13 @@ from util.scheduler import Scheduler
 
 
 class TickReceiver:
-    def __init__(self, symbol, interval):
+    def __init__(self, symbol, interval, timeframe):
         self.symbol = symbol
+        self.timeframe = timeframe
         # Init Scheduler
         self.scheduler = Scheduler(interval)
         # Init MQL5 Connection
-        MQL5().initialize();
+        MQL5().initialize()
 
     def run_scheduler(self):
         try:
@@ -20,12 +21,12 @@ class TickReceiver:
             print("Interrupção pelo usuário. Encerrando o programa...")
         finally:
             # Init MQL5 Connection
-            MQL5().finalize();
+            MQL5().finalize()
 
     def get_data(self):
         num_bars = 1000  # número de barras de dados para recuperar
         # Obter os dados OHLC
-        bars = mt5.copy_rates_from_pos(self.symbol, mt5.TIMEFRAME_M5, 0, num_bars)
+        bars = mt5.copy_rates_from_pos(self.symbol, self.timeframe, 0, num_bars)
         df = pd.DataFrame(bars)
         df['time'] = pd.to_datetime(df['time'], unit='s')
         # Definir a coluna 'time' como índice
@@ -36,8 +37,9 @@ class TickReceiver:
 
 
 if __name__ == "__main__":
-    INTERVAL = 2 # 5*60
+    INTERVAL = 5*60
     TICKER = "WIN$D"
+    TIMEFRAME = mt5.TIMEFRAME_M5
     print(f"Updating {TICKER} every {INTERVAL} sec.")
-    tick_receiver = TickReceiver(TICKER, INTERVAL)
+    tick_receiver = TickReceiver(TICKER, INTERVAL, TIMEFRAME)
     tick_receiver.get_data()
