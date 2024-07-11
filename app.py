@@ -31,14 +31,10 @@ class TickReceiver:
         df['time'] = pd.to_datetime(df['time'], unit='s')
         # Definir a coluna 'time' como índice
         df.set_index('time', inplace=True)
-        print(df[['open', 'high', 'low', 'close', 'tick_volume']])
-        self.df = df
+        self.df = df  # populate dataframe
 
     def process_ticks(self):
         symbol_data = mt5.symbol_info(self.symbol)
-        # print(
-        #    f"{str(pd.to_datetime(symbol_data.time, unit='s')).ljust(20)} {symbol_data.name.ljust(8)}\
-        #        {str(symbol_data.last).ljust(10)} {str(symbol_data.session_volume).ljust(12)}")
         if symbol_data is None:
             print(f"Não foi possível obter informações sobre o símbolo {self.symbol}")
         else:
@@ -51,9 +47,10 @@ class TickReceiver:
 
     def print_dataframe(self):
         # print(self.df.columns)
-        dff = self.df.loc[(self.df.index >= pd.Timestamp("2024-07-10 10:15:00"))]
-        dff = dff.drop(columns=['tick_volume', 'spread', 'real_volume'], errors='ignore')
-        print(dff)
+        self.df.drop(columns=['tick_volume', 'spread', 'real_volume'], errors='ignore', inplace=True)
+        # self.df = self.df.loc[(self.df.index >= pd.Timestamp("2024-07-10 10:15:00"))]
+        pd.set_option('display.max_columns', None)  # Ensure all columns are printed
+        print(self.df.head(60))
 
     def update_dataframe(self, symbol_data):
         stime = pd.to_datetime(symbol_data.time, unit='s')
@@ -63,8 +60,23 @@ class TickReceiver:
 
     def calculate_atr(self):
         """Calculates the ATR (Average True Range) for the last 20 bars."""
+        '''
         self.df['atr'] = abs(self.df['open'] - self.df['close'])
-        self.df['atr'].tail(20).mean()
+        self.df['atr'].rolling(window=20).mean()
+        self.df['atr_i'] = self.df['atr'].shift()
+        self.df['atr_b'] = self.df['atr'] > self.df['atr_i'] * 2
+        self.df.drop(columns=['atr_i'], errors='ignore', inplace=True)
+        print(self.df.loc[self.df.atr_b].head(60))
+        '''
+        """Calculates the ATR (Average True Range) for the last 20 bars."""
+        self.df['High-Low'] = self.df['high'] - self.df['low']
+        self.df['High-PreviousClose'] = abs(self.df['high'] - self.df['close'].shift(1))
+        self.df['Low-PreviousClose'] = abs(self.df['low'] - self.df['close'].shift(1))
+
+        self.df['TrueRange__'] = self.df[['High-Low', 'High-PreviousClose', 'Low-PreviousClose']].max(axis=1)
+        self.df['true_range'] = self.df['TrueRange__'].rolling(window=20).mean()
+        self.df.drop(columns=['High-Low', 'High-PreviousClose', 'Low-PreviousClose', 'TrueRange__'],
+                               errors='ignore', inplace=True)
 
     @staticmethod
     def finalize():
