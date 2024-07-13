@@ -6,6 +6,7 @@ import pandas as pd
 import numpy as np
 
 from util.Rates import Rates
+from util.scheduler import Scheduler
 
 servicemanager = "mt5"
 
@@ -16,13 +17,15 @@ class TickReceiver:
         self.symbol = symbol
         self.interval = interval
         self.df = pd.DataFrame()
-        self.scheduler = sched.scheduler(time.time, time.sleep)
+        self.scheduler = Scheduler(interval)# sched.scheduler(time.time, time.sleep)
         self.from_date = datetime.now()
         self.rates = Rates(servicemanager)
 
+    '''
     def enter_scheduler(self):
         self.scheduler.enter(self.interval, 1, self.load_until_now)
         self.scheduler.run()
+    '''
 
     def load_until_now(self):
         # Obter os dados OHLC
@@ -36,7 +39,7 @@ class TickReceiver:
         # SYSOUT
         print(df)
         # Update Scheduler
-        self.enter_scheduler()
+        self.scheduler.create_scheduler(self.load_until_now)
 
     def process_ticks(self):
         bars = self.rates.rates_from(self.symbol)
@@ -44,6 +47,7 @@ class TickReceiver:
         if bars is None:
             print(f"Não foi possível obter informações sobre o símbolo {self.symbol}")
         else:
+            print(bars)
             self.update_dataframe(bars)
             self.calculate_atr()
             self.is_atr_over()
@@ -51,7 +55,7 @@ class TickReceiver:
             # SYSOUT
             self.print_dataframe()
         # Update Scheduler
-        self.enter_scheduler()
+        self.scheduler.create_scheduler(self.process_ticks)
 
     def print_dataframe(self):
         self.df.drop(columns=['tick_volume', 'spread', 'real_volume'], errors='ignore', inplace=True)
@@ -93,7 +97,7 @@ class TickReceiver:
     def run(self):
         try:
             if self.rates.initialize():
-                self.enter_scheduler()
+                self.scheduler.create_scheduler(self.load_until_now)
             else:
                 print("Falha na inicialização do serviço.")
         except KeyboardInterrupt:
