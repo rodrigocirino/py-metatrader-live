@@ -2,7 +2,7 @@ import MetaTrader5 as mt5
 import pandas as pd
 
 from util.initialize_mt5 import MQL5
-from util.scheduler import Scheduler
+from util.scheduler import scheduler
 
 
 class TickReceiver:
@@ -10,7 +10,7 @@ class TickReceiver:
         self.symbol = symbol
         self.timeframe = timeframe
         # Init Scheduler
-        self.scheduler = Scheduler(interval)
+        self.scheduler = scheduler(interval)
         # Init MQL5 Connection
         MQL5().initialize()
 

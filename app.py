@@ -5,8 +5,8 @@ from datetime import datetime
 import pandas as pd
 import numpy as np
 
-from util.Rates import Rates
-from util.scheduler import Scheduler
+from util.rates import rates
+from util.scheduler import scheduler
 
 servicemanager = "mt5"
 
@@ -17,9 +17,9 @@ class TickReceiver:
         self.symbol = symbol
         self.interval = interval
         self.df = pd.DataFrame()
-        self.scheduler = Scheduler(interval)# sched.scheduler(time.time, time.sleep)
+        self.scheduler = scheduler(interval)# sched.scheduler(time.time, time.sleep)
         self.from_date = datetime.now()
-        self.rates = Rates(servicemanager)
+        self.rates = rates(servicemanager)
 
     '''
     def enter_scheduler(self):

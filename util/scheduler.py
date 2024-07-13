@@ -3,7 +3,7 @@ import time
 from datetime import datetime
 
 
-class Scheduler:
+class scheduler:
 
     def __init__(self, interval):
         self.interval = interval

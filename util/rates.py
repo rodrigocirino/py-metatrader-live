@@ -2,7 +2,7 @@ import MetaTrader5 as mt5
 import pandas as pd
 
 
-class Rates:
+class rates:
     servicemanager = ['mt5', 'mt5_ticks', 'yfinance']
 
     def __init__(self, service):
