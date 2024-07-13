@@ -2,51 +2,56 @@ import sched
 import time
 from datetime import datetime
 
-import MetaTrader5 as mt5
 import pandas as pd
 import numpy as np
 
+from util.Rates import Rates
+
+servicemanager = "mt5"
+
 
 class TickReceiver:
+
     def __init__(self, symbol, interval):
         self.symbol = symbol
         self.interval = interval
         self.df = pd.DataFrame()
         self.scheduler = sched.scheduler(time.time, time.sleep)
         self.from_date = datetime.now()
+        self.rates = Rates(servicemanager)
 
-    @staticmethod
-    def initialize():
-        if not mt5.initialize():
-            print("initialize() falhou")
-            exit()
-
-    def create_scheduler(self):
-        self.scheduler.enter(self.interval, 1, self.process_ticks)
+    def enter_scheduler(self):
+        self.scheduler.enter(self.interval, 1, self.load_until_now)
+        self.scheduler.run()
 
     def load_until_now(self):
-        num_bars = 1000  # número de barras de dados para recuperar
         # Obter os dados OHLC
-        bars = mt5.copy_rates_from_pos(self.symbol, mt5.TIMEFRAME_M5, 0, num_bars)
+        bars = self.rates.rates_from(self.symbol)
+        # bars = mt5.copy_rates_from_pos(self.symbol, mt5.TIMEFRAME_M5, 0, num_bars)
         df = pd.DataFrame(bars)
         df['time'] = pd.to_datetime(df['time'], unit='s')
         # Definir a coluna 'time' como índice
         df.set_index('time', inplace=True)
         self.df = df  # populate dataframe
+        # SYSOUT
+        print(df)
+        # Update Scheduler
+        self.enter_scheduler()
 
     def process_ticks(self):
-        symbol_data = mt5.symbol_info(self.symbol)
-        if symbol_data is None:
+        bars = self.rates.rates_from(self.symbol)
+        # bars = self.rates.symbol_info(self.symbol)
+        if bars is None:
             print(f"Não foi possível obter informações sobre o símbolo {self.symbol}")
         else:
-            # PROCESS
-            self.update_dataframe(symbol_data)
+            self.update_dataframe(bars)
             self.calculate_atr()
             self.is_atr_over()
             self.ema()
             # SYSOUT
             self.print_dataframe()
-        self.scheduler.enter(self.interval, 1, self.process_ticks)
+        # Update Scheduler
+        self.enter_scheduler()
 
     def print_dataframe(self):
         self.df.drop(columns=['tick_volume', 'spread', 'real_volume'], errors='ignore', inplace=True)
@@ -57,9 +62,9 @@ class TickReceiver:
         # print(self.df.loc[self.df.is_over].tail(115))
         print((self.df.loc[:, ~self.df.columns.isin(['open', 'high', 'low'])]).tail(40))
 
-    def update_dataframe(self, symbol_data):
-        stime = pd.to_datetime(symbol_data.time, unit='s')
-        new_record = pd.DataFrame({'close': symbol_data.last}, index=[stime])
+    def update_dataframe(self, bars):
+        stime = pd.to_datetime(bars.time, unit='s')
+        new_record = pd.DataFrame({'close': bars.last}, index=[stime])
         self.df = pd.concat([self.df, new_record])
         self.df = self.df[~self.df.index.duplicated(keep='last')]  # Remove duplicate times, keep the last
 
@@ -68,7 +73,6 @@ class TickReceiver:
         # Wilder quer calcular a amplitude maior, se a minima for mais distante que a maxima do fechamento anterior use esta, senao a outra
         #  ATR = MME(máx(H – L, H – Cp, Cp – L)) - Cp=previous close
         dff = pd.DataFrame()
-
         dff['H-L'] = self.df['high'] - self.df['low']
         dff['|H-Cp|'] = np.abs(self.df['high'] - self.df['close'].shift(1))
         dff['|L-Cp|'] = np.abs(self.df['low'] - self.df['close'].shift(1))
@@ -86,22 +90,18 @@ class TickReceiver:
     def is_atr_over(self):
         self.df['is_over'] = abs(self.df['open'] - self.df['close']) > (self.df['true_range'].shift() * 1.5)
 
-    @staticmethod
-    def finalize():
-        mt5.shutdown()
-
     def run(self):
         try:
-            self.create_scheduler()
-            self.scheduler.run()
+            if self.rates.initialize():
+                self.enter_scheduler()
+            else:
+                print("Falha na inicialização do serviço.")
         except KeyboardInterrupt:
             print("Interrupção pelo usuário. Encerrando o programa...")
         finally:
-            self.finalize()
+            self.rates.finalize()
 
 
 if __name__ == "__main__":
     tick_receiver = TickReceiver(symbol="WIN$D", interval=3)
-    tick_receiver.initialize()
-    tick_receiver.load_until_now()
     tick_receiver.run()  # infinite loop
