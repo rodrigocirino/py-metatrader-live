@@ -1,5 +1,3 @@
-import sched
-import time
 from datetime import datetime
 
 import pandas as pd
@@ -17,15 +15,9 @@ class TickReceiver:
         self.symbol = symbol
         self.interval = interval
         self.df = pd.DataFrame()
-        self.scheduler = scheduler(interval)# sched.scheduler(time.time, time.sleep)
+        self.scheduler = scheduler(interval)  # sched.scheduler(time.time, time.sleep)
         self.from_date = datetime.now()
         self.rates = rates(servicemanager)
-
-    '''
-    def enter_scheduler(self):
-        self.scheduler.enter(self.interval, 1, self.load_until_now)
-        self.scheduler.run()
-    '''
 
     def load_until_now(self):
         # Obter os dados OHLC
