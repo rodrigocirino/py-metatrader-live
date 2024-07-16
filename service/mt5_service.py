@@ -1,9 +1,7 @@
 import MetaTrader5 as mt5
-import pandas as pd
 
 
-class rates:
-    servicemanager = ['mt5', 'mt5_ticks', 'yfinance']
+class MT5_Service:
 
     def __init__(self, service):
         self.service = service
@@ -11,8 +9,6 @@ class rates:
 
     def rates_from(self, symbol, num_bars=1000):
         print("RATES " + str(symbol))
-        if self.service == 'yfinance':
-            return pd.DataFrame()
         if self.service == 'mt5':
             return mt5.copy_rates_from_pos(symbol, mt5.TIMEFRAME_M5, 0, num_bars)
         if self.service == 'mt5_ticks':

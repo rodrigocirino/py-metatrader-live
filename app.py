@@ -3,7 +3,7 @@ from datetime import datetime
 import pandas as pd
 import numpy as np
 
-from util.rates import rates
+from service.mt5_service import MT5_Service
 from util.scheduler import scheduler
 
 servicemanager = "mt5"
@@ -17,7 +17,7 @@ class TickReceiver:
         self.df = pd.DataFrame()
         self.scheduler = scheduler(interval)  # sched.scheduler(time.time, time.sleep)
         self.from_date = datetime.now()
-        self.rates = rates(servicemanager)
+        self.rates = MT5_Service(servicemanager)
 
     def load_until_now(self):
         # Obter os dados OHLC
@@ -99,5 +99,5 @@ class TickReceiver:
 
 
 if __name__ == "__main__":
-    tick_receiver = TickReceiver(symbol="WIN$D", interval=3)
+    tick_receiver = TickReceiver(symbol="WIN$D", interval=5)
     tick_receiver.run()  # infinite loop
