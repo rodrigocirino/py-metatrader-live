@@ -10,6 +10,6 @@ class scheduler:
         self.scheduler = sched.scheduler(time.time, time.sleep)
         self.from_date = datetime.now()
 
-    def create_scheduler(self, myfunction):
+    def renew(self, myfunction):
         self.scheduler.enter(self.interval, 1, myfunction)
         self.scheduler.run()

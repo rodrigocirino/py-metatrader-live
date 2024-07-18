@@ -16,7 +16,7 @@ class TickReceiver:
 
     def run_scheduler(self):
         try:
-            self.scheduler.create_scheduler(self.get_data)
+            self.scheduler.renew(self.get_data)
         except KeyboardInterrupt:
             print("Interrupção pelo usuário. Encerrando o programa...")
         finally:

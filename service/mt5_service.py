@@ -5,10 +5,10 @@ class MT5_Service:
 
     def __init__(self, service):
         self.service = service
-        self.mt5 = mt5 if service == 'mt5' else None
+        self.mt5 = mt5 if (service == 'mt5' or service == 'mt5_ticks') else None
 
     def rates_from(self, symbol, num_bars=1000):
-        print("RATES " + str(symbol))
+        print("RATES " + str(symbol) +" with "+ str(self.service))
         if self.service == 'mt5':
             return mt5.copy_rates_from_pos(symbol, mt5.TIMEFRAME_M5, 0, num_bars)
         if self.service == 'mt5_ticks':
