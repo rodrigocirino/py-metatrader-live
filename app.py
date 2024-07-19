@@ -49,6 +49,8 @@ class TickReceiver:
             self.analyze_indicators()
 
             self.print_dataframe()
+
+            self.recent_dataframe()
         # Update Scheduler
         self.scheduler.renew(self.process_ticks)
 
@@ -59,10 +61,16 @@ class TickReceiver:
         self.df.to_csv(f"{log_filepath}/console.csv")  # , sep="\t", decimal=',')
         self.df.drop(columns=['tick_volume', 'spread', 'real_volume'], errors='ignore', inplace=True)
         pd.set_option('display.max_columns', None)  # Ensure all columns are printed
-        print((self.df.loc[:, ~self.df.columns.isin(['open', 'high', 'low'])]).tail(30))
+        pd.set_option('display.max_rows', 100)  # Ensure all columns are printed
+        # print((self.df.loc[:, ~self.df.columns.isin(['open', 'high', 'low'])]).tail(100))
         # self.df = self.df.loc[(self.df.index >= pd.Timestamp("2024-07-10 10:15:00"))]
         # print("> Barras com ATR 20 Superior a 1.5 vezes.")
         # print(self.df.loc[self.df.is_over].tail(115))
+
+    def recent_dataframe(self):
+        df = (self.df.loc[:, ~self.df.columns.isin(['open', 'high', 'low'])]).tail(100)
+        print(f"\n{'_' * 65}")
+        print(df.iloc[-1:])
 
     def analyze_indicators(self):
         # Cria uma instância do controlador
@@ -76,5 +84,12 @@ class TickReceiver:
 
 
 if __name__ == "__main__":
-    tick_receiver = TickReceiver(symbol="EURUSD", interval=60)
+    tick_receiver = TickReceiver(symbol="EURUSD", interval=10)
     tick_receiver.run()  # infinite loop
+
+'''
+_________________________________________________________________
+                       close  atr_1.5 EMA20COLOR aroon_strength
+time                                                           
+2024-07-19 03:55:00  1.08881    False        Red    Forte Baixa
+'''

@@ -10,7 +10,6 @@ class TrueRange(Command):
 
     def execute(self):
         self.calculate_atr()
-        self.is_atr_over()
 
     def calculate_atr(self, n=14):
         """Calculates the ATR (Average True Range) for the last n bars."""
@@ -25,8 +24,10 @@ class TrueRange(Command):
         sma = dff['TR'].rolling(window=n, min_periods=n).mean()[:n]
         rest = dff['TR'][n:]
         dff['true_range'] = pd.concat([sma, rest]).ewm(alpha=1 / n, adjust=False).mean()  # Calculate MME
-        self.df['true_range'] = dff['true_range']  # .round(decimals=2)
         # Número máximo de ações permitidas = shares = total_capital * risk / df['ATR'].iloc[-1] # total_capital = 20000, risk = 0.005
 
-    def is_atr_over(self):
-        self.df['is_over'] = abs(self.df['open'] - self.df['close']) > (self.df['true_range'].shift() * 1.5)
+        self.is_atr_over(dff['true_range'])
+
+    def is_atr_over(self, true_range):
+        mult = 1.50
+        self.df['atr_' + str(mult)] = abs(self.df['open'] - self.df['close']) > (true_range.shift() * mult)
