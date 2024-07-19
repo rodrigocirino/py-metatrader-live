@@ -36,8 +36,7 @@ while True:
         print(f"Não foi possível obter informações sobre o símbolo {TICKER}")
     else:
         # print(f"{symbol_data.name.ljust(8)} {str(symbol_data.last).ljust(10)} {str(symbol_data.session_volume).ljust(12)} {str(symbol_data.bid).ljust(10)} {str(symbol_data.ask).ljust(10)}")
-        print(
-            f"{symbol_data.name.ljust(8)} {str(symbol_data.last).ljust(10)} {str(symbol_data.session_volume).ljust(12)}")
+        print(f"{symbol_data.name.ljust(8)} {str(symbol_data.last).ljust(10)} {str(symbol_data.session_volume).ljust(12)}")
     # Espera um intervalo antes de verificar novamente (por exemplo, 1 segundo)
     time.sleep(SLEEP_TIME)
 

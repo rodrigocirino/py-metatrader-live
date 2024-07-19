@@ -3,11 +3,11 @@ from datetime import datetime
 import pandas as pd
 
 from service.mt5_service import MT5_Service
+from service.scheduler import scheduler
 from util.indicators.aroon_oscilator import Aroon
 from util.indicators.command import CommandController
 from util.indicators.ema import Ema
 from util.indicators.true_range import TrueRange
-from service.scheduler import scheduler
 
 servicemanager = "mt5"
 
@@ -35,8 +35,8 @@ class TickReceiver:
 
     def mining_dataframe(self, bars):
         self.df = pd.DataFrame(bars)
-        self.df['time'] = pd.to_datetime(self.df['time'], unit='s')
-        self.df.set_index('time', inplace=True)
+        self.df["time"] = pd.to_datetime(self.df["time"], unit="s")
+        self.df.set_index("time", inplace=True)
 
     def process_ticks(self):
         bars = self.rates.rates_from(self.symbol)
@@ -56,19 +56,24 @@ class TickReceiver:
 
     def print_dataframe(self):
         import os
+
         log_filepath = "util/export"
         os.makedirs(log_filepath, exist_ok=True)
         self.df.to_csv(f"{log_filepath}/console.csv")  # , sep="\t", decimal=',')
-        self.df.drop(columns=['tick_volume', 'spread', 'real_volume'], errors='ignore', inplace=True)
-        pd.set_option('display.max_columns', None)  # Ensure all columns are printed
-        pd.set_option('display.max_rows', 100)  # Ensure all columns are printed
+        self.df.drop(
+            columns=["tick_volume", "spread", "real_volume"],
+            errors="ignore",
+            inplace=True,
+        )
+        pd.set_option("display.max_columns", None)  # Ensure all columns are printed
+        pd.set_option("display.max_rows", 100)  # Ensure all columns are printed
         # print((self.df.loc[:, ~self.df.columns.isin(['open', 'high', 'low'])]).tail(100))
         # self.df = self.df.loc[(self.df.index >= pd.Timestamp("2024-07-10 10:15:00"))]
         # print("> Barras com ATR 20 Superior a 1.5 vezes.")
         # print(self.df.loc[self.df.is_over].tail(115))
 
     def recent_dataframe(self):
-        df = (self.df.loc[:, ~self.df.columns.isin(['open', 'high', 'low'])]).tail(100)
+        df = (self.df.loc[:, ~self.df.columns.isin(["open", "high", "low"])]).tail(100)
         print(f"\n{'_' * 65}")
         print(df.iloc[-1:])
 
@@ -87,10 +92,10 @@ if __name__ == "__main__":
     tick_receiver = TickReceiver(symbol="GOLD", interval=10)
     tick_receiver.run()  # infinite loop
 
-'''
+"""
 _________________________________________________________________
                        close  atr_1.5 EMA20COLOR aroon_strength
 time                                                           
 2024-07-19 03:55:00  2425.86    False        Red          Médio
 RATES GOLD with mt5
-'''
+"""
