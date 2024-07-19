@@ -84,12 +84,13 @@ class TickReceiver:
 
 
 if __name__ == "__main__":
-    tick_receiver = TickReceiver(symbol="EURUSD", interval=10)
+    tick_receiver = TickReceiver(symbol="GOLD", interval=10)
     tick_receiver.run()  # infinite loop
 
 '''
 _________________________________________________________________
                        close  atr_1.5 EMA20COLOR aroon_strength
 time                                                           
-2024-07-19 03:55:00  1.08881    False        Red    Forte Baixa
+2024-07-19 03:55:00  2425.86    False        Red          Médio
+RATES GOLD with mt5
 '''
