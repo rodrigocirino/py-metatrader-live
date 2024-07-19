@@ -3,10 +3,11 @@ from datetime import datetime
 import pandas as pd
 
 from service.mt5_service import MT5_Service
+from util.indicators.aroon_oscilator import Aroon
 from util.indicators.command import CommandController
 from util.indicators.ema import Ema
 from util.indicators.true_range import TrueRange
-from util.scheduler import scheduler
+from service.scheduler import scheduler
 
 servicemanager = "mt5"
 
@@ -55,10 +56,10 @@ class TickReceiver:
         import os
         log_filepath = "util/export"
         os.makedirs(log_filepath, exist_ok=True)
-        self.df.to_csv(f"{log_filepath}/console_{servicemanager}.csv")  # , sep="\t", decimal=',')
+        self.df.to_csv(f"{log_filepath}/console.csv")  # , sep="\t", decimal=',')
         self.df.drop(columns=['tick_volume', 'spread', 'real_volume'], errors='ignore', inplace=True)
         pd.set_option('display.max_columns', None)  # Ensure all columns are printed
-        print((self.df.loc[:, ~self.df.columns.isin(['open', 'high', 'low'])]).tail(40))
+        print((self.df.loc[:, ~self.df.columns.isin(['open', 'high', 'low'])]).tail(30))
         # self.df = self.df.loc[(self.df.index >= pd.Timestamp("2024-07-10 10:15:00"))]
         # print("> Barras com ATR 20 Superior a 1.5 vezes.")
         # print(self.df.loc[self.df.is_over].tail(115))
@@ -69,6 +70,7 @@ class TickReceiver:
         # Adiciona os comandos ao controlador
         controller.add_command(TrueRange(self.df))
         controller.add_command(Ema(self.df))
+        controller.add_command(Aroon(self.df))
         # Processa os comandos
         controller.process_command()
 
