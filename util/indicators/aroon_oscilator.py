@@ -4,7 +4,7 @@ import pandas_ta as ta
 from util.indicators.command import Command
 
 """
-Objetivo: Confirmar pontos de entrada numa tendência muito forte.
+Objetivo: Indicar pontos de entrada numa tendência muito forte.
 Cenário: A tendência esta muito forte, demonstrando em indicadores estocásticos que esta sobrecomprado ou sobrevendido, 
 são dias de always in long/short desde a abertura e queremos entrar mas estamos com medo de entrar no final da  festa. 
 Este indicador pode ajudar a demonstrar que há folego para mais algumas barras, ignorando demais osciladores estocásticos.

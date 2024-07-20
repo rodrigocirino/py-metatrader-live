@@ -55,11 +55,6 @@ class TickReceiver:
         self.scheduler.renew(self.process_ticks)
 
     def print_dataframe(self):
-        import os
-
-        log_filepath = "util/export"
-        os.makedirs(log_filepath, exist_ok=True)
-        self.df.to_csv(f"{log_filepath}/console.csv")  # , sep="\t", decimal=',')
         self.df.drop(
             columns=["tick_volume", "spread", "real_volume"],
             errors="ignore",
@@ -67,13 +62,23 @@ class TickReceiver:
         )
         pd.set_option("display.max_columns", None)  # Ensure all columns are printed
         pd.set_option("display.max_rows", 100)  # Ensure all columns are printed
-        # print((self.df.loc[:, ~self.df.columns.isin(['open', 'high', 'low'])]).tail(100))
-        # self.df = self.df.loc[(self.df.index >= pd.Timestamp("2024-07-10 10:15:00"))]
+        print((self.df.loc[:, ~self.df.columns.isin(["open", "high", "low"])]).tail(100))
+        print(self.df.loc[(self.df.index >= pd.Timestamp("2024-07-19 00:01:00"))])
         # print("> Barras com ATR 20 Superior a 1.5 vezes.")
         # print(self.df.loc[self.df.is_over].tail(115))
+        # logging.info(f"{'> ' * 5} Período disponível: {df.Data.min().strftime('%d/%m/%y')} a {df.Data.max().strftime('%d/%m/%y')}")
+
+    def log_to_csv(self):
+        import os
+
+        log_filepath = "util/export"
+        os.makedirs(log_filepath, exist_ok=True)
+        self.df.to_csv(f"{log_filepath}/console.csv")  # , sep="\t", decimal=',')
 
     def recent_dataframe(self):
         df = (self.df.loc[:, ~self.df.columns.isin(["open", "high", "low"])]).tail(100)
+        # df.index = df.index.tz_convert("America/Sao_Paulo")
+        self.log_to_csv()
         print(f"\n{'_' * 65}")
         print(df.iloc[-1:])
 
@@ -89,7 +94,7 @@ class TickReceiver:
 
 
 if __name__ == "__main__":
-    tick_receiver = TickReceiver(symbol="GOLD", interval=10)
+    tick_receiver = TickReceiver(symbol="Ger40", interval=10)
     tick_receiver.run()  # infinite loop
 
 """
