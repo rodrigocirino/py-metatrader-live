@@ -1,3 +1,4 @@
+import os
 from datetime import datetime
 
 import pandas as pd
@@ -55,21 +56,26 @@ class TickReceiver:
         self.scheduler.renew(self.process_ticks)
 
     def print_dataframe(self):
+        # inplace=True
+        print(f"{'> ' * 5} Período disponível: {self.df.index.min()} a {self.df.index.max()}")
         self.df.drop(
-            columns=["tick_volume", "spread", "real_volume"],
+            columns=["tick_volume", "spread", "real_volume"],  # "open", "high", "low"
             errors="ignore",
             inplace=True,
         )
+        df = self.df[
+            (self.df.index >= pd.Timestamp("2024-07-18 00:00:01")) & (self.df.index <= pd.Timestamp("2024-07-18 23:59:59"))
+        ]
+        df.index = (
+            pd.to_datetime(df.index).tz_localize("Etc/GMT-2").tz_convert("Etc/GMT+3")
+        )  # Etc/GMT+3, Brazil/East, America/Sao_Paulo
         pd.set_option("display.max_columns", None)  # Ensure all columns are printed
         pd.set_option("display.max_rows", 100)  # Ensure all columns are printed
-        print((self.df.loc[:, ~self.df.columns.isin(["open", "high", "low"])]).tail(100))
-        print(self.df.loc[(self.df.index >= pd.Timestamp("2024-07-19 00:01:00"))])
-        # print("> Barras com ATR 20 Superior a 1.5 vezes.")
-        # print(self.df.loc[self.df.is_over].tail(115))
-        # logging.info(f"{'> ' * 5} Período disponível: {df.Data.min().strftime('%d/%m/%y')} a {df.Data.max().strftime('%d/%m/%y')}")
+        print(df)
+        # print((self.df.loc[:, ~self.df.columns.isin(["open", "high", "low"])]).tail(100))
+        # print(df[["tick_volume"]].sort_values("tick_volume", ascending=False).tail(100))
 
     def log_to_csv(self):
-        import os
 
         log_filepath = "util/export"
         os.makedirs(log_filepath, exist_ok=True)
@@ -77,7 +83,6 @@ class TickReceiver:
 
     def recent_dataframe(self):
         df = (self.df.loc[:, ~self.df.columns.isin(["open", "high", "low"])]).tail(100)
-        # df.index = df.index.tz_convert("America/Sao_Paulo")
         self.log_to_csv()
         print(f"\n{'_' * 65}")
         print(df.iloc[-1:])
@@ -94,7 +99,7 @@ class TickReceiver:
 
 
 if __name__ == "__main__":
-    tick_receiver = TickReceiver(symbol="Ger40", interval=10)
+    tick_receiver = TickReceiver(symbol="Bra50", interval=10)
     tick_receiver.run()  # infinite loop
 
 """
