@@ -1,0 +1,91 @@
+RATES ^SPX with yfinance
+> > >  ^SPX Período disponível: 2024-07-19 13:30:00-04:00 a 2024-07-19 15:55:00-04:00
+
+---	print_dataframe	-----------------------------------------------------------------
+                                 close  atr_1.5 EMA20COLOR aroon_strength
+time                                                                     
+2024-07-19 13:30:00-04:00  5503.529785    False        Red    Forte Baixa
+2024-07-19 13:35:00-04:00  5505.850098    False        Red          Médio
+2024-07-19 13:40:00-04:00  5500.709961    False        Red          Médio
+2024-07-19 13:45:00-04:00  5509.379883    False      White          Médio
+2024-07-19 13:50:00-04:00  5505.229980    False      White          Médio
+2024-07-19 13:55:00-04:00  5511.770020    False      White          Médio
+2024-07-19 14:00:00-04:00  5508.430176    False      White         Neutro
+2024-07-19 14:05:00-04:00  5512.899902    False      White         Neutro
+2024-07-19 14:10:00-04:00  5511.229980    False      Green         Neutro
+2024-07-19 14:15:00-04:00  5510.470215    False      Green         Neutro
+2024-07-19 14:20:00-04:00  5505.939941    False      White     Forte Alta
+2024-07-19 14:25:00-04:00  5504.189941    False        Red     Forte Alta
+2024-07-19 14:30:00-04:00  5504.100098    False        Red          Médio
+2024-07-19 14:35:00-04:00  5501.069824    False        Red          Médio
+2024-07-19 14:40:00-04:00  5499.069824    False        Red         Neutro
+2024-07-19 14:45:00-04:00  5502.669922    False        Red         Neutro
+2024-07-19 14:50:00-04:00  5506.720215    False      White         Neutro
+2024-07-19 14:55:00-04:00  5508.649902    False      White         Neutro
+2024-07-19 15:00:00-04:00  5518.140137     True      Green         Neutro
+2024-07-19 15:05:00-04:00  5515.899902    False      Green         Neutro
+2024-07-19 15:10:00-04:00  5517.779785    False      Green         Neutro
+2024-07-19 15:15:00-04:00  5519.939941    False      Green         Neutro
+2024-07-19 15:20:00-04:00  5518.569824    False      Green         Neutro
+2024-07-19 15:25:00-04:00  5517.930176    False      Green         Neutro
+2024-07-19 15:30:00-04:00  5509.779785     True      White         Neutro
+2024-07-19 15:35:00-04:00  5503.549805    False      White          Médio
+2024-07-19 15:40:00-04:00  5502.060059    False        Red          Médio
+2024-07-19 15:45:00-04:00  5502.839844    False        Red          Médio
+2024-07-19 15:50:00-04:00  5502.959961    False        Red          Médio
+2024-07-19 15:55:00-04:00  5505.729980    False        Red          Médio
+
+---	one_last_dataframe	-----------------------------------------------------------------
+                                close  atr_1.5 EMA20COLOR aroon_strength
+time                                                                    
+2024-07-19 15:55:00-04:00  5505.72998    False        Red          Médio
+
+
+
+
+
+
+
+
+
+RATES GOLD with mt5
+> > >  GOLD Período disponível: 1970-01-01 00:07:50 a 1970-01-01 00:08:19
+
+---	print_dataframe	-----------------------------------------------------------------
+                       close  atr_1.5 EMA20COLOR aroon_strength
+time                                                           
+1970-01-01 00:07:50  2400.30     True      White         Neutro
+1970-01-01 00:07:51  2400.32    False      Green         Neutro
+1970-01-01 00:07:52  2403.65    False      Green         Neutro
+1970-01-01 00:07:53  2403.39    False      Green     Forte Alta
+1970-01-01 00:07:54  2405.06    False      Green     Forte Alta
+1970-01-01 00:07:55  2406.38    False      Green     Forte Alta
+1970-01-01 00:07:56  2409.41     True      Green         Neutro
+1970-01-01 00:07:57  2410.45    False      Green         Neutro
+1970-01-01 00:07:58  2409.26    False      Green         Neutro
+1970-01-01 00:07:59  2409.56    False      Green         Neutro
+1970-01-01 00:08:00  2410.83    False      Green          Médio
+1970-01-01 00:08:01  2411.19    False      Green     Forte Alta
+1970-01-01 00:08:02  2410.53    False      Green     Forte Alta
+1970-01-01 00:08:03  2411.17    False      Green     Forte Alta
+1970-01-01 00:08:04  2410.49    False      Green     Forte Alta
+1970-01-01 00:08:05  2410.35    False      Green     Forte Alta
+1970-01-01 00:08:06  2410.69    False      Green          Médio
+1970-01-01 00:08:07  2410.06    False      Green          Médio
+1970-01-01 00:08:08  2409.58    False      Green          Médio
+1970-01-01 00:08:09  2410.66    False      Green          Médio
+1970-01-01 00:08:10  2410.77    False      Green          Médio
+1970-01-01 00:08:11  2409.92    False      Green         Neutro
+1970-01-01 00:08:12  2410.24    False      Green         Neutro
+1970-01-01 00:08:13  2410.98    False      Green         Neutro
+1970-01-01 00:08:14  2411.64    False      Green         Neutro
+1970-01-01 00:08:15  2411.36    False      Green         Neutro
+1970-01-01 00:08:16  2409.70    False      White         Neutro
+1970-01-01 00:08:17  2409.13    False      White         Neutro
+1970-01-01 00:08:18  2409.22    False      White         Neutro
+1970-01-01 00:08:19  2409.01    False        Red         Neutro
+
+---	one_last_dataframe	-----------------------------------------------------------------
+                       close  atr_1.5 EMA20COLOR aroon_strength
+time                                                           
+1970-01-01 00:08:19  2409.01    False        Red         Neutro
