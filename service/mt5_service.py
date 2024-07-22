@@ -1,4 +1,6 @@
 import MetaTrader5 as mt5
+import pandas as pd
+import yfinance as yf
 
 
 class MT5_Service:
@@ -14,6 +16,28 @@ class MT5_Service:
             return mt5.copy_rates_from_pos(symbol, mt5.TIMEFRAME_M5, 0, num_bars)
         if self.service == "mt5_ticks":
             return mt5.symbol_info(symbol)
+        if self.service == "yfinance":
+            return self.online_yf_intraday([symbol])
+
+    def online_yf_intraday(self, stocks, interval="5m", period="5d"):
+        # timeframe = "5m"  # valid 1m,2m,5m,15m,30m,60m,90m,1h
+        # stocks = [stock + ".SA" if not stock.endswith(".SA") and "^" not in stock else stock for stock in stocks]
+        df = yf.download(stocks, period=period, interval=interval)
+        print(f"{'> ' * 3} {stocks} Período disponível: {df.index.min()} a {df.index.max()}")
+        df.drop(["Close", "Volume"], axis=1, inplace=True)
+        df.index.names = ["time"]  # rename index
+        df.rename(columns={"Open": "open", "High": "high", "Low": "low", "Adj Close": "close"}, inplace=True)
+        return df
+
+    def on_off_yfinance(self, stocks=None, start=None, end=None, interval="5m", period="60d"):
+        # Download percent change
+        if stocks is None:
+            stocks = []
+        # Add ".SA" sufix to Yfinance if the string doesn't end with ".SA" and doesn't contain "^"
+        stocks = [stock + ".SA" if not stock.endswith(".SA") and "^" not in stock else stock for stock in stocks]
+        data = yf.download(stocks, start=start, end=end, period=period, interval=interval)
+        data.index = pd.to_datetime(data.index).tz_convert("Etc/GMT+3")
+        return data
 
     def initialize(self):
         print("SELF SERVICE " + self.service)
@@ -28,6 +52,9 @@ class MT5_Service:
             else:
                 print("MetaTrader 5 initialized successfully")
                 return True
+        elif self.service == "yfinance":
+            print("Yfinance initializing.....")
+            return True
         else:
             print("Service not supported")
             return False
