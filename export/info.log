@@ -1,91 +1,153 @@
-RATES ^SPX with yfinance
-> > >  ^SPX Período disponível: 2024-07-19 13:30:00-04:00 a 2024-07-19 15:55:00-04:00
+RATES MinDolAug24 with mt5
+
+
+....................................................................................................
+
 
 ---	print_dataframe	-----------------------------------------------------------------
-                                 close  atr_1.5 EMA20COLOR aroon_strength
-time                                                                     
-2024-07-19 13:30:00-04:00  5503.529785    False        Red    Forte Baixa
-2024-07-19 13:35:00-04:00  5505.850098    False        Red          Médio
-2024-07-19 13:40:00-04:00  5500.709961    False        Red          Médio
-2024-07-19 13:45:00-04:00  5509.379883    False      White          Médio
-2024-07-19 13:50:00-04:00  5505.229980    False      White          Médio
-2024-07-19 13:55:00-04:00  5511.770020    False      White          Médio
-2024-07-19 14:00:00-04:00  5508.430176    False      White         Neutro
-2024-07-19 14:05:00-04:00  5512.899902    False      White         Neutro
-2024-07-19 14:10:00-04:00  5511.229980    False      Green         Neutro
-2024-07-19 14:15:00-04:00  5510.470215    False      Green         Neutro
-2024-07-19 14:20:00-04:00  5505.939941    False      White     Forte Alta
-2024-07-19 14:25:00-04:00  5504.189941    False        Red     Forte Alta
-2024-07-19 14:30:00-04:00  5504.100098    False        Red          Médio
-2024-07-19 14:35:00-04:00  5501.069824    False        Red          Médio
-2024-07-19 14:40:00-04:00  5499.069824    False        Red         Neutro
-2024-07-19 14:45:00-04:00  5502.669922    False        Red         Neutro
-2024-07-19 14:50:00-04:00  5506.720215    False      White         Neutro
-2024-07-19 14:55:00-04:00  5508.649902    False      White         Neutro
-2024-07-19 15:00:00-04:00  5518.140137     True      Green         Neutro
-2024-07-19 15:05:00-04:00  5515.899902    False      Green         Neutro
-2024-07-19 15:10:00-04:00  5517.779785    False      Green         Neutro
-2024-07-19 15:15:00-04:00  5519.939941    False      Green         Neutro
-2024-07-19 15:20:00-04:00  5518.569824    False      Green         Neutro
-2024-07-19 15:25:00-04:00  5517.930176    False      Green         Neutro
-2024-07-19 15:30:00-04:00  5509.779785     True      White         Neutro
-2024-07-19 15:35:00-04:00  5503.549805    False      White          Médio
-2024-07-19 15:40:00-04:00  5502.060059    False        Red          Médio
-2024-07-19 15:45:00-04:00  5502.839844    False        Red          Médio
-2024-07-19 15:50:00-04:00  5502.959961    False        Red          Médio
-2024-07-19 15:55:00-04:00  5505.729980    False        Red          Médio
+                             close                      zone  adx_up  adx_dw  atr_1.5        ema20 ema20color  afs_ema20    afs aroon_strength
+time                                                                                                                                          
+2024-07-22 21:00:00+00:00  5576.75 2024-07-22 16:00:00-05:00    True   False    False  5566.102263      Green   0.191296  False     Forte Alta
+2024-07-22 21:05:00+00:00  5576.75 2024-07-22 16:05:00-05:00    True   False    False  5567.116333      Green   0.173046  False     Forte Alta
+2024-07-22 21:10:00+00:00  5577.25 2024-07-22 16:10:00-05:00    True   False    False  5568.081444      Green   0.164663  False          Médio
+2024-07-22 21:15:00+00:00  5579.75 2024-07-22 16:15:00-05:00    True   False    False  5569.192735      Green   0.189565  False     Forte Alta
+2024-07-22 21:20:00+00:00  5580.25 2024-07-22 16:20:00-05:00    True   False    False  5570.245808      Green   0.179601  False     Forte Alta
+2024-07-22 21:25:00+00:00  5579.75 2024-07-22 16:25:00-05:00    True   False    False  5571.150969      Green   0.154349  False     Forte Alta
+2024-07-22 21:30:00+00:00  5577.25 2024-07-22 16:30:00-05:00   False    True    False  5571.731829      Green   0.099039  False     Forte Alta
+2024-07-22 21:35:00+00:00  5578.25 2024-07-22 16:35:00-05:00   False    True    False  5572.352608      Green   0.105833  False     Forte Alta
+2024-07-22 21:40:00+00:00  5577.75 2024-07-22 16:40:00-05:00   False    True    False  5572.866645      Green   0.087627  False         Neutro
+2024-07-22 21:45:00+00:00  5575.25 2024-07-22 16:45:00-05:00   False    True    False  5573.093631      Green   0.038692  False          Médio
+2024-07-22 21:50:00+00:00  5578.25 2024-07-22 16:50:00-05:00   False    True    False  5573.584714      Green   0.083704  False          Médio
+2024-07-22 21:55:00+00:00  5574.75 2024-07-22 16:55:00-05:00   False   False    False  5573.695693      Green   0.018916  False          Médio
+2024-07-22 22:00:00+00:00  5574.25 2024-07-22 17:00:00-05:00   False    True    False  5573.748485      White   0.008998  False          Médio
+2024-07-22 22:05:00+00:00  5577.25 2024-07-22 17:05:00-05:00   False    True    False  5574.081962      Green   0.056835  False         Neutro
+2024-07-22 22:10:00+00:00  5575.75 2024-07-22 17:10:00-05:00   False   False    False  5574.240823      Green   0.027074  False         Neutro
+2024-07-22 22:15:00+00:00  5575.75 2024-07-22 17:15:00-05:00   False   False    False  5574.384554      Green   0.024495  False          Médio
+2024-07-22 22:20:00+00:00  5575.75 2024-07-22 17:20:00-05:00   False   False    False  5574.514597      Green   0.022162  False          Médio
+2024-07-22 22:25:00+00:00  5574.25 2024-07-22 17:25:00-05:00   False   False    False  5574.489397      White  -0.004295  False          Médio
+2024-07-22 22:30:00+00:00  5577.25 2024-07-22 17:30:00-05:00   False   False    False  5574.752311      White   0.044804  False          Médio
+2024-07-22 22:35:00+00:00  5578.25 2024-07-22 17:35:00-05:00    True   False    False  5575.085425      Green   0.056763  False          Médio
+2024-07-22 22:40:00+00:00  5578.25 2024-07-22 17:40:00-05:00   False   False    False  5575.386813      Green   0.051354  False         Neutro
+2024-07-22 22:45:00+00:00  5578.75 2024-07-22 17:45:00-05:00   False   False    False  5575.707116      Green   0.054574  False         Neutro
+2024-07-22 22:50:00+00:00  5580.25 2024-07-22 17:50:00-05:00    True   False    False  5576.139772      Green   0.073711  False         Neutro
+2024-07-22 22:55:00+00:00  5584.25 2024-07-22 17:55:00-05:00    True   False    False  5576.912175      Green   0.131575  False         Neutro
+2024-07-22 23:00:00+00:00  5581.75 2024-07-22 18:00:00-05:00    True   False    False  5577.372920      Green   0.078479  False     Forte Alta
+2024-07-22 23:05:00+00:00  5582.25 2024-07-22 18:05:00-05:00    True   False    False  5577.837404      Green   0.079109  False     Forte Alta
+2024-07-22 23:10:00+00:00  5581.75 2024-07-22 18:10:00-05:00   False   False    False  5578.210032      Green   0.063461  False          Médio
+2024-07-22 23:15:00+00:00  5579.25 2024-07-22 18:15:00-05:00   False    True    False  5578.309077      Green   0.016868  False          Médio
+2024-07-22 23:20:00+00:00  5578.75 2024-07-22 18:20:00-05:00   False    True    False  5578.351069      White   0.007151  False          Médio
+2024-07-22 23:25:00+00:00  5578.25 2024-07-22 18:25:00-05:00   False    True    False  5578.341444      White  -0.001639  False          Médio
 
 ---	one_last_dataframe	-----------------------------------------------------------------
-                                close  atr_1.5 EMA20COLOR aroon_strength
-time                                                                    
-2024-07-19 15:55:00-04:00  5505.72998    False        Red          Médio
+close               : 5578.25
+zone                : 2024-07-22 18:25:00-05:00
+adx_up              : False
+adx_dw              : True
+atr_1.5             : False
+ema20               : 5578.341443578084
+ema20color          : White
+afs_ema20           : -0.001639261042176852
+afs                 : False
+aroon_strength      : Médio
+RATES MinDolAug24 with mt5
 
 
+....................................................................................................
 
-
-
-
-
-
-
-RATES GOLD with mt5
-> > >  GOLD Período disponível: 1970-01-01 00:07:50 a 1970-01-01 00:08:19
 
 ---	print_dataframe	-----------------------------------------------------------------
-                       close  atr_1.5 EMA20COLOR aroon_strength
-time                                                           
-1970-01-01 00:07:50  2400.30     True      White         Neutro
-1970-01-01 00:07:51  2400.32    False      Green         Neutro
-1970-01-01 00:07:52  2403.65    False      Green         Neutro
-1970-01-01 00:07:53  2403.39    False      Green     Forte Alta
-1970-01-01 00:07:54  2405.06    False      Green     Forte Alta
-1970-01-01 00:07:55  2406.38    False      Green     Forte Alta
-1970-01-01 00:07:56  2409.41     True      Green         Neutro
-1970-01-01 00:07:57  2410.45    False      Green         Neutro
-1970-01-01 00:07:58  2409.26    False      Green         Neutro
-1970-01-01 00:07:59  2409.56    False      Green         Neutro
-1970-01-01 00:08:00  2410.83    False      Green          Médio
-1970-01-01 00:08:01  2411.19    False      Green     Forte Alta
-1970-01-01 00:08:02  2410.53    False      Green     Forte Alta
-1970-01-01 00:08:03  2411.17    False      Green     Forte Alta
-1970-01-01 00:08:04  2410.49    False      Green     Forte Alta
-1970-01-01 00:08:05  2410.35    False      Green     Forte Alta
-1970-01-01 00:08:06  2410.69    False      Green          Médio
-1970-01-01 00:08:07  2410.06    False      Green          Médio
-1970-01-01 00:08:08  2409.58    False      Green          Médio
-1970-01-01 00:08:09  2410.66    False      Green          Médio
-1970-01-01 00:08:10  2410.77    False      Green          Médio
-1970-01-01 00:08:11  2409.92    False      Green         Neutro
-1970-01-01 00:08:12  2410.24    False      Green         Neutro
-1970-01-01 00:08:13  2410.98    False      Green         Neutro
-1970-01-01 00:08:14  2411.64    False      Green         Neutro
-1970-01-01 00:08:15  2411.36    False      Green         Neutro
-1970-01-01 00:08:16  2409.70    False      White         Neutro
-1970-01-01 00:08:17  2409.13    False      White         Neutro
-1970-01-01 00:08:18  2409.22    False      White         Neutro
-1970-01-01 00:08:19  2409.01    False        Red         Neutro
+                             close      zone  adx_up  adx_dw  atr_1.5        ema20 ema20color  afs_ema20    afs aroon_strength
+time                                                                                                                          
+2024-07-22 21:00:00+00:00  5576.75  16:00:00    True   False    False  5566.102263      Green   0.191296  False     Forte Alta
+2024-07-22 21:05:00+00:00  5576.75  16:05:00    True   False    False  5567.116333      Green   0.173046  False     Forte Alta
+2024-07-22 21:10:00+00:00  5577.25  16:10:00    True   False    False  5568.081444      Green   0.164663  False          Médio
+2024-07-22 21:15:00+00:00  5579.75  16:15:00    True   False    False  5569.192735      Green   0.189565  False     Forte Alta
+2024-07-22 21:20:00+00:00  5580.25  16:20:00    True   False    False  5570.245808      Green   0.179601  False     Forte Alta
+2024-07-22 21:25:00+00:00  5579.75  16:25:00    True   False    False  5571.150969      Green   0.154349  False     Forte Alta
+2024-07-22 21:30:00+00:00  5577.25  16:30:00   False    True    False  5571.731829      Green   0.099039  False     Forte Alta
+2024-07-22 21:35:00+00:00  5578.25  16:35:00   False    True    False  5572.352608      Green   0.105833  False     Forte Alta
+2024-07-22 21:40:00+00:00  5577.75  16:40:00   False    True    False  5572.866645      Green   0.087627  False         Neutro
+2024-07-22 21:45:00+00:00  5575.25  16:45:00   False    True    False  5573.093631      Green   0.038692  False          Médio
+2024-07-22 21:50:00+00:00  5578.25  16:50:00   False    True    False  5573.584714      Green   0.083704  False          Médio
+2024-07-22 21:55:00+00:00  5574.75  16:55:00   False   False    False  5573.695693      Green   0.018916  False          Médio
+2024-07-22 22:00:00+00:00  5574.25  17:00:00   False    True    False  5573.748485      White   0.008998  False          Médio
+2024-07-22 22:05:00+00:00  5577.25  17:05:00   False    True    False  5574.081962      Green   0.056835  False         Neutro
+2024-07-22 22:10:00+00:00  5575.75  17:10:00   False   False    False  5574.240823      Green   0.027074  False         Neutro
+2024-07-22 22:15:00+00:00  5575.75  17:15:00   False   False    False  5574.384554      Green   0.024495  False          Médio
+2024-07-22 22:20:00+00:00  5575.75  17:20:00   False   False    False  5574.514597      Green   0.022162  False          Médio
+2024-07-22 22:25:00+00:00  5574.25  17:25:00   False   False    False  5574.489397      White  -0.004295  False          Médio
+2024-07-22 22:30:00+00:00  5577.25  17:30:00   False   False    False  5574.752311      White   0.044804  False          Médio
+2024-07-22 22:35:00+00:00  5578.25  17:35:00    True   False    False  5575.085425      Green   0.056763  False          Médio
+2024-07-22 22:40:00+00:00  5578.25  17:40:00   False   False    False  5575.386813      Green   0.051354  False         Neutro
+2024-07-22 22:45:00+00:00  5578.75  17:45:00   False   False    False  5575.707116      Green   0.054574  False         Neutro
+2024-07-22 22:50:00+00:00  5580.25  17:50:00    True   False    False  5576.139772      Green   0.073711  False         Neutro
+2024-07-22 22:55:00+00:00  5584.25  17:55:00    True   False    False  5576.912175      Green   0.131575  False         Neutro
+2024-07-22 23:00:00+00:00  5581.75  18:00:00    True   False    False  5577.372920      Green   0.078479  False     Forte Alta
+2024-07-22 23:05:00+00:00  5582.25  18:05:00    True   False    False  5577.837404      Green   0.079109  False     Forte Alta
+2024-07-22 23:10:00+00:00  5581.75  18:10:00   False   False    False  5578.210032      Green   0.063461  False          Médio
+2024-07-22 23:15:00+00:00  5579.25  18:15:00   False    True    False  5578.309077      Green   0.016868  False          Médio
+2024-07-22 23:20:00+00:00  5578.75  18:20:00   False    True    False  5578.351069      White   0.007151  False          Médio
+2024-07-22 23:25:00+00:00  5578.25  18:25:00   False    True    False  5578.341444      White  -0.001639  False          Médio
 
 ---	one_last_dataframe	-----------------------------------------------------------------
-                       close  atr_1.5 EMA20COLOR aroon_strength
-time                                                           
-1970-01-01 00:08:19  2409.01    False        Red         Neutro
+close               : 5578.25
+zone                : 18:25:00
+adx_up              : False
+adx_dw              : True
+atr_1.5             : False
+ema20               : 5578.341443578084
+ema20color          : White
+afs_ema20           : -0.001639261042176852
+afs                 : False
+aroon_strength      : Médio
+RATES MinDolAug24 with mt5
+
+
+....................................................................................................
+
+
+---	print_dataframe	-----------------------------------------------------------------
+                             close      zone  adx_up  adx_dw  atr_1.5        ema20 ema20color  afs_ema20    afs aroon_strength
+time                                                                                                                          
+2024-07-22 21:00:00+00:00  5576.75  16:00:00    True   False    False  5566.102263      Green   0.191296  False           Alta
+2024-07-22 21:05:00+00:00  5576.75  16:05:00    True   False    False  5567.116333      Green   0.173046  False           Alta
+2024-07-22 21:10:00+00:00  5577.25  16:10:00    True   False    False  5568.081444      Green   0.164663  False          Médio
+2024-07-22 21:15:00+00:00  5579.75  16:15:00    True   False    False  5569.192735      Green   0.189565  False           Alta
+2024-07-22 21:20:00+00:00  5580.25  16:20:00    True   False    False  5570.245808      Green   0.179601  False           Alta
+2024-07-22 21:25:00+00:00  5579.75  16:25:00    True   False    False  5571.150969      Green   0.154349  False           Alta
+2024-07-22 21:30:00+00:00  5577.25  16:30:00   False    True    False  5571.731829      Green   0.099039  False           Alta
+2024-07-22 21:35:00+00:00  5578.25  16:35:00   False    True    False  5572.352608      Green   0.105833  False           Alta
+2024-07-22 21:40:00+00:00  5577.75  16:40:00   False    True    False  5572.866645      Green   0.087627  False         Neutro
+2024-07-22 21:45:00+00:00  5575.25  16:45:00   False    True    False  5573.093631      Green   0.038692  False          Médio
+2024-07-22 21:50:00+00:00  5578.25  16:50:00   False    True    False  5573.584714      Green   0.083704  False          Médio
+2024-07-22 21:55:00+00:00  5574.75  16:55:00   False   False    False  5573.695693      Green   0.018916  False          Médio
+2024-07-22 22:00:00+00:00  5574.25  17:00:00   False    True    False  5573.748485      White   0.008998  False          Médio
+2024-07-22 22:05:00+00:00  5577.25  17:05:00   False    True    False  5574.081962      Green   0.056835  False         Neutro
+2024-07-22 22:10:00+00:00  5575.75  17:10:00   False   False    False  5574.240823      Green   0.027074  False         Neutro
+2024-07-22 22:15:00+00:00  5575.75  17:15:00   False   False    False  5574.384554      Green   0.024495  False          Médio
+2024-07-22 22:20:00+00:00  5575.75  17:20:00   False   False    False  5574.514597      Green   0.022162  False          Médio
+2024-07-22 22:25:00+00:00  5574.25  17:25:00   False   False    False  5574.489397      White  -0.004295  False          Médio
+2024-07-22 22:30:00+00:00  5577.25  17:30:00   False   False    False  5574.752311      White   0.044804  False          Médio
+2024-07-22 22:35:00+00:00  5578.25  17:35:00    True   False    False  5575.085425      Green   0.056763  False          Médio
+2024-07-22 22:40:00+00:00  5578.25  17:40:00   False   False    False  5575.386813      Green   0.051354  False         Neutro
+2024-07-22 22:45:00+00:00  5578.75  17:45:00   False   False    False  5575.707116      Green   0.054574  False         Neutro
+2024-07-22 22:50:00+00:00  5580.25  17:50:00    True   False    False  5576.139772      Green   0.073711  False         Neutro
+2024-07-22 22:55:00+00:00  5584.25  17:55:00    True   False    False  5576.912175      Green   0.131575  False         Neutro
+2024-07-22 23:00:00+00:00  5581.75  18:00:00    True   False    False  5577.372920      Green   0.078479  False           Alta
+2024-07-22 23:05:00+00:00  5582.25  18:05:00    True   False    False  5577.837404      Green   0.079109  False           Alta
+2024-07-22 23:10:00+00:00  5581.75  18:10:00   False   False    False  5578.210032      Green   0.063461  False          Médio
+2024-07-22 23:15:00+00:00  5579.25  18:15:00   False    True    False  5578.309077      Green   0.016868  False          Médio
+2024-07-22 23:20:00+00:00  5578.75  18:20:00   False    True    False  5578.351069      White   0.007151  False          Médio
+2024-07-22 23:25:00+00:00  5578.25  18:25:00   False    True    False  5578.341444      White  -0.001639  False          Médio
+
+---	one_last_dataframe	-----------------------------------------------------------------
+close               : 5578.25
+zone                : 18:25:00
+adx_up              : False
+adx_dw              : True
+atr_1.5             : False
+ema20               : 5578.341443578084
+ema20color          : White
+afs_ema20           : -0.001639261042176852
+afs                 : False
+aroon_strength      : Médio

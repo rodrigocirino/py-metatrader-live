@@ -28,6 +28,10 @@ class TrueRange(Command):
 
         self.is_atr_over(dff["true_range"])
 
+        # df.ta.atr(length=50, mamode='ma', col_names='ATR', append=True, percent=False)
+        # ATR APLICADO APENAS AO CORPO DA BARRA E NÃO AO TOTAL
+        # df['mult_atr'] = (abs(df['open'] - df['close']) >= (atr_multiples * df['ATR']))
+
     def is_atr_over(self, true_range):
         mult = 1.50
         self.df["atr_" + str(mult)] = abs(self.df["open"] - self.df["close"]) > (true_range.shift() * mult)

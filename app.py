@@ -4,45 +4,46 @@ import pandas as pd
 
 from service.loggs import Loggs
 from service.mt5_service import MT5_Service
+from service.pandas_options import PandasConfig
 from service.scheduler import scheduler
 from util.indicators.aroon_oscilator import Aroon
 from util.indicators.command import CommandController
+from util.indicators.dmi import Dmi
 from util.indicators.ema import Ema
 from util.indicators.true_range import TrueRange
+
+PandasConfig.apply_settings()
 
 loggs = Loggs().logger
 
 
 class TickReceiver:
 
-    def __init__(self, servicemanager, symbol, interval):
-        self.symbol = symbol
+    def __init__(self, servicemanager, symbols, interval):
+        self.symbol = symbols
         self.interval = interval
         self.df = pd.DataFrame()
         self.scheduler = scheduler(interval)
         self.from_date = datetime.now()
+        self.servicemanager = servicemanager
         self.rates = MT5_Service(servicemanager)
         loggs.info("RATES " + str(self.symbol) + " with " + str(servicemanager))
 
-    def run(self):
-        try:
-            if self.rates.initialize():
-                self.scheduler.renew(self.process_ticks())
-            else:
-                print("Falha na inicialização do serviço.")
-        except KeyboardInterrupt:
-            print("Interrupção pelo usuário. Encerrando o programa...")
-        finally:
-            self.rates.finalize()
-
-    # def config_logger(self): LogSelf(self.symbol).config_logger()
-
     def mining_dataframe(self, bars):
         self.df = pd.DataFrame(bars)
-        self.df["time"] = pd.to_datetime(self.df.index, unit="s")
-        self.df.set_index("time", inplace=True)
+        if self.df.index.name != "time":  # Set 'time' as index if not already
+            self.df.set_index("time", inplace=True)
+        self.df.index = pd.to_datetime(self.df.index, unit="s", utc=True)
+        # MT5 não traz qual timestamp ele esta retornando a hora GMT, verifique na plataforma.
+        if self.servicemanager.startswith("mt5"):
+            self.df["zone"] = self.df.index.tz_convert("Etc/GMT+5")
+        else:
+            self.df["zone"] = self.df.index.tz_convert("America/Sao_Paulo")
+        self.df["zone"] = self.df["zone"].dt.strftime("%H:%M:%S")
+        # Etc/GMT+3, Brazil/East, America/Sao_Paulo
 
     def process_ticks(self):
+        loggs.info(f"\n\n{'.' * 100}\n")
         bars = self.rates.rates_from(self.symbol)
         if bars is None:
             print(f"Não foi possível obter informações sobre o símbolo {self.symbol}")
@@ -63,35 +64,21 @@ class TickReceiver:
             errors="ignore",
             inplace=True,
         )
-        pd.set_option("display.max_columns", None)  # Ensure all columns are printed
-        pd.set_option("display.max_rows", 100)  # Ensure all columns are printed
         df = (self.df.loc[:, ~self.df.columns.isin(["open", "high", "low"])]).tail(30)
-        loggs.info(f"{'> ' * 3} {self.symbol} Período disponível: {df.index.min()} a {df.index.max()}")
+        print(f"{'> ' * 3} {self.symbol} Período disponível: {df.index.min()} a {df.index.max()}")
         loggs.info(f"\n---\tprint_dataframe\t{'-' * 65}")
         loggs.info(df)
-        """ 
-        df = self.df[
-            (self.df.index >= pd.Timestamp("2024-07-18 00:00:01")) & (self.df.index <= pd.Timestamp("2024-07-18 23:59:59"))
-        ] 
-        df.index = (
-            pd.to_datetime(df.index).tz_localize("Etc/GMT-2").tz_convert("Etc/GMT+3")
-        )  # Etc/GMT+3, Brazil/East, America/Sao_Paulo        
-        """
+        """ df[(self.df.index >= pd.Timestamp("2024-07-18 00:00:01")) & (self.df.index <= ...)] """
         # logging.info(f"\r\n{'.'*5}\tColunas do Dataframe\t{'.'*5}\n\t[%s]\n", ", ".join(df.columns))
         # print((self.df.loc[:, ~self.df.columns.isin(["open", "high", "low"])]).tail(100))
         # print(df[["tick_volume"]].sort_values("tick_volume", ascending=False).tail(100))
 
-    """
-    def log_to_csv(self):
-        log_filepath = "./export"
-        os.makedirs(log_filepath, exist_ok=True)
-        self.df.to_csv(f"{log_filepath}/console.csv")  # , sep="\t", decimal=',')
-    """
-
     def one_last_dataframe(self):
         df = (self.df.loc[:, ~self.df.columns.isin(["open", "high", "low"])]).tail(100)
         loggs.info(f"\n---\tone_last_dataframe\t{'-' * 65}")
-        loggs.info(df.iloc[-1:])
+        last_row = df.iloc[-1]
+        # Imprime cada coluna com seu valor na última linha, alinhando com 50 caracteres de forma pythonica
+        loggs.info("\n".join(f"{col.ljust(20)}: {val}" for col, val in df.iloc[-1].items()))
 
     def analyze_indicators(self):
         # Cria uma instância do controlador
@@ -100,22 +87,33 @@ class TickReceiver:
         controller.add_command(TrueRange(self.df))
         controller.add_command(Ema(self.df))
         controller.add_command(Aroon(self.df))
+        controller.add_command(Dmi(self.df))
         # Processa os comandos
         controller.process_command()
 
+    def run(self):
+        try:
+            if self.rates.initialize():
+                self.scheduler.renew(self.process_ticks())
+            else:
+                print("Falha na inicialização do serviço.")
+        except KeyboardInterrupt:
+            print("Interrupção pelo usuário. Encerrando o programa...")
+        finally:
+            self.rates.finalize()
+
 
 if __name__ == "__main__":
-    service = ["yfinance", "mt5"]
-    symbol = ["^SPX", "GOLD"]
-    item = 1
-    tick_receiver = TickReceiver(servicemanager=service[item], symbol=symbol[item], interval=20)
-    # tick_receiver.config_logger()
+    service = ["yfinance", "mt5", "mt5"]
+    symbol = ["^SPX", "GOLD", "MinDolAug24"]
+    item = 2
+    tick_receiver = TickReceiver(servicemanager=service[item], symbols=symbol[item], interval=30)
     tick_receiver.run()  # run scheduler
 
 """
-_________________________________________________________________
-                       close  atr_1.5 EMA20COLOR aroon_strength
-time                                                           
-2024-07-19 03:55:00  2425.86    False        Red          Médio
-RATES GOLD with mt5
+__________________________________________________________________________________________________________________
+                            close   ADX_UP  ADX_DW  atr_1.5 ema20   ema20color  afs_ema20   afs     aroon_strength
+time                                                                           
+2024-07-22 14:25:00-04:00   5567    False   False   False   5560    Green       0.134674    False   Forte Alta 
+__________________________________________________________________________________________________________________
 """

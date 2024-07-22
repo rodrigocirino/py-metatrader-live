@@ -11,7 +11,6 @@ class MT5_Service:
 
     def rates_from(self, symbol, num_bars=500):
         # MetaTrader 5 stores tick and bar open time in "Etc/UTC" zone (without the shift)
-        print("RATES " + str(symbol) + " with " + str(self.service))
         if self.service == "mt5":
             return mt5.copy_rates_from_pos(symbol, mt5.TIMEFRAME_M5, 0, num_bars)
         if self.service == "mt5_ticks":
@@ -23,7 +22,6 @@ class MT5_Service:
         # timeframe = "5m"  # valid 1m,2m,5m,15m,30m,60m,90m,1h
         # stocks = [stock + ".SA" if not stock.endswith(".SA") and "^" not in stock else stock for stock in stocks]
         df = yf.download(stocks, period=period, interval=interval)
-        print(f"{'> ' * 3} {stocks} Período disponível: {df.index.min()} a {df.index.max()}")
         df.drop(["Close", "Volume"], axis=1, inplace=True)
         df.index.names = ["time"]  # rename index
         df.rename(columns={"Open": "open", "High": "high", "Low": "low", "Adj Close": "close"}, inplace=True)

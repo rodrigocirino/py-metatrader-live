@@ -25,19 +25,18 @@ class Aroon(Command):
         data["Aroon_Up"] = aroon["AROONU_14"]
         data["Aroon_Down"] = aroon["AROOND_14"]
         # Aplicar a função define_trend_strength para cada par de valores Aroon Up e Aroon Down e criar uma nova coluna
-        data["Trend_Strength"] = data.apply(
-            lambda row: self.define_trend_strength(row["Aroon_Up"], row["Aroon_Down"]),
+        self.df["aroon_strength"] = data.apply(
+            lambda row: define_trend_strength(row["Aroon_Up"], row["Aroon_Down"]),
             axis=1,
         )
-        self.df["aroon_strength"] = data["Trend_Strength"]
-        # print((self.df.loc[:, ~self.df.columns.isin(['open', 'high', 'low', 'close', 'tick_volume', 'spread', 'real_volume'])]).tail(40))
 
-    def define_trend_strength(self, aroon_up, aroon_down):
-        if aroon_up > 80 and aroon_down < 20:
-            return "Forte Alta"
-        elif aroon_down > 80 and aroon_up < 20:
-            return "Forte Baixa"
-        elif (50 <= aroon_up <= 80 and aroon_down < 50) or (50 <= aroon_down <= 80 and aroon_up < 50):
-            return "Médio"
-        else:
-            return "Neutro"
+
+def define_trend_strength(aroon_up, aroon_down):
+    if aroon_up > 80 and aroon_down < 20:
+        return "Alta"
+    elif aroon_down > 80 and aroon_up < 20:
+        return "Baixa"
+    elif (80 >= aroon_up >= 50 > aroon_down) or (80 >= aroon_down >= 50 > aroon_up):
+        return "Médio"
+    else:
+        return "Neutro"
