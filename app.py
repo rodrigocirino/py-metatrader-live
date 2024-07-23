@@ -19,21 +19,20 @@ loggs = Loggs().logger
 
 class TickReceiver:
 
-    def __init__(self, servicemanager, symbols):
+    def __init__(self, servicemanager, symbols, timeframe):
         self.symbol = symbols
         self.df = pd.DataFrame()
         self.scheduler = Scheduler()
         self.from_date = datetime.now()
         self.servicemanager = servicemanager
-        self.rates = MT5_Service(servicemanager)
-        loggs.info("RATES " + str(self.symbol) + " with " + str(servicemanager))
+        self.rates = MT5_Service(servicemanager, timeframe)
 
     def mining_dataframe(self, bars):
         self.df = pd.DataFrame(bars)
         if self.df.index.name != "time":  # Set 'time' as index if not already
             self.df.set_index("time", inplace=True)
         self.df.index = pd.to_datetime(self.df.index, unit="s", utc=True)
-        # MT5 não traz qual timestamp ele esta retornando a hora GMT, verifique na plataforma.
+        # MT5 não traz a info de tz, qual timezone ele esta retornando, calcule manualmente o shift
         if self.servicemanager.startswith("mt5"):
             self.df["zone"] = self.df.index.tz_convert("Etc/GMT+5")
         else:
@@ -47,6 +46,7 @@ class TickReceiver:
         if bars is None:
             print(f"Não foi possível obter informações sobre o símbolo {self.symbol}")
         else:
+            loggs.info(f"-- Rates of {self.symbol} with {self.servicemanager} in {datetime.now()} --")
             self.mining_dataframe(bars)
 
             self.analyze_indicators()
@@ -65,15 +65,15 @@ class TickReceiver:
             errors="ignore",
             inplace=True,
         )
-        df = self.df.loc[:, ~self.df.columns.isin(["open", "high", "low"])]
-        loggs.info(f"{'> ' * 3} {self.symbol} Período disponível: {df.index.min()} a {df.index.max()}")
-        loggs.info(f"\n{'-' * 10} print_dataframe {'-' * 60}")
-        loggs.info(df[self.df.index >= pd.Timestamp.now(tz="UTC").normalize()])
+        df = self.df.loc[:, ~self.df.columns.isin(["close", "open", "high", "low"])]
+        loggs.info(f"-- {self.symbol} Período disponível: {df.index.min()} a {df.index.max()}")
+        loggs.info(f"\n{'_' * 10} print_dataframe {'_' * 50}")
+        loggs.info(df[self.df.index >= pd.Timestamp.now(tz="UTC").normalize()].to_string(index=False))
         # print(df[["tick_volume"]].sort_values("tick_volume", ascending=False).tail(100))
 
     def one_last_dataframe(self):
         df = self.df.loc[:, ~self.df.columns.isin(["open", "high", "low"])]
-        loggs.info(f"\n---\tone_last_dataframe\t{'-' * 65}")
+        loggs.info(f"\n{'_' * 10} one_last_dataframe {'_' * 50}")
         # Imprime cada coluna com seu valor na última linha, alinhando com 50 caracteres de forma pythonica
         loggs.info("\n".join(f"{col.ljust(20)}: {val}" for col, val in df.iloc[-1].items()))
 
@@ -100,7 +100,7 @@ class TickReceiver:
             self.rates.finalize()
 
     def advices_trading(self):
-        loggs.info(f"\n---\tadvices_trading\t{'-' * 80}")
+        loggs.info(f"\n{'_' * 10} advices_trading {'_' * 50}")
         last_row = self.df.iloc[-1]
         if last_row.ema20 is not None:
             loggs.info(
@@ -123,5 +123,5 @@ if __name__ == "__main__":
     service = ["yfinance", "mt5", "mt5", "mt5"]
     symbol = ["^SPX", "GOLD", "MinDolAug24", "HKInd"]
     item = 0
-    tick_receiver = TickReceiver(servicemanager=service[item], symbols=symbol[item])
+    tick_receiver = TickReceiver(service[item], symbol[item], 5)
     tick_receiver.run()  # run scheduler

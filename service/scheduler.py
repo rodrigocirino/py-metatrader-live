@@ -18,5 +18,5 @@ class Scheduler:
         repeat = 1
         next_minute = (now + timedelta(minutes=repeat)).replace(second=0, microsecond=0)
         delay = (next_minute - now).total_seconds() + 5  # wait repeat+5 seconds to turn
-        print(f"\n\nupdating in {int(delay)} secs ....")
+        print(f"\n\nupdating in {int(delay)} secs ....\r")
         return delay
