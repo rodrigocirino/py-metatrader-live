@@ -12,13 +12,13 @@ class MT5_Service:
     def rates_from(self, symbol, num_bars=500):
         # MetaTrader 5 stores tick and bar open time in "Etc/UTC" zone (without the shift)
         if self.service == "mt5":
-            return mt5.copy_rates_from_pos(symbol, mt5.TIMEFRAME_M5, 0, num_bars)
+            return mt5.copy_rates_from_pos(symbol, mt5.TIMEFRAME_M1, 0, num_bars)
         if self.service == "mt5_ticks":
             return mt5.symbol_info(symbol)
         if self.service == "yfinance":
             return self.online_yf_intraday([symbol])
 
-    def online_yf_intraday(self, stocks, interval="5m", period="5d"):
+    def online_yf_intraday(self, stocks, interval="1m", period="5d"):
         # timeframe = "5m"  # valid 1m,2m,5m,15m,30m,60m,90m,1h
         # stocks = [stock + ".SA" if not stock.endswith(".SA") and "^" not in stock else stock for stock in stocks]
         df = yf.download(stocks, period=period, interval=interval)
@@ -38,7 +38,6 @@ class MT5_Service:
         return data
 
     def initialize(self):
-        print("SELF SERVICE " + self.service)
         if self.mt5 is not None:
             if not self.mt5.initialize():
                 print(

@@ -5,7 +5,7 @@ import pandas as pd
 from service.loggs import Loggs
 from service.mt5_service import MT5_Service
 from service.pandas_options import PandasConfig
-from service.scheduler import scheduler
+from service.scheduler import Scheduler
 from util.indicators.aroon import Aroon
 from util.indicators.command import CommandController
 from util.indicators.dmi import Dmi
@@ -19,11 +19,10 @@ loggs = Loggs().logger
 
 class TickReceiver:
 
-    def __init__(self, servicemanager, symbols, interval):
+    def __init__(self, servicemanager, symbols):
         self.symbol = symbols
-        self.interval = interval
         self.df = pd.DataFrame()
-        self.scheduler = scheduler(interval)
+        self.scheduler = Scheduler()
         self.from_date = datetime.now()
         self.servicemanager = servicemanager
         self.rates = MT5_Service(servicemanager)
@@ -43,7 +42,7 @@ class TickReceiver:
         # Etc/GMT+3, Brazil/East, America/Sao_Paulo
 
     def process_ticks(self):
-        loggs.info(f"\n\n{'.' * 100}\n")
+        loggs.info(f"{'.' * 100}\n")
         bars = self.rates.rates_from(self.symbol)
         if bars is None:
             print(f"Não foi possível obter informações sobre o símbolo {self.symbol}")
@@ -101,7 +100,7 @@ class TickReceiver:
             self.rates.finalize()
 
     def advices_trading(self):
-        loggs.info(f"\n---\tadvices_trading\t{'-' * 65}")
+        loggs.info(f"\n---\tadvices_trading\t{'-' * 80}")
         last_row = self.df.iloc[-1]
         if last_row.ema20 is not None:
             loggs.info(
@@ -123,6 +122,6 @@ class TickReceiver:
 if __name__ == "__main__":
     service = ["yfinance", "mt5", "mt5", "mt5"]
     symbol = ["^SPX", "GOLD", "MinDolAug24", "HKInd"]
-    item = 1
-    tick_receiver = TickReceiver(servicemanager=service[item], symbols=symbol[item], interval=30)
+    item = 0
+    tick_receiver = TickReceiver(servicemanager=service[item], symbols=symbol[item])
     tick_receiver.run()  # run scheduler
