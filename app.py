@@ -6,7 +6,7 @@ from service.loggs import Loggs
 from service.mt5_service import MT5_Service
 from service.pandas_options import PandasConfig
 from service.scheduler import scheduler
-from util.indicators.aroon_oscilator import Aroon
+from util.indicators.aroon import Aroon
 from util.indicators.command import CommandController
 from util.indicators.dmi import Dmi
 from util.indicators.ema import Ema
@@ -55,6 +55,8 @@ class TickReceiver:
             self.print_dataframe()
 
             self.one_last_dataframe()
+
+            self.advices_trading()
         # Update Scheduler
         self.scheduler.renew(self.process_ticks)
 
@@ -64,19 +66,15 @@ class TickReceiver:
             errors="ignore",
             inplace=True,
         )
-        df = (self.df.loc[:, ~self.df.columns.isin(["open", "high", "low"])]).tail(30)
-        print(f"{'> ' * 3} {self.symbol} Período disponível: {df.index.min()} a {df.index.max()}")
-        loggs.info(f"\n---\tprint_dataframe\t{'-' * 65}")
-        loggs.info(df)
-        """ df[(self.df.index >= pd.Timestamp("2024-07-18 00:00:01")) & (self.df.index <= ...)] """
-        # logging.info(f"\r\n{'.'*5}\tColunas do Dataframe\t{'.'*5}\n\t[%s]\n", ", ".join(df.columns))
-        # print((self.df.loc[:, ~self.df.columns.isin(["open", "high", "low"])]).tail(100))
+        df = self.df.loc[:, ~self.df.columns.isin(["open", "high", "low"])]
+        loggs.info(f"{'> ' * 3} {self.symbol} Período disponível: {df.index.min()} a {df.index.max()}")
+        loggs.info(f"\n{'-' * 10} print_dataframe {'-' * 60}")
+        loggs.info(df[self.df.index >= pd.Timestamp.now(tz="UTC").normalize()])
         # print(df[["tick_volume"]].sort_values("tick_volume", ascending=False).tail(100))
 
     def one_last_dataframe(self):
-        df = (self.df.loc[:, ~self.df.columns.isin(["open", "high", "low"])]).tail(100)
+        df = self.df.loc[:, ~self.df.columns.isin(["open", "high", "low"])]
         loggs.info(f"\n---\tone_last_dataframe\t{'-' * 65}")
-        last_row = df.iloc[-1]
         # Imprime cada coluna com seu valor na última linha, alinhando com 50 caracteres de forma pythonica
         loggs.info("\n".join(f"{col.ljust(20)}: {val}" for col, val in df.iloc[-1].items()))
 
@@ -102,18 +100,25 @@ class TickReceiver:
         finally:
             self.rates.finalize()
 
+    def advices_trading(self):
+        loggs.info(f"\n---\tadvices_trading\t{'-' * 65}")
+        last_row = self.df.iloc[-1]
+        if last_row.ema20 is not None:
+            loggs.info(
+                f"{last_row.ema20.upper()} - Média Direcional: Não indica entradas, sobre-preços podem indicar que"
+                " reversões podem estar ocorrendo."
+            )
+        if last_row.afs:
+            loggs.info(f"Média afastada - Entradas longe da média apenas com tendência forte.")
+        if last_row.atrs:
+            loggs.info(f"ATR Climax - Não sei oque fazer aqui, aguarde!")
+        if last_row.aroon:
+            loggs.info(f"Aroon {last_row.aroon.upper()} - Tendência forte ativada!")
+
 
 if __name__ == "__main__":
     service = ["yfinance", "mt5", "mt5"]
     symbol = ["^SPX", "GOLD", "MinDolAug24"]
-    item = 2
+    item = 1
     tick_receiver = TickReceiver(servicemanager=service[item], symbols=symbol[item], interval=30)
     tick_receiver.run()  # run scheduler
-
-"""
-__________________________________________________________________________________________________________________
-                            close   ADX_UP  ADX_DW  atr_1.5 ema20   ema20color  afs_ema20   afs     aroon_strength
-time                                                                           
-2024-07-22 14:25:00-04:00   5567    False   False   False   5560    Green       0.134674    False   Forte Alta 
-__________________________________________________________________________________________________________________
-"""

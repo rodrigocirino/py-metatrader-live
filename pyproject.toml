@@ -1,7 +1,7 @@
 # https://github.com/psf/black/blob/main/pyproject.toml
 
 [tool.black]
-line-length = 130
+line-length = 120
 target-version = ['py311']
 include = '\.pyi?$'
 # 'extend-exclude' excludes files or directories in addition to the defaults

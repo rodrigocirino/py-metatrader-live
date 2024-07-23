@@ -1,17 +1,22 @@
 # pandas_options.py
 
+import os
+
 import pandas as pd  # noqa: F401
 
 
 class PandasConfig:
     @staticmethod
     def apply_settings():
+        # clear console
+        os.system("cls")
+
         # Set display options for pandas globally
         # ---------------------------
         # Show all columns in the output
         pd.set_option("display.max_columns", None)
         # Show up to 100 rows in the output (set to None for unlimited)
-        pd.set_option("display.max_rows", 100)
+        pd.set_option("display.max_rows", 200)
         # Increase the line width limit to 1000 characters (adjust as needed)
         pd.set_option("display.width", 1000)
 
