@@ -16,8 +16,8 @@ class Ema(Command):
 
     def ema(self, s=20):
         ema = self.df["close"].ewm(span=s).mean()
-        # self.df[self.column] = data  # df['ema20']
         color_column = "ema" + str(s)
+        # self.df[color_column] = ema  # df['ema20']
         self.df[color_column] = ""  # Default color
         self.df.loc[self.df["low"] > ema, color_column] = "Altista"
         self.df.loc[self.df["high"] < ema, color_column] = "Baixista"

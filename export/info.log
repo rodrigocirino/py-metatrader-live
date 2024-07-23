@@ -108,3 +108,304 @@ aroon               : Altista
 ---	advices_trading	-----------------------------------------------------------------
 ALTISTA - Média Direcional: Não indica entradas, sobre-preços podem indicar que reversões podem estar ocorrendo.
 Aroon ALTISTA - Tendência forte ativada!
+RATES GOLD with mt5
+
+
+....................................................................................................
+
+> > >  GOLD Período disponível: 2024-07-19 07:05:00+00:00 a 2024-07-23 02:40:00+00:00
+
+---------- print_dataframe ------------------------------------------------------------
+                             close      zone  adx_up  adx_dw  atrs     ema20    afs      aroon
+time                                                                                          
+2024-07-23 00:00:00+00:00  2397.48  19:00:00    True   False                  False   Baixista
+2024-07-23 00:05:00+00:00  2397.01  19:05:00   False   False                  False  Transição
+2024-07-23 00:10:00+00:00  2396.88  19:10:00   False   False        Baixista  False  Transição
+2024-07-23 00:15:00+00:00  2396.38  19:15:00   False    True        Baixista  False  Transição
+2024-07-23 00:20:00+00:00  2396.16  19:20:00   False    True        Baixista  False  Transição
+2024-07-23 00:25:00+00:00  2396.10  19:25:00   False    True        Baixista  False  Transição
+2024-07-23 00:30:00+00:00  2395.88  19:30:00   False    True        Baixista  False           
+2024-07-23 00:35:00+00:00  2396.28  19:35:00   False   False        Baixista  False           
+2024-07-23 00:40:00+00:00  2395.99  19:40:00   False   False        Baixista  False           
+2024-07-23 00:45:00+00:00  2395.43  19:45:00   False    True        Baixista  False   Baixista
+2024-07-23 00:50:00+00:00  2395.19  19:50:00   False    True        Baixista  False           
+2024-07-23 00:55:00+00:00  2395.00  19:55:00   False    True        Baixista  False           
+2024-07-23 01:00:00+00:00  2395.27  20:00:00   False    True        Baixista  False   Baixista
+2024-07-23 01:05:00+00:00  2395.69  20:05:00    True   False        Baixista  False   Baixista
+2024-07-23 01:10:00+00:00  2394.98  20:10:00   False   False        Baixista  False   Baixista
+2024-07-23 01:15:00+00:00  2395.29  20:15:00   False   False        Baixista  False   Baixista
+2024-07-23 01:20:00+00:00  2395.55  20:20:00    True   False        Baixista  False   Baixista
+2024-07-23 01:25:00+00:00  2395.54  20:25:00   False   False        Baixista  False   Baixista
+2024-07-23 01:30:00+00:00  2394.89  20:30:00   False    True        Baixista  False           
+2024-07-23 01:35:00+00:00  2395.08  20:35:00   False    True        Baixista  False           
+2024-07-23 01:40:00+00:00  2395.34  20:40:00   False   False        Baixista  False   Baixista
+2024-07-23 01:45:00+00:00  2395.70  20:45:00    True   False                  False  Transição
+2024-07-23 01:50:00+00:00  2395.70  20:50:00    True   False                  False  Transição
+2024-07-23 01:55:00+00:00  2395.55  20:55:00   False   False                  False           
+2024-07-23 02:00:00+00:00  2396.69  21:00:00    True   False  True            False           
+2024-07-23 02:05:00+00:00  2397.13  21:05:00    True   False         Altista  False           
+2024-07-23 02:10:00+00:00  2396.00  21:10:00    True   False         Altista  False           
+2024-07-23 02:15:00+00:00  2396.78  21:15:00   False   False                  False           
+2024-07-23 02:20:00+00:00  2396.46  21:20:00   False   False                  False           
+2024-07-23 02:25:00+00:00  2397.13  21:25:00   False   False         Altista  False  Transição
+2024-07-23 02:30:00+00:00  2398.24  21:30:00    True   False         Altista  False    Altista
+2024-07-23 02:35:00+00:00  2397.98  21:35:00    True   False         Altista  False    Altista
+2024-07-23 02:40:00+00:00  2397.44  21:40:00    True   False         Altista  False    Altista
+
+---	one_last_dataframe	-----------------------------------------------------------------
+close               : 2397.44
+zone                : 21:40:00
+adx_up              : True
+adx_dw              : False
+atrs                : 
+ema20               : Altista
+afs                 : False
+aroon               : Altista
+
+---	advices_trading	-----------------------------------------------------------------
+ALTISTA - Média Direcional: Não indica entradas, sobre-preços podem indicar que reversões podem estar ocorrendo.
+Aroon ALTISTA - Tendência forte ativada!
+RATES HKInd with mt5
+
+
+....................................................................................................
+
+> > >  HKInd Período disponível: 2024-07-18 20:20:00+00:00 a 2024-07-23 02:40:00+00:00
+
+---------- print_dataframe ------------------------------------------------------------
+                              close      zone  adx_up  adx_dw atrs ema20    afs      aroon
+time                                                                                      
+2024-07-23 02:15:00+00:00  17703.69  21:15:00   False   False             False   Baixista
+2024-07-23 02:20:00+00:00  17701.56  21:20:00   False   False             False   Baixista
+2024-07-23 02:25:00+00:00  17699.50  21:25:00   False   False             False  Transição
+2024-07-23 02:30:00+00:00  17699.12  21:30:00   False   False             False           
+2024-07-23 02:35:00+00:00  17700.20  21:35:00   False   False             False           
+2024-07-23 02:40:00+00:00  17699.11  21:40:00   False   False             False  Transição
+
+---	one_last_dataframe	-----------------------------------------------------------------
+close               : 17699.11
+zone                : 21:40:00
+adx_up              : False
+adx_dw              : False
+atrs                : 
+ema20               : 
+afs                 : False
+aroon               : Transição
+
+---	advices_trading	-----------------------------------------------------------------
+ - Média Direcional: Não indica entradas, sobre-preços podem indicar que reversões podem estar ocorrendo.
+Aroon TRANSIÇÃO - Tendência forte ativada!
+RATES HKInd with mt5
+
+
+....................................................................................................
+
+> > >  HKInd Período disponível: 2024-07-18 20:20:00+00:00 a 2024-07-23 02:40:00+00:00
+
+---------- print_dataframe ------------------------------------------------------------
+                              close      zone  adx_up  adx_dw atrs ema20    afs      aroon
+time                                                                                      
+2024-07-23 02:15:00+00:00  17703.69  21:15:00   False   False             False   Baixista
+2024-07-23 02:20:00+00:00  17701.56  21:20:00   False   False             False   Baixista
+2024-07-23 02:25:00+00:00  17699.50  21:25:00   False   False             False  Transição
+2024-07-23 02:30:00+00:00  17699.12  21:30:00   False   False             False           
+2024-07-23 02:35:00+00:00  17700.20  21:35:00   False   False             False           
+2024-07-23 02:40:00+00:00  17694.00  21:40:00   False   False             False  Transição
+
+---	one_last_dataframe	-----------------------------------------------------------------
+close               : 17694.0
+zone                : 21:40:00
+adx_up              : False
+adx_dw              : False
+atrs                : 
+ema20               : 
+afs                 : False
+aroon               : Transição
+
+---	advices_trading	-----------------------------------------------------------------
+ - Média Direcional: Não indica entradas, sobre-preços podem indicar que reversões podem estar ocorrendo.
+Aroon TRANSIÇÃO - Tendência forte ativada!
+RATES HKInd with mt5
+
+
+....................................................................................................
+
+> > >  HKInd Período disponível: 2024-07-18 20:20:00+00:00 a 2024-07-23 02:40:00+00:00
+
+---------- print_dataframe ------------------------------------------------------------
+                              close      zone  adx_up  adx_dw atrs ema20    afs      aroon
+time                                                                                      
+2024-07-23 02:15:00+00:00  17703.69  21:15:00   False   False             False   Baixista
+2024-07-23 02:20:00+00:00  17701.56  21:20:00   False   False             False   Baixista
+2024-07-23 02:25:00+00:00  17699.50  21:25:00   False   False             False  Transição
+2024-07-23 02:30:00+00:00  17699.12  21:30:00   False   False             False           
+2024-07-23 02:35:00+00:00  17700.20  21:35:00   False   False             False           
+2024-07-23 02:40:00+00:00  17693.80  21:40:00   False   False             False  Transição
+
+---	one_last_dataframe	-----------------------------------------------------------------
+close               : 17693.8
+zone                : 21:40:00
+adx_up              : False
+adx_dw              : False
+atrs                : 
+ema20               : 
+afs                 : False
+aroon               : Transição
+
+---	advices_trading	-----------------------------------------------------------------
+ - Média Direcional: Não indica entradas, sobre-preços podem indicar que reversões podem estar ocorrendo.
+Aroon TRANSIÇÃO - Tendência forte ativada!
+RATES HKInd with mt5
+
+
+....................................................................................................
+
+> > >  HKInd Período disponível: 2024-07-18 20:25:00+00:00 a 2024-07-23 02:45:00+00:00
+
+---------- print_dataframe ------------------------------------------------------------
+                              close      zone  adx_up  adx_dw atrs     ema20    afs      aroon
+time                                                                                          
+2024-07-23 02:15:00+00:00  17703.69  21:15:00   False   False                 False   Baixista
+2024-07-23 02:20:00+00:00  17701.56  21:20:00   False   False                 False   Baixista
+2024-07-23 02:25:00+00:00  17699.50  21:25:00   False   False                 False  Transição
+2024-07-23 02:30:00+00:00  17699.12  21:30:00   False   False                 False           
+2024-07-23 02:35:00+00:00  17700.20  21:35:00   False   False                 False           
+2024-07-23 02:40:00+00:00  17693.99  21:40:00   False   False                 False  Transição
+2024-07-23 02:45:00+00:00  17692.79  21:45:00   False    True       Baixista  False  Transição
+
+---	one_last_dataframe	-----------------------------------------------------------------
+close               : 17692.79
+zone                : 21:45:00
+adx_up              : False
+adx_dw              : True
+atrs                : 
+ema20               : Baixista
+afs                 : False
+aroon               : Transição
+
+---	advices_trading	-----------------------------------------------------------------
+BAIXISTA - Média Direcional: Não indica entradas, sobre-preços podem indicar que reversões podem estar ocorrendo.
+Aroon TRANSIÇÃO - Tendência forte ativada!
+RATES HKInd with mt5
+
+
+....................................................................................................
+
+> > >  HKInd Período disponível: 2024-07-18 20:25:00+00:00 a 2024-07-23 02:45:00+00:00
+
+---------- print_dataframe ------------------------------------------------------------
+                              close      zone  adx_up  adx_dw atrs     ema20    afs      aroon
+time                                                                                          
+2024-07-23 02:15:00+00:00  17703.69  21:15:00   False   False                 False   Baixista
+2024-07-23 02:20:00+00:00  17701.56  21:20:00   False   False                 False   Baixista
+2024-07-23 02:25:00+00:00  17699.50  21:25:00   False   False                 False  Transição
+2024-07-23 02:30:00+00:00  17699.12  21:30:00   False   False                 False           
+2024-07-23 02:35:00+00:00  17700.20  21:35:00   False   False                 False           
+2024-07-23 02:40:00+00:00  17693.99  21:40:00   False   False                 False  Transição
+2024-07-23 02:45:00+00:00  17692.09  21:45:00   False    True       Baixista  False  Transição
+
+---	one_last_dataframe	-----------------------------------------------------------------
+close               : 17692.09
+zone                : 21:45:00
+adx_up              : False
+adx_dw              : True
+atrs                : 
+ema20               : Baixista
+afs                 : False
+aroon               : Transição
+
+---	advices_trading	-----------------------------------------------------------------
+BAIXISTA - Média Direcional: Não indica entradas, sobre-preços podem indicar que reversões podem estar ocorrendo.
+Aroon TRANSIÇÃO - Tendência forte ativada!
+RATES HKInd with mt5
+
+
+....................................................................................................
+
+> > >  HKInd Período disponível: 2024-07-18 20:25:00+00:00 a 2024-07-23 02:45:00+00:00
+
+---------- print_dataframe ------------------------------------------------------------
+                              close      zone  adx_up  adx_dw atrs     ema20    afs      aroon
+time                                                                                          
+2024-07-23 02:15:00+00:00  17703.69  21:15:00   False   False                 False   Baixista
+2024-07-23 02:20:00+00:00  17701.56  21:20:00   False   False                 False   Baixista
+2024-07-23 02:25:00+00:00  17699.50  21:25:00   False   False                 False  Transição
+2024-07-23 02:30:00+00:00  17699.12  21:30:00   False   False                 False           
+2024-07-23 02:35:00+00:00  17700.20  21:35:00   False   False                 False           
+2024-07-23 02:40:00+00:00  17693.99  21:40:00   False   False                 False  Transição
+2024-07-23 02:45:00+00:00  17694.17  21:45:00   False    True       Baixista  False  Transição
+
+---	one_last_dataframe	-----------------------------------------------------------------
+close               : 17694.17
+zone                : 21:45:00
+adx_up              : False
+adx_dw              : True
+atrs                : 
+ema20               : Baixista
+afs                 : False
+aroon               : Transição
+
+---	advices_trading	-----------------------------------------------------------------
+BAIXISTA - Média Direcional: Não indica entradas, sobre-preços podem indicar que reversões podem estar ocorrendo.
+Aroon TRANSIÇÃO - Tendência forte ativada!
+ADX DI- True - Tendência baixista!
+RATES GOLD with mt5
+
+
+....................................................................................................
+
+> > >  GOLD Período disponível: 2024-07-19 07:15:00+00:00 a 2024-07-23 02:50:00+00:00
+
+---------- print_dataframe ------------------------------------------------------------
+                             close      zone  adx_up  adx_dw  atrs     ema20    afs      aroon
+time                                                                                          
+2024-07-23 00:00:00+00:00  2397.48  19:00:00    True   False                  False   Baixista
+2024-07-23 00:05:00+00:00  2397.01  19:05:00   False   False                  False  Transição
+2024-07-23 00:10:00+00:00  2396.88  19:10:00   False   False        Baixista  False  Transição
+2024-07-23 00:15:00+00:00  2396.38  19:15:00   False    True        Baixista  False  Transição
+2024-07-23 00:20:00+00:00  2396.16  19:20:00   False    True        Baixista  False  Transição
+2024-07-23 00:25:00+00:00  2396.10  19:25:00   False    True        Baixista  False  Transição
+2024-07-23 00:30:00+00:00  2395.88  19:30:00   False    True        Baixista  False           
+2024-07-23 00:35:00+00:00  2396.28  19:35:00   False   False        Baixista  False           
+2024-07-23 00:40:00+00:00  2395.99  19:40:00   False   False        Baixista  False           
+2024-07-23 00:45:00+00:00  2395.43  19:45:00   False    True        Baixista  False   Baixista
+2024-07-23 00:50:00+00:00  2395.19  19:50:00   False    True        Baixista  False           
+2024-07-23 00:55:00+00:00  2395.00  19:55:00   False    True        Baixista  False           
+2024-07-23 01:00:00+00:00  2395.27  20:00:00   False    True        Baixista  False   Baixista
+2024-07-23 01:05:00+00:00  2395.69  20:05:00    True   False        Baixista  False   Baixista
+2024-07-23 01:10:00+00:00  2394.98  20:10:00   False   False        Baixista  False   Baixista
+2024-07-23 01:15:00+00:00  2395.29  20:15:00   False   False        Baixista  False   Baixista
+2024-07-23 01:20:00+00:00  2395.55  20:20:00    True   False        Baixista  False   Baixista
+2024-07-23 01:25:00+00:00  2395.54  20:25:00   False   False        Baixista  False   Baixista
+2024-07-23 01:30:00+00:00  2394.89  20:30:00   False    True        Baixista  False           
+2024-07-23 01:35:00+00:00  2395.08  20:35:00   False    True        Baixista  False           
+2024-07-23 01:40:00+00:00  2395.34  20:40:00   False   False        Baixista  False   Baixista
+2024-07-23 01:45:00+00:00  2395.70  20:45:00    True   False                  False  Transição
+2024-07-23 01:50:00+00:00  2395.70  20:50:00    True   False                  False  Transição
+2024-07-23 01:55:00+00:00  2395.55  20:55:00   False   False                  False           
+2024-07-23 02:00:00+00:00  2396.69  21:00:00    True   False  True            False           
+2024-07-23 02:05:00+00:00  2397.13  21:05:00    True   False         Altista  False           
+2024-07-23 02:10:00+00:00  2396.00  21:10:00    True   False         Altista  False           
+2024-07-23 02:15:00+00:00  2396.78  21:15:00   False   False                  False           
+2024-07-23 02:20:00+00:00  2396.46  21:20:00   False   False                  False           
+2024-07-23 02:25:00+00:00  2397.13  21:25:00   False   False         Altista  False  Transição
+2024-07-23 02:30:00+00:00  2398.24  21:30:00    True   False         Altista  False    Altista
+2024-07-23 02:35:00+00:00  2397.98  21:35:00    True   False         Altista  False    Altista
+2024-07-23 02:40:00+00:00  2398.08  21:40:00    True   False         Altista  False    Altista
+2024-07-23 02:45:00+00:00  2398.03  21:45:00    True   False         Altista  False    Altista
+2024-07-23 02:50:00+00:00  2398.41  21:50:00    True   False         Altista  False  Transição
+
+---	one_last_dataframe	-----------------------------------------------------------------
+close               : 2398.41
+zone                : 21:50:00
+adx_up              : True
+adx_dw              : False
+atrs                : 
+ema20               : Altista
+afs                 : False
+aroon               : Transição
+
+---	advices_trading	-----------------------------------------------------------------
+ALTISTA - Média Direcional: Não indica entradas, sobre-preços podem indicar que reversões podem estar ocorrendo.
+Aroon TRANSIÇÃO - Tendência forte ativada!
+ADX DI+ True - Tendência altista!

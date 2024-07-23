@@ -109,16 +109,20 @@ class TickReceiver:
                 " reversões podem estar ocorrendo."
             )
         if last_row.afs:
-            loggs.info(f"Média afastada - Entradas longe da média apenas com tendência forte.")
+            loggs.info(f"Média muito afastada - Entradas apenas em forte tendência no modo BuyTheClose.")
         if last_row.atrs:
             loggs.info(f"ATR Climax - Não sei oque fazer aqui, aguarde!")
         if last_row.aroon:
             loggs.info(f"Aroon {last_row.aroon.upper()} - Tendência forte ativada!")
+        if last_row.adx_up:
+            loggs.info(f"ADX DI+ {last_row.adx_up} - Tendência altista!")
+        if last_row.adx_dw:
+            loggs.info(f"ADX DI- {last_row.adx_dw} - Tendência baixista!")
 
 
 if __name__ == "__main__":
-    service = ["yfinance", "mt5", "mt5"]
-    symbol = ["^SPX", "GOLD", "MinDolAug24"]
+    service = ["yfinance", "mt5", "mt5", "mt5"]
+    symbol = ["^SPX", "GOLD", "MinDolAug24", "HKInd"]
     item = 1
     tick_receiver = TickReceiver(servicemanager=service[item], symbols=symbol[item], interval=30)
     tick_receiver.run()  # run scheduler
