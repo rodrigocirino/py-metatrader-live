@@ -6,10 +6,12 @@ from service.loggs import Loggs
 from service.mt5_service import MT5_Service
 from service.pandas_options import PandasConfig
 from service.scheduler import Scheduler
+from util.indicators.advice_trading import AdviceTrading
 from util.indicators.aroon import Aroon
 from util.indicators.command import CommandController
 from util.indicators.dmi import Dmi
 from util.indicators.ema import Ema
+from util.indicators.stochastic import Stochastic
 from util.indicators.true_range import TrueRange
 
 PandasConfig.apply_settings()
@@ -53,9 +55,9 @@ class TickReceiver:
 
             self.print_dataframe()
 
-            self.one_last_dataframe()
+            # self.one_last_dataframe()
 
-            self.advices_trading()
+            AdviceTrading(self.df)
         # Update Scheduler
         self.scheduler.renew(self.process_ticks)
 
@@ -68,7 +70,7 @@ class TickReceiver:
         df = self.df.loc[:, ~self.df.columns.isin(["close", "open", "high", "low"])]
         loggs.info(f"-- {self.symbol} Período disponível: {df.index.min()} a {df.index.max()}")
         loggs.info(f"\n{'_' * 10} print_dataframe {'_' * 50}")
-        loggs.info(df[self.df.index >= pd.Timestamp.now(tz="UTC").normalize()].to_string(index=False))
+        loggs.info(df[self.df.index >= pd.Timestamp.now(tz="UTC").normalize()].tail(15).to_string(index=False))
         # print(df[["tick_volume"]].sort_values("tick_volume", ascending=False).tail(100))
 
     def one_last_dataframe(self):
@@ -85,6 +87,7 @@ class TickReceiver:
         controller.add_command(Ema(self.df))
         controller.add_command(Aroon(self.df))
         controller.add_command(Dmi(self.df))
+        controller.add_command(Stochastic(self.df))
         # Processa os comandos
         controller.process_command()
 
@@ -98,25 +101,6 @@ class TickReceiver:
             print("Interrupção pelo usuário. Encerrando o programa...")
         finally:
             self.rates.finalize()
-
-    def advices_trading(self):
-        loggs.info(f"\n{'_' * 10} advices_trading {'_' * 50}")
-        last_row = self.df.iloc[-1]
-        if last_row.ema20 is not None:
-            loggs.info(
-                f"{last_row.ema20.upper()} - Média Direcional: Não indica entradas, sobre-preços podem indicar que"
-                " reversões podem estar ocorrendo."
-            )
-        if last_row.afs:
-            loggs.info(f"Média muito afastada - Entradas apenas em forte tendência no modo BuyTheClose.")
-        if last_row.atrs:
-            loggs.info(f"ATR Climax - Não sei oque fazer aqui, aguarde!")
-        if last_row.aroon:
-            loggs.info(f"Aroon {last_row.aroon.upper()} - Tendência forte ativada!")
-        if last_row.adx_up:
-            loggs.info(f"ADX DI+ {last_row.adx_up} - Tendência altista!")
-        if last_row.adx_dw:
-            loggs.info(f"ADX DI- {last_row.adx_dw} - Tendência baixista!")
 
 
 if __name__ == "__main__":
