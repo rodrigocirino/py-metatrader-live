@@ -18,7 +18,7 @@ class AdviceTrading:
 
         if last_row.ema20:
             loggs.info(f"{last_row.ema20.upper().ljust(10)} - EMA20")
-            print(f"... Não indica entradas")
+            print(f"... direcional de médias não indica entradas")
 
         if last_row.afs:
             loggs.info(f"AFASTAMENTO ALTO - mais que 0.25% distante da EMA20")

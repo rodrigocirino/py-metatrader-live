@@ -1,0 +1,846 @@
+....................................................................................................
+
+-- Rates of MinDolAug24 with mt5 in 2024-07-23 21:31:14.409193 --
+-- MinDolAug24 Período disponível: 2024-07-19 21:40:00+00:00 a 2024-07-23 23:25:00+00:00
+
+__________ print_dataframe __________________________________________________
+                               zone  adx_up  adx_dw  stoch_k  stoch_d  atrs     ema20    afs      aroon
+time                                                                                                   
+2024-07-19 21:40:00+00:00  16:40:00   False   False      NaN      NaN                  False           
+2024-07-19 21:45:00+00:00  16:45:00   False   False      NaN      NaN                  False           
+2024-07-19 21:50:00+00:00  16:50:00   False   False      NaN      NaN                  False           
+2024-07-19 21:55:00+00:00  16:55:00   False   False      NaN      NaN                  False           
+2024-07-19 22:00:00+00:00  17:00:00   False   False      NaN      NaN                  False           
+2024-07-19 22:05:00+00:00  17:05:00   False   False      NaN      NaN         Altista  False           
+2024-07-19 22:10:00+00:00  17:10:00   False   False      NaN      NaN                  False           
+2024-07-19 22:15:00+00:00  17:15:00   False   False      NaN      NaN                  False           
+2024-07-19 22:20:00+00:00  17:20:00   False   False      NaN      NaN        Baixista  False           
+2024-07-19 22:25:00+00:00  17:25:00   False    True      NaN      NaN        Baixista  False           
+2024-07-19 22:30:00+00:00  17:30:00   False    True      NaN      NaN        Baixista  False           
+2024-07-19 22:35:00+00:00  17:35:00   False    True      NaN      NaN        Baixista  False           
+2024-07-19 22:40:00+00:00  17:40:00   False   False      NaN      NaN        Baixista  False           
+2024-07-19 22:45:00+00:00  17:45:00   False   False      NaN      NaN        Baixista  False           
+2024-07-19 22:50:00+00:00  17:50:00   False    True      NaN      NaN        Baixista  False           
+2024-07-19 22:55:00+00:00  17:55:00   False    True    12.63      NaN        Baixista  False           
+2024-07-19 23:00:00+00:00  18:00:00    True   False    26.87      NaN                  False           
+2024-07-19 23:05:00+00:00  18:05:00    True   False    53.04    30.85         Altista  False   Baixista
+2024-07-19 23:10:00+00:00  18:10:00    True   False    79.31    53.08         Altista  False   Baixista
+2024-07-19 23:15:00+00:00  18:15:00    True   False    89.57    73.97         Altista  False  Transição
+2024-07-19 23:20:00+00:00  18:20:00    True   False    93.02    87.30         Altista  False           
+2024-07-19 23:25:00+00:00  18:25:00    True   False    97.62    93.40         Altista  False           
+2024-07-22 14:00:00+00:00  09:00:00   False    True    73.69    88.11        Baixista  False           
+2024-07-22 14:05:00+00:00  09:05:00   False    True    61.01    77.44        Baixista  False           
+2024-07-22 14:10:00+00:00  09:10:00    True   False    38.36    57.69                  False           
+2024-07-22 14:15:00+00:00  09:15:00   False    True    31.38    43.58        Baixista   True           
+2024-07-22 14:20:00+00:00  09:20:00   False    True    12.42    27.39        Baixista   True           
+2024-07-22 14:25:00+00:00  09:25:00   False    True     2.17    15.32        Baixista   True           
+2024-07-22 14:30:00+00:00  09:30:00   False    True     2.27     5.62        Baixista   True           
+2024-07-22 14:35:00+00:00  09:35:00   False    True     6.98     3.81        Baixista  False           
+2024-07-22 14:40:00+00:00  09:40:00   False   False    11.60     6.95        Baixista  False           
+2024-07-22 14:45:00+00:00  09:45:00   False   False    20.85    13.14        Baixista  False           
+2024-07-22 14:50:00+00:00  09:50:00   False   False    19.83    17.43        Baixista  False           
+2024-07-22 14:55:00+00:00  09:55:00   False   False    16.36    19.01        Baixista   True   Baixista
+2024-07-22 15:00:00+00:00  10:00:00   False   False     7.00    14.39        Baixista   True   Baixista
+2024-07-22 15:05:00+00:00  10:05:00   False    True     4.61     9.32        Baixista   True   Baixista
+2024-07-22 15:10:00+00:00  10:10:00   False   False     5.22     5.61        Baixista   True   Baixista
+2024-07-22 15:15:00+00:00  10:15:00   False    True     5.05     4.96        Baixista   True   Baixista
+2024-07-22 15:20:00+00:00  10:20:00   False   False     6.41     5.56        Baixista   True   Baixista
+2024-07-22 15:25:00+00:00  10:25:00   False   False     8.85     6.77        Baixista  False   Baixista
+2024-07-22 15:30:00+00:00  10:30:00   False   False    11.61     8.96        Baixista  False   Baixista
+2024-07-22 15:35:00+00:00  10:35:00   False   False    14.07    11.51        Baixista  False           
+2024-07-22 15:40:00+00:00  10:40:00   False   False    22.14    15.94        Baixista  False  Transição
+2024-07-22 15:45:00+00:00  10:45:00   False   False    27.80    21.34        Baixista  False  Transição
+2024-07-22 15:50:00+00:00  10:50:00   False   False    31.57    27.17        Baixista  False  Transição
+2024-07-22 15:55:00+00:00  10:55:00   False    True    21.89    27.09        Baixista  False   Baixista
+2024-07-22 16:00:00+00:00  11:00:00   False    True    23.46    25.64        Baixista  False   Baixista
+2024-07-22 16:05:00+00:00  11:05:00   False   False    27.81    24.39        Baixista  False   Baixista
+2024-07-22 16:10:00+00:00  11:10:00   False    True    28.95    26.74        Baixista  False   Baixista
+2024-07-22 16:15:00+00:00  11:15:00   False    True    25.99    27.58        Baixista  False   Baixista
+2024-07-22 16:20:00+00:00  11:20:00   False    True    16.97    23.97        Baixista  False           
+2024-07-22 16:25:00+00:00  11:25:00   False    True    18.52    20.50        Baixista  False           
+2024-07-22 16:30:00+00:00  11:30:00   False    True    10.48    15.32        Baixista  False           
+2024-07-22 16:35:00+00:00  11:35:00   False    True     5.71    11.57        Baixista  False           
+2024-07-22 16:40:00+00:00  11:40:00   False   False    13.33     9.84        Baixista  False           
+2024-07-22 16:45:00+00:00  11:45:00   False   False    28.89    15.98        Baixista  False   Baixista
+2024-07-22 16:50:00+00:00  11:50:00   False   False    39.26    27.16        Baixista  False   Baixista
+2024-07-22 16:55:00+00:00  11:55:00   False   False    33.50    33.88        Baixista  False  Transição
+2024-07-22 17:00:00+00:00  12:00:00   False   False    26.89    33.22        Baixista  False  Transição
+2024-07-22 17:05:00+00:00  12:05:00   False   False    29.34    29.91        Baixista  False  Transição
+2024-07-22 17:10:00+00:00  12:10:00   False   False    37.15    31.13        Baixista  False  Transição
+2024-07-22 17:15:00+00:00  12:15:00   False   False    37.46    34.65        Baixista  False  Transição
+2024-07-22 17:20:00+00:00  12:20:00   False    True    34.52    36.38        Baixista  False           
+2024-07-22 17:25:00+00:00  12:25:00    True   False    44.47    38.82                  False           
+2024-07-22 17:30:00+00:00  12:30:00    True   False    58.82    45.94                  False           
+2024-07-22 17:35:00+00:00  12:35:00   False   False    67.00    56.76        Baixista  False           
+2024-07-22 17:40:00+00:00  12:40:00   False   False    59.72    61.85        Baixista  False  Transição
+2024-07-22 17:45:00+00:00  12:45:00   False   False    59.72    62.15        Baixista  False  Transição
+2024-07-22 17:50:00+00:00  12:50:00   False    True    46.67    55.37                  False  Transição
+2024-07-22 17:55:00+00:00  12:55:00   False    True    33.49    46.63        Baixista  False           
+2024-07-22 18:00:00+00:00  13:00:00   False    True    10.86    30.34        Baixista  False           
+2024-07-22 18:05:00+00:00  13:05:00   False    True     9.19    17.85        Baixista  False           
+2024-07-22 18:10:00+00:00  13:10:00   False    True     8.48     9.51        Baixista  False           
+2024-07-22 18:15:00+00:00  13:15:00   False    True     9.17     8.95        Baixista  False           
+2024-07-22 18:20:00+00:00  13:20:00   False    True    10.41     9.35        Baixista  False           
+2024-07-22 18:25:00+00:00  13:25:00   False    True    17.35    12.31        Baixista  False   Baixista
+2024-07-22 18:30:00+00:00  13:30:00   False    True    29.41    19.06        Baixista  False   Baixista
+2024-07-22 18:35:00+00:00  13:35:00   False   False    37.76    28.18        Baixista  False  Transição
+2024-07-22 18:40:00+00:00  13:40:00   False   False    40.72    35.97        Baixista  False  Transição
+2024-07-22 18:45:00+00:00  13:45:00   False   False    45.52    41.33        Baixista  False  Transição
+2024-07-22 18:50:00+00:00  13:50:00    True   False    51.11    45.78                  False  Transição
+2024-07-22 18:55:00+00:00  13:55:00   False   False    54.81    50.48        Baixista  False  Transição
+2024-07-22 19:00:00+00:00  14:00:00   False   False    55.22    53.71        Baixista  False           
+2024-07-22 19:05:00+00:00  14:05:00   False   False    57.65    55.89                  False           
+2024-07-22 19:10:00+00:00  14:10:00    True   False    70.08    60.98                  False           
+2024-07-22 19:15:00+00:00  14:15:00    True   False    80.33    69.35         Altista  False           
+2024-07-22 19:20:00+00:00  14:20:00    True   False    90.14    80.18         Altista  False    Altista
+2024-07-22 19:25:00+00:00  14:25:00    True   False    85.58    85.35                  False    Altista
+2024-07-22 19:30:00+00:00  14:30:00   False   False    79.33    85.02                  False    Altista
+2024-07-22 19:35:00+00:00  14:35:00    True   False    71.75    78.88         Altista  False  Transição
+2024-07-22 19:40:00+00:00  14:40:00   False   False    66.39    72.49                  False  Transição
+2024-07-22 19:45:00+00:00  14:45:00   False   False    66.21    68.12                  False  Transição
+2024-07-22 19:50:00+00:00  14:50:00   False   False    64.23    65.61         Altista  False  Transição
+2024-07-22 19:55:00+00:00  14:55:00   False   False    74.10    68.18         Altista  False    Altista
+2024-07-22 20:00:00+00:00  15:00:00   False   False    80.36    72.89         Altista  False           
+2024-07-22 20:05:00+00:00  15:05:00   False   False    89.58    81.34         Altista  False    Altista
+2024-07-22 20:10:00+00:00  15:10:00    True   False    90.19    86.71         Altista  False    Altista
+2024-07-22 20:15:00+00:00  15:15:00    True   False    94.54    91.44         Altista  False    Altista
+2024-07-22 20:20:00+00:00  15:20:00    True   False    92.89    92.54         Altista  False    Altista
+2024-07-22 20:25:00+00:00  15:25:00    True   False    95.45    94.29         Altista  False    Altista
+2024-07-22 20:30:00+00:00  15:30:00    True   False    91.29    93.21         Altista  False    Altista
+2024-07-22 20:35:00+00:00  15:35:00    True   False    82.64    89.79         Altista  False    Altista
+2024-07-22 20:40:00+00:00  15:40:00    True   False    74.13    82.69         Altista  False    Altista
+2024-07-22 20:45:00+00:00  15:45:00    True   False    64.82    73.86         Altista  False    Altista
+2024-07-22 20:50:00+00:00  15:50:00    True   False    68.79    69.25         Altista  False  Transição
+2024-07-22 20:55:00+00:00  15:55:00    True   False    71.12    68.25         Altista  False    Altista
+2024-07-22 21:00:00+00:00  16:00:00    True   False    80.25    73.39         Altista  False    Altista
+2024-07-22 21:05:00+00:00  16:05:00    True   False    84.71    78.70         Altista  False    Altista
+2024-07-22 21:10:00+00:00  16:10:00    True   False    86.92    83.96         Altista  False  Transição
+2024-07-22 21:15:00+00:00  16:15:00    True   False    90.42    87.35         Altista  False    Altista
+2024-07-22 21:20:00+00:00  16:20:00    True   False    95.18    90.84         Altista  False    Altista
+2024-07-22 21:25:00+00:00  16:25:00    True   False    97.95    94.51         Altista  False    Altista
+2024-07-22 21:30:00+00:00  16:30:00   False    True    92.14    95.09         Altista  False    Altista
+2024-07-22 21:35:00+00:00  16:35:00   False    True    85.73    91.94         Altista  False    Altista
+2024-07-22 21:40:00+00:00  16:40:00   False    True    79.23    85.70         Altista  False           
+2024-07-22 21:45:00+00:00  16:45:00   False    True    71.79    78.92         Altista  False  Transição
+2024-07-22 21:50:00+00:00  16:50:00   False    True    71.79    74.27         Altista  False  Transição
+2024-07-22 21:55:00+00:00  16:55:00   False   False    62.82    68.80         Altista  False  Transição
+2024-07-22 22:00:00+00:00  17:00:00   False    True    54.12    62.91                  False  Transição
+2024-07-22 22:05:00+00:00  17:05:00   False    True    48.25    55.06         Altista  False           
+2024-07-22 22:10:00+00:00  17:10:00   False   False    47.37    49.91         Altista  False           
+2024-07-22 22:15:00+00:00  17:15:00   False   False    52.63    49.42         Altista  False  Transição
+2024-07-22 22:20:00+00:00  17:20:00   False   False    47.37    49.12         Altista  False  Transição
+2024-07-22 22:25:00+00:00  17:25:00   False   False    42.11    47.37                  False  Transição
+2024-07-22 22:30:00+00:00  17:30:00   False   False    47.37    45.61                  False  Transição
+2024-07-22 22:35:00+00:00  17:35:00    True   False    56.14    48.54         Altista  False  Transição
+2024-07-22 22:40:00+00:00  17:40:00   False   False    71.54    58.35         Altista  False           
+2024-07-22 22:45:00+00:00  17:45:00   False   False    78.27    68.65         Altista  False           
+2024-07-22 22:50:00+00:00  17:50:00    True   False    87.04    78.95         Altista  False           
+2024-07-22 22:55:00+00:00  17:55:00    True   False    94.44    86.58         Altista  False           
+2024-07-22 23:00:00+00:00  18:00:00    True   False    93.59    91.69         Altista  False    Altista
+2024-07-22 23:05:00+00:00  18:05:00    True   False    88.46    92.17         Altista  False    Altista
+2024-07-22 23:10:00+00:00  18:10:00   False   False    80.13    87.39         Altista  False  Transição
+2024-07-22 23:15:00+00:00  18:15:00   False    True    69.87    79.49         Altista  False  Transição
+2024-07-22 23:20:00+00:00  18:20:00   False    True    56.67    68.89                  False  Transição
+2024-07-22 23:25:00+00:00  18:25:00   False    True    45.00    57.18                  False  Transição
+2024-07-23 14:00:00+00:00  09:00:00    True   False    46.54    49.40         Altista  False    Altista
+2024-07-23 14:05:00+00:00  09:05:00    True   False    48.17    46.57         Altista  False    Altista
+2024-07-23 14:10:00+00:00  09:10:00    True   False    47.91    47.54         Altista  False    Altista
+2024-07-23 14:15:00+00:00  09:15:00    True   False    45.40    47.16         Altista  False           
+2024-07-23 14:20:00+00:00  09:20:00    True   False    60.18    51.16  True   Altista   True           
+2024-07-23 14:25:00+00:00  09:25:00    True   False    74.97    60.18         Altista   True           
+2024-07-23 14:30:00+00:00  09:30:00    True   False    91.03    75.39         Altista   True           
+2024-07-23 14:35:00+00:00  09:35:00    True   False    91.57    85.86         Altista   True           
+2024-07-23 14:40:00+00:00  09:40:00    True   False    89.63    90.74         Altista   True           
+2024-07-23 14:45:00+00:00  09:45:00   False   False    83.31    88.17         Altista  False           
+2024-07-23 14:50:00+00:00  09:50:00   False   False    74.97    82.63         Altista  False  Transição
+2024-07-23 14:55:00+00:00  09:55:00   False    True    66.16    74.81         Altista  False  Transição
+2024-07-23 15:00:00+00:00  10:00:00   False    True    60.13    67.08                  False  Transição
+2024-07-23 15:05:00+00:00  10:05:00   False   False    58.39    61.56                  False  Transição
+2024-07-23 15:10:00+00:00  10:10:00    True   False    68.61    62.38         Altista  False  Transição
+2024-07-23 15:15:00+00:00  10:15:00   False    True    62.30    63.10  True            False           
+2024-07-23 15:20:00+00:00  10:20:00   False    True    53.55    61.48                  False           
+2024-07-23 15:25:00+00:00  10:25:00   False    True    36.00    50.62                  False           
+2024-07-23 15:30:00+00:00  10:30:00   False   False    38.88    42.81                  False           
+2024-07-23 15:35:00+00:00  10:35:00   False   False    39.10    38.00                  False  Transição
+2024-07-23 15:40:00+00:00  10:40:00   False   False    48.67    42.22                  False  Transição
+2024-07-23 15:45:00+00:00  10:45:00   False   False    46.27    44.68                  False  Transição
+2024-07-23 15:50:00+00:00  10:50:00   False   False    49.24    48.06         Altista  False  Transição
+2024-07-23 15:55:00+00:00  10:55:00   False   False    47.79    47.77         Altista  False  Transição
+2024-07-23 16:00:00+00:00  11:00:00   False    True    45.56    47.53                  False           
+2024-07-23 16:05:00+00:00  11:05:00   False   False    39.84    44.40                  False           
+2024-07-23 16:10:00+00:00  11:10:00   False    True    24.33    36.58        Baixista  False   Baixista
+2024-07-23 16:15:00+00:00  11:15:00   False    True    14.99    26.39        Baixista  False   Baixista
+2024-07-23 16:20:00+00:00  11:20:00   False    True     4.42    14.58        Baixista   True   Baixista
+2024-07-23 16:25:00+00:00  11:25:00   False    True     4.87     8.09        Baixista  False   Baixista
+2024-07-23 16:30:00+00:00  11:30:00   False    True     2.82     4.04  True  Baixista   True           
+2024-07-23 16:35:00+00:00  11:35:00   False    True     7.89     5.19        Baixista   True           
+2024-07-23 16:40:00+00:00  11:40:00   False    True     7.17     5.96        Baixista   True           
+2024-07-23 16:45:00+00:00  11:45:00   False    True     7.65     7.57        Baixista   True           
+2024-07-23 16:50:00+00:00  11:50:00   False    True    10.92     8.58  True  Baixista  False           
+2024-07-23 16:55:00+00:00  11:55:00   False   False    14.37    10.98        Baixista  False   Baixista
+2024-07-23 17:00:00+00:00  12:00:00   False   False    24.60    16.63        Baixista  False  Transição
+2024-07-23 17:05:00+00:00  12:05:00    True   False    30.16    23.04                  False  Transição
+2024-07-23 17:10:00+00:00  12:10:00   False   False    37.16    30.64        Baixista  False  Transição
+2024-07-23 17:15:00+00:00  12:15:00   False   False    42.84    36.72        Baixista  False  Transição
+2024-07-23 17:20:00+00:00  12:20:00    True   False    52.71    44.24                  False  Transição
+2024-07-23 17:25:00+00:00  12:25:00   False   False    66.08    53.88                  False           
+2024-07-23 17:30:00+00:00  12:30:00   False   False    79.60    66.13                  False           
+2024-07-23 17:35:00+00:00  12:35:00   False   False    86.61    77.43                  False           
+2024-07-23 17:40:00+00:00  12:40:00   False   False    87.18    84.46                  False           
+2024-07-23 17:45:00+00:00  12:45:00   False   False    82.05    85.28                  False    Altista
+2024-07-23 17:50:00+00:00  12:50:00   False    True    70.94    80.06        Baixista  False    Altista
+2024-07-23 17:55:00+00:00  12:55:00   False   False    61.99    71.66        Baixista  False    Altista
+2024-07-23 18:00:00+00:00  13:00:00   False   False    46.40    59.78        Baixista  False  Transição
+2024-07-23 18:05:00+00:00  13:05:00    True   False    55.47    54.62                  False  Transição
+2024-07-23 18:10:00+00:00  13:10:00    True   False    61.12    54.33         Altista  False    Altista
+2024-07-23 18:15:00+00:00  13:15:00    True   False    79.46    65.35         Altista  False           
+2024-07-23 18:20:00+00:00  13:20:00    True   False    84.06    74.88         Altista  False           
+2024-07-23 18:25:00+00:00  13:25:00    True   False    91.76    85.09         Altista  False           
+2024-07-23 18:30:00+00:00  13:30:00    True   False    96.05    90.62         Altista  False           
+2024-07-23 18:35:00+00:00  13:35:00    True   False    89.99    92.60         Altista  False           
+2024-07-23 18:40:00+00:00  13:40:00   False   False    82.58    89.54         Altista  False           
+2024-07-23 18:45:00+00:00  13:45:00   False   False    71.97    81.51         Altista  False  Transição
+2024-07-23 18:50:00+00:00  13:50:00   False   False    67.42    73.99         Altista  False  Transição
+2024-07-23 18:55:00+00:00  13:55:00   False   False    62.12    67.17                  False  Transição
+2024-07-23 19:00:00+00:00  14:00:00   False    True    56.82    62.12                  False  Transição
+2024-07-23 19:05:00+00:00  14:05:00   False    True    53.86    57.60                  False  Transição
+2024-07-23 19:10:00+00:00  14:10:00   False    True    57.65    56.11         Altista  False           
+2024-07-23 19:15:00+00:00  14:15:00   False   False    61.94    57.82         Altista  False           
+2024-07-23 19:20:00+00:00  14:20:00   False   False    59.34    59.65                  False  Transição
+2024-07-23 19:25:00+00:00  14:25:00    True   False    65.71    62.33  True   Altista  False           
+2024-07-23 19:30:00+00:00  14:30:00    True   False    77.21    67.42         Altista  False           
+2024-07-23 19:35:00+00:00  14:35:00    True   False    85.24    76.05         Altista  False           
+2024-07-23 19:40:00+00:00  14:40:00    True   False    83.27    81.91         Altista  False           
+2024-07-23 19:45:00+00:00  14:45:00   False   False    84.15    84.22         Altista  False           
+2024-07-23 19:50:00+00:00  14:50:00   False   False    89.38    85.60         Altista  False           
+2024-07-23 19:55:00+00:00  14:55:00   False   False    95.00    89.51         Altista  False           
+2024-07-23 20:00:00+00:00  15:00:00   False   False    84.63    89.67         Altista  False    Altista
+2024-07-23 20:05:00+00:00  15:05:00   False   False    77.07    85.57         Altista  False    Altista
+2024-07-23 20:10:00+00:00  15:10:00   False   False    69.34    77.01         Altista  False    Altista
+2024-07-23 20:15:00+00:00  15:15:00   False   False    74.62    73.68         Altista  False  Transição
+2024-07-23 20:20:00+00:00  15:20:00   False   False    78.41    74.12         Altista  False  Transição
+2024-07-23 20:25:00+00:00  15:25:00   False   False    79.17    77.40         Altista  False  Transição
+2024-07-23 20:30:00+00:00  15:30:00   False   False    78.14    78.57         Altista  False  Transição
+2024-07-23 20:35:00+00:00  15:35:00   False   False    74.93    77.41         Altista  False  Transição
+2024-07-23 20:40:00+00:00  15:40:00   False   False    73.38    75.48         Altista  False           
+2024-07-23 20:45:00+00:00  15:45:00   False   False    69.64    72.65         Altista  False           
+2024-07-23 20:50:00+00:00  15:50:00   False   False    62.06    68.36         Altista  False           
+2024-07-23 20:55:00+00:00  15:55:00   False   False    54.47    62.06         Altista  False           
+2024-07-23 21:00:00+00:00  16:00:00   False   False    52.38    56.30         Altista  False           
+2024-07-23 21:05:00+00:00  16:05:00   False   False    58.73    55.19         Altista  False           
+2024-07-23 21:10:00+00:00  16:10:00    True   False    76.19    62.43         Altista  False           
+2024-07-23 21:15:00+00:00  16:15:00   False   False    78.47    71.13         Altista  False    Altista
+2024-07-23 21:20:00+00:00  16:20:00   False    True    61.38    72.01                  False    Altista
+2024-07-23 21:25:00+00:00  16:25:00   False    True    37.57    59.14        Baixista  False           
+2024-07-23 21:30:00+00:00  16:30:00   False   False    21.79    40.25                  False           
+2024-07-23 21:35:00+00:00  16:35:00   False   False    23.81    27.72        Baixista  False           
+2024-07-23 21:40:00+00:00  16:40:00   False   False    30.95    25.52                  False           
+2024-07-23 21:45:00+00:00  16:45:00   False   False    28.57    27.78                  False           
+2024-07-23 21:50:00+00:00  16:50:00   False    True    23.28    27.60        Baixista  False           
+2024-07-23 21:55:00+00:00  16:55:00   False    True    11.38    21.08        Baixista  False           
+2024-07-23 22:00:00+00:00  17:00:00   False    True    12.67    15.78        Baixista  False           
+2024-07-23 22:05:00+00:00  17:05:00   False   False    18.40    14.15        Baixista  False           
+2024-07-23 22:10:00+00:00  17:10:00    True   False    21.21    17.43                  False           
+2024-07-23 22:15:00+00:00  17:15:00   False   False    30.30    23.30                  False  Transição
+2024-07-23 22:20:00+00:00  17:20:00   False   False    31.82    27.78                  False  Transição
+2024-07-23 22:25:00+00:00  17:25:00   False    True    32.09    31.40        Baixista  False  Transição
+2024-07-23 22:30:00+00:00  17:30:00   False   False    32.49    32.13        Baixista  False  Transição
+2024-07-23 22:35:00+00:00  17:35:00   False   False    36.73    33.77        Baixista  False  Transição
+2024-07-23 22:40:00+00:00  17:40:00    True   False    42.22    37.15                  False           
+2024-07-23 22:45:00+00:00  17:45:00   False    True    33.33    37.43        Baixista  False           
+2024-07-23 22:50:00+00:00  17:50:00   False    True    26.67    34.07        Baixista  False   Baixista
+2024-07-23 22:55:00+00:00  17:55:00   False    True    24.62    28.21        Baixista  False   Baixista
+2024-07-23 23:00:00+00:00  18:00:00    True   False    41.03    30.77                  False           
+2024-07-23 23:05:00+00:00  18:05:00    True   False    52.31    39.32                  False           
+2024-07-23 23:10:00+00:00  18:10:00   False   False    64.10    52.48                  False  Transição
+2024-07-23 23:15:00+00:00  18:15:00    True   False    69.60    62.00                  False           
+2024-07-23 23:20:00+00:00  18:20:00    True   False    73.08    68.93         Altista  False           
+2024-07-23 23:25:00+00:00  18:25:00   False    True    61.90    68.19                  False           
+
+__________ advices_trading __________________________________________________
+BAIXISTA com ADX/DI- - Tendência forte de baixa
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+....................................................................................................
+
+-- Rates of Bra50 with mt5 in 2024-07-23 21:32:03.772700 --
+-- Bra50 Período disponível: 2024-07-19 21:25:00+00:00 a 2024-07-23 23:20:00+00:00
+
+__________ print_dataframe __________________________________________________
+                               zone  adx_up  adx_dw  stoch_k  stoch_d  atrs     ema20    afs      aroon
+time                                                                                                   
+2024-07-19 21:25:00+00:00  16:25:00   False   False      NaN      NaN                  False           
+2024-07-19 21:30:00+00:00  16:30:00   False   False      NaN      NaN                  False           
+2024-07-19 21:35:00+00:00  16:35:00   False   False      NaN      NaN                  False           
+2024-07-19 21:40:00+00:00  16:40:00   False   False      NaN      NaN                  False           
+2024-07-19 21:45:00+00:00  16:45:00   False   False      NaN      NaN                  False           
+2024-07-19 21:50:00+00:00  16:50:00   False   False      NaN      NaN                  False           
+2024-07-19 21:55:00+00:00  16:55:00   False   False      NaN      NaN                  False           
+2024-07-19 22:00:00+00:00  17:00:00   False   False      NaN      NaN                  False           
+2024-07-19 22:05:00+00:00  17:05:00   False   False      NaN      NaN        Baixista  False           
+2024-07-19 22:10:00+00:00  17:10:00   False   False      NaN      NaN                  False           
+2024-07-19 22:15:00+00:00  17:15:00   False   False      NaN      NaN        Baixista  False           
+2024-07-19 22:20:00+00:00  17:20:00   False   False      NaN      NaN                  False           
+2024-07-19 22:25:00+00:00  17:25:00   False   False      NaN      NaN                  False           
+2024-07-19 22:30:00+00:00  17:30:00   False   False      NaN      NaN                  False           
+2024-07-19 22:35:00+00:00  17:35:00   False   False      NaN      NaN                  False           
+2024-07-19 22:40:00+00:00  17:40:00   False   False    21.93      NaN                  False  Transição
+2024-07-19 22:45:00+00:00  17:45:00   False   False    18.42      NaN                  False  Transição
+2024-07-19 22:50:00+00:00  17:50:00   False   False    15.79    18.71        Baixista  False  Transição
+2024-07-19 22:55:00+00:00  17:55:00   False   False    13.16    15.79                  False           
+2024-07-19 23:00:00+00:00  18:00:00   False    True    13.05    14.00        Baixista  False   Baixista
+2024-07-19 23:05:00+00:00  18:05:00   False    True    11.27    12.49        Baixista  False   Baixista
+2024-07-19 23:10:00+00:00  18:10:00   False    True     9.41    11.24        Baixista  False   Baixista
+2024-07-19 23:15:00+00:00  18:15:00   False    True    10.33    10.33        Baixista  False           
+2024-07-19 23:20:00+00:00  18:20:00   False    True     7.72     9.15        Baixista  False           
+2024-07-22 14:00:00+00:00  09:00:00    True   False    31.74    16.60                  False           
+2024-07-22 14:05:00+00:00  09:05:00    True   False    41.13    26.86         Altista  False           
+2024-07-22 14:10:00+00:00  09:10:00    True   False    65.05    45.97                  False           
+2024-07-22 14:15:00+00:00  09:15:00    True   False    67.47    57.89         Altista  False           
+2024-07-22 14:20:00+00:00  09:20:00    True   False    83.60    72.04         Altista  False           
+2024-07-22 14:25:00+00:00  09:25:00   False   False    85.48    78.85         Altista  False           
+2024-07-22 14:30:00+00:00  09:30:00   False   False    79.03    82.71         Altista  False           
+2024-07-22 14:35:00+00:00  09:35:00   False   False    70.70    78.41         Altista  False  Transição
+2024-07-22 14:40:00+00:00  09:40:00   False    True    60.75    70.16                  False           
+2024-07-22 14:45:00+00:00  09:45:00   False    True    50.54    60.66        Baixista  False           
+2024-07-22 14:50:00+00:00  09:50:00   False    True    46.77    52.69                  False           
+2024-07-22 14:55:00+00:00  09:55:00   False   False    52.15    49.82                  False           
+2024-07-22 15:00:00+00:00  10:00:00   False   False    62.10    53.67                  False           
+2024-07-22 15:05:00+00:00  10:05:00    True   False    74.39    62.88                  False    Altista
+2024-07-22 15:10:00+00:00  10:10:00    True   False    76.58    71.02         Altista  False    Altista
+2024-07-22 15:15:00+00:00  10:15:00   False   False    83.50    78.16         Altista  False    Altista
+2024-07-22 15:20:00+00:00  10:20:00   False   False    74.74    78.27         Altista  False    Altista
+2024-07-22 15:25:00+00:00  10:25:00   False   False    80.39    79.54         Altista  False  Transição
+2024-07-22 15:30:00+00:00  10:30:00   False   False    73.76    76.30         Altista  False  Transição
+2024-07-22 15:35:00+00:00  10:35:00   False   False    79.08    77.74         Altista  False  Transição
+2024-07-22 15:40:00+00:00  10:40:00   False   False    73.53    75.46         Altista  False           
+2024-07-22 15:45:00+00:00  10:45:00   False    True    59.60    70.74                  False    Altista
+2024-07-22 15:50:00+00:00  10:50:00   False    True    34.97    56.03        Baixista  False    Altista
+2024-07-22 15:55:00+00:00  10:55:00   False    True    18.70    37.76        Baixista  False  Transição
+2024-07-22 16:00:00+00:00  11:00:00    True   False    31.66    28.44                  False           
+2024-07-22 16:05:00+00:00  11:05:00    True   False    49.83    33.40                  False           
+2024-07-22 16:10:00+00:00  11:10:00    True   False    73.97    51.82         Altista  False           
+2024-07-22 16:15:00+00:00  11:15:00    True   False    83.24    69.01         Altista  False           
+2024-07-22 16:20:00+00:00  11:20:00   False   False    92.56    83.25         Altista  False           
+2024-07-22 16:25:00+00:00  11:25:00   False   False    92.56    89.45         Altista  False           
+2024-07-22 16:30:00+00:00  11:30:00    True   False    93.91    93.01         Altista  False           
+2024-07-22 16:35:00+00:00  11:35:00    True   False    95.00    93.82         Altista  False           
+2024-07-22 16:40:00+00:00  11:40:00   False   False    90.13    93.01         Altista  False           
+2024-07-22 16:45:00+00:00  11:45:00   False   False    81.14    88.76         Altista  False           
+2024-07-22 16:50:00+00:00  11:50:00   False   False    78.10    83.12         Altista  False    Altista
+2024-07-22 16:55:00+00:00  11:55:00    True   False    83.94    81.06         Altista  False  Transição
+2024-07-22 17:00:00+00:00  12:00:00   False   False    87.55    83.20         Altista  False  Transição
+2024-07-22 17:05:00+00:00  12:05:00   False   False    84.74    85.41         Altista  False  Transição
+2024-07-22 17:10:00+00:00  12:10:00   False   False    79.83    84.04         Altista  False  Transição
+2024-07-22 17:15:00+00:00  12:15:00   False   False    72.58    79.05         Altista  False  Transição
+2024-07-22 17:20:00+00:00  12:20:00   False   False    52.90    68.43                  False           
+2024-07-22 17:25:00+00:00  12:25:00   False    True    25.87    50.45        Baixista  False           
+2024-07-22 17:30:00+00:00  12:30:00   False    True    17.24    32.00        Baixista  False           
+2024-07-22 17:35:00+00:00  12:35:00   False   False    32.07    25.06                  False           
+2024-07-22 17:40:00+00:00  12:40:00    True   False    54.01    34.44         Altista  False   Baixista
+2024-07-22 17:45:00+00:00  12:45:00    True   False    66.24    50.77         Altista  False  Transição
+2024-07-22 17:50:00+00:00  12:50:00    True   False    78.21    66.16         Altista  False           
+2024-07-22 17:55:00+00:00  12:55:00    True   False    82.75    75.73         Altista  False           
+2024-07-22 18:00:00+00:00  13:00:00   False   False    87.48    82.81         Altista  False           
+2024-07-22 18:05:00+00:00  13:05:00   False   False    81.44    83.89         Altista  False           
+2024-07-22 18:10:00+00:00  13:10:00   False   False    81.06    83.33         Altista  False  Transição
+2024-07-22 18:15:00+00:00  13:15:00   False   False    79.17    80.56         Altista  False  Transição
+2024-07-22 18:20:00+00:00  13:20:00   False   False    80.68    80.30         Altista  False  Transição
+2024-07-22 18:25:00+00:00  13:25:00   False    True    77.65    79.17                  False  Transição
+2024-07-22 18:30:00+00:00  13:30:00   False    True    74.24    77.53                  False  Transição
+2024-07-22 18:35:00+00:00  13:35:00    True   False    75.38    75.76         Altista  False           
+2024-07-22 18:40:00+00:00  13:40:00   False   False    77.50    75.71         Altista  False           
+2024-07-22 18:45:00+00:00  13:45:00   False   False    71.40    74.76         Altista  False           
+2024-07-22 18:50:00+00:00  13:50:00   False   False    67.39    72.10         Altista  False           
+2024-07-22 18:55:00+00:00  13:55:00   False   False    66.98    68.59         Altista  False  Transição
+2024-07-22 19:00:00+00:00  14:00:00   False   False    78.86    71.08         Altista  False  Transição
+2024-07-22 19:05:00+00:00  14:05:00    True   False    75.80    73.88         Altista  False           
+2024-07-22 19:10:00+00:00  14:10:00   False   False    69.27    74.64                  False           
+2024-07-22 19:15:00+00:00  14:15:00   False   False    62.00    69.02         Altista  False           
+2024-07-22 19:20:00+00:00  14:20:00   False   False    59.33    63.53                  False  Transição
+2024-07-22 19:25:00+00:00  14:25:00   False   False    60.00    60.44         Altista  False  Transição
+2024-07-22 19:30:00+00:00  14:30:00    True   False    64.00    61.11         Altista  False  Transição
+2024-07-22 19:35:00+00:00  14:35:00   False   False    66.67    63.56         Altista  False  Transição
+2024-07-22 19:40:00+00:00  14:40:00   False   False    60.85    63.84         Altista  False  Transição
+2024-07-22 19:45:00+00:00  14:45:00   False   False    62.47    63.33                  False           
+2024-07-22 19:50:00+00:00  14:50:00   False   False    64.94    62.75         Altista  False           
+2024-07-22 19:55:00+00:00  14:55:00   False    True    62.86    63.42                  False           
+2024-07-22 20:00:00+00:00  15:00:00   False    True    44.61    57.47                  False           
+2024-07-22 20:05:00+00:00  15:05:00   False   False    35.39    47.62                  False   Baixista
+2024-07-22 20:10:00+00:00  15:10:00   False    True    27.88    35.96                  False   Baixista
+2024-07-22 20:15:00+00:00  15:15:00   False   False    20.73    28.00                  False   Baixista
+2024-07-22 20:20:00+00:00  15:20:00   False   False    15.03    21.21                  False           
+2024-07-22 20:25:00+00:00  15:25:00   False   False    12.15    15.97                  False           
+2024-07-22 20:30:00+00:00  15:30:00   False   False    13.53    13.57        Baixista  False           
+2024-07-22 20:35:00+00:00  15:35:00   False    True    10.41    12.03        Baixista  False           
+2024-07-22 20:40:00+00:00  15:40:00   False    True    14.55    12.83        Baixista  False           
+2024-07-22 20:45:00+00:00  15:45:00   False    True    19.56    14.84        Baixista  False           
+2024-07-22 20:50:00+00:00  15:50:00    True   False    29.89    21.33                  False   Baixista
+2024-07-22 20:55:00+00:00  15:55:00   False    True    32.76    27.40        Baixista  False  Transição
+2024-07-22 21:00:00+00:00  16:00:00   False   False    34.01    32.22        Baixista  False  Transição
+2024-07-22 21:05:00+00:00  16:05:00   False   False    21.47    29.41        Baixista  False  Transição
+2024-07-22 21:10:00+00:00  16:10:00   False   False    13.42    22.97        Baixista  False   Baixista
+2024-07-22 21:15:00+00:00  16:15:00   False   False     4.88    13.26        Baixista  False   Baixista
+2024-07-22 21:20:00+00:00  16:20:00   False   False    12.67    10.32        Baixista  False   Baixista
+2024-07-22 21:25:00+00:00  16:25:00   False   False    21.18    12.91        Baixista  False   Baixista
+2024-07-22 21:30:00+00:00  16:30:00   False   False    38.99    24.28                  False   Baixista
+2024-07-22 21:35:00+00:00  16:35:00    True   False    53.49    37.89                  False  Transição
+2024-07-22 21:40:00+00:00  16:40:00   False   False    71.11    54.53         Altista  False  Transição
+2024-07-22 21:45:00+00:00  16:45:00   False   False    77.18    67.26         Altista  False  Transição
+2024-07-22 21:50:00+00:00  16:50:00   False   False    78.38    75.56                  False  Transição
+2024-07-22 21:55:00+00:00  16:55:00   False   False    73.87    76.48                  False  Transição
+2024-07-22 22:00:00+00:00  17:00:00   False    True    63.89    72.05                  False           
+2024-07-22 22:05:00+00:00  17:05:00   False   False    59.72    65.83        Baixista  False  Transição
+2024-07-22 22:10:00+00:00  17:10:00   False   False    61.90    61.84                  False  Transição
+2024-07-22 22:15:00+00:00  17:15:00   False   False    71.43    64.35                  False  Transição
+2024-07-22 22:20:00+00:00  17:20:00   False   False    75.24    69.52                  False  Transição
+2024-07-22 22:25:00+00:00  17:25:00   False   False    79.05    75.24         Altista  False           
+2024-07-22 22:30:00+00:00  17:30:00   False   False    70.95    75.08                  False           
+2024-07-22 22:35:00+00:00  17:35:00   False   False    58.17    69.39        Baixista  False           
+2024-07-22 22:40:00+00:00  17:40:00   False   False    50.85    59.99                  False           
+2024-07-22 22:45:00+00:00  17:45:00   False   False    51.57    53.53                  False           
+2024-07-22 22:50:00+00:00  17:50:00   False   False    52.17    51.53                  False           
+2024-07-22 22:55:00+00:00  17:55:00   False   False    50.07    51.27                  False           
+2024-07-22 23:00:00+00:00  18:00:00   False   False    51.01    51.08                  False           
+2024-07-22 23:05:00+00:00  18:05:00   False   False    58.18    53.09                  False           
+2024-07-22 23:10:00+00:00  18:10:00   False   False    63.33    57.51                  False           
+2024-07-22 23:15:00+00:00  18:15:00    True   False    71.67    64.39                  False    Altista
+2024-07-22 23:20:00+00:00  18:20:00    True   False    83.33    72.78         Altista  False           
+2024-07-23 14:00:00+00:00  09:00:00   False    True    63.43    72.81  True  Baixista   True           
+2024-07-23 14:05:00+00:00  09:05:00   False    True    43.12    63.29        Baixista  False           
+2024-07-23 14:10:00+00:00  09:10:00   False    True    21.00    42.52        Baixista  False           
+2024-07-23 14:15:00+00:00  09:15:00   False    True    30.00    31.38        Baixista  False           
+2024-07-23 14:20:00+00:00  09:20:00   False    True    24.85    25.28  True  Baixista  False           
+2024-07-23 14:25:00+00:00  09:25:00   False    True    15.45    23.43        Baixista  False           
+2024-07-23 14:30:00+00:00  09:30:00   False    True     4.41    14.90        Baixista  False           
+2024-07-23 14:35:00+00:00  09:35:00   False    True     5.65     8.51        Baixista  False           
+2024-07-23 14:40:00+00:00  09:40:00   False    True     8.21     6.09        Baixista  False           
+2024-07-23 14:45:00+00:00  09:45:00   False    True     7.65     7.17        Baixista  False           
+2024-07-23 14:50:00+00:00  09:50:00   False   False     6.56     7.47        Baixista  False           
+2024-07-23 14:55:00+00:00  09:55:00   False   False     5.74     6.65        Baixista  False   Baixista
+2024-07-23 15:00:00+00:00  10:00:00   False    True     5.16     5.82  True  Baixista  False   Baixista
+2024-07-23 15:05:00+00:00  10:05:00   False    True     5.46     5.45        Baixista   True   Baixista
+2024-07-23 15:10:00+00:00  10:10:00   False    True     3.22     4.62        Baixista  False   Baixista
+2024-07-23 15:15:00+00:00  10:15:00   False    True     6.57     5.08        Baixista  False           
+2024-07-23 15:20:00+00:00  10:20:00   False    True     6.33     5.37        Baixista   True   Baixista
+2024-07-23 15:25:00+00:00  10:25:00   False    True     7.87     6.92        Baixista  False   Baixista
+2024-07-23 15:30:00+00:00  10:30:00   False    True     5.64     6.61  True  Baixista   True   Baixista
+2024-07-23 15:35:00+00:00  10:35:00   False    True     9.34     7.62        Baixista   True   Baixista
+2024-07-23 15:40:00+00:00  10:40:00   False    True    12.48     9.16        Baixista   True   Baixista
+2024-07-23 15:45:00+00:00  10:45:00   False    True    19.45    13.76        Baixista  False   Baixista
+2024-07-23 15:50:00+00:00  10:50:00   False    True    16.41    16.11        Baixista   True   Baixista
+2024-07-23 15:55:00+00:00  10:55:00   False   False    17.29    17.72        Baixista  False   Baixista
+2024-07-23 16:00:00+00:00  11:00:00   False   False    19.01    17.57        Baixista  False   Baixista
+2024-07-23 16:05:00+00:00  11:05:00   False   False    24.34    20.22        Baixista  False  Transição
+2024-07-23 16:10:00+00:00  11:10:00   False   False    31.24    24.87        Baixista  False  Transição
+2024-07-23 16:15:00+00:00  11:15:00   False   False    36.41    30.66        Baixista  False  Transição
+2024-07-23 16:20:00+00:00  11:20:00   False   False    46.39    38.01        Baixista  False  Transição
+2024-07-23 16:25:00+00:00  11:25:00   False   False    47.10    43.30        Baixista  False  Transição
+2024-07-23 16:30:00+00:00  11:30:00   False   False    60.89    51.46                  False           
+2024-07-23 16:35:00+00:00  11:35:00   False   False    65.14    57.71                  False           
+2024-07-23 16:40:00+00:00  11:40:00   False    True    78.67    68.23                  False           
+2024-07-23 16:45:00+00:00  11:45:00   False   False    67.06    70.29                  False  Transição
+2024-07-23 16:50:00+00:00  11:50:00   False   False    55.07    66.93        Baixista  False  Transição
+2024-07-23 16:55:00+00:00  11:55:00   False   False    38.65    53.59        Baixista  False  Transição
+2024-07-23 17:00:00+00:00  12:00:00   False   False    23.41    39.04        Baixista  False  Transição
+2024-07-23 17:05:00+00:00  12:05:00   False   False    23.69    28.58        Baixista  False           
+2024-07-23 17:10:00+00:00  12:10:00   False   False    29.51    25.54        Baixista  False           
+2024-07-23 17:15:00+00:00  12:15:00    True   False    55.22    36.14                  False           
+2024-07-23 17:20:00+00:00  12:20:00   False   False    59.20    47.98                  False  Transição
+2024-07-23 17:25:00+00:00  12:25:00   False   False    56.72    57.05        Baixista  False  Transição
+2024-07-23 17:30:00+00:00  12:30:00   False   False    41.29    52.40        Baixista  False  Transição
+2024-07-23 17:35:00+00:00  12:35:00   False   False    35.32    44.44        Baixista  False  Transição
+2024-07-23 17:40:00+00:00  12:40:00   False   False    30.14    35.59        Baixista  False  Transição
+2024-07-23 17:45:00+00:00  12:45:00   False   False    22.88    29.45        Baixista  False           
+2024-07-23 17:50:00+00:00  12:50:00   False   False    22.96    25.33        Baixista  False  Transição
+2024-07-23 17:55:00+00:00  12:55:00   False   False    24.71    23.52        Baixista  False  Transição
+2024-07-23 18:00:00+00:00  13:00:00   False   False    31.03    26.24        Baixista  False           
+2024-07-23 18:05:00+00:00  13:05:00   False   False    31.03    28.93        Baixista  False           
+2024-07-23 18:10:00+00:00  13:10:00   False    True    28.74    30.27        Baixista  False           
+2024-07-23 18:15:00+00:00  13:15:00   False   False    26.77    28.85        Baixista  False           
+2024-07-23 18:20:00+00:00  13:20:00   False    True    19.16    24.89  True            False   Baixista
+2024-07-23 18:25:00+00:00  13:25:00   False    True    14.38    20.10        Baixista  False   Baixista
+2024-07-23 18:30:00+00:00  13:30:00   False    True     9.30    14.28        Baixista  False   Baixista
+2024-07-23 18:35:00+00:00  13:35:00   False   False    17.75    13.81        Baixista  False   Baixista
+2024-07-23 18:40:00+00:00  13:40:00   False   False    21.51    16.19        Baixista  False  Transição
+2024-07-23 18:45:00+00:00  13:45:00   False   False    24.61    21.29        Baixista  False  Transição
+2024-07-23 18:50:00+00:00  13:50:00   False   False    23.27    23.13        Baixista  False  Transição
+2024-07-23 18:55:00+00:00  13:55:00   False   False    27.04    24.98        Baixista  False  Transição
+2024-07-23 19:00:00+00:00  14:00:00    True   False    32.08    27.46                  False  Transição
+2024-07-23 19:05:00+00:00  14:05:00   False    True    29.22    29.45        Baixista  False   Baixista
+2024-07-23 19:10:00+00:00  14:10:00   False    True    21.57    27.62        Baixista  False   Baixista
+2024-07-23 19:15:00+00:00  14:15:00   False   False    15.00    21.93        Baixista  False   Baixista
+2024-07-23 19:20:00+00:00  14:20:00    True   False    21.79    19.45        Baixista  False  Transição
+2024-07-23 19:25:00+00:00  14:25:00   False    True    20.26    19.02        Baixista  False   Baixista
+2024-07-23 19:30:00+00:00  14:30:00   False    True    19.09    20.38        Baixista  False   Baixista
+2024-07-23 19:35:00+00:00  14:35:00   False    True    17.29    18.88        Baixista  False           
+2024-07-23 19:40:00+00:00  14:40:00   False    True    22.33    19.57        Baixista  False           
+2024-07-23 19:45:00+00:00  14:45:00   False    True    23.74    21.12        Baixista  False           
+2024-07-23 19:50:00+00:00  14:50:00   False   False    21.35    22.47        Baixista  False           
+2024-07-23 19:55:00+00:00  14:55:00   False    True    16.97    20.69        Baixista  False           
+2024-07-23 20:00:00+00:00  15:00:00   False    True    17.39    18.57        Baixista  False   Baixista
+2024-07-23 20:05:00+00:00  15:05:00   False    True    15.88    16.75        Baixista  False   Baixista
+2024-07-23 20:10:00+00:00  15:10:00   False   False    16.15    16.47        Baixista  False   Baixista
+2024-07-23 20:15:00+00:00  15:15:00   False    True    18.31    16.78        Baixista  False   Baixista
+2024-07-23 20:20:00+00:00  15:20:00   False    True    16.94    17.13        Baixista  False   Baixista
+2024-07-23 20:25:00+00:00  15:25:00   False    True    16.18    17.14        Baixista  False   Baixista
+2024-07-23 20:30:00+00:00  15:30:00   False    True    11.06    14.72        Baixista  False   Baixista
+2024-07-23 20:35:00+00:00  15:35:00   False   False    16.49    14.58        Baixista  False   Baixista
+2024-07-23 20:40:00+00:00  15:40:00   False   False    20.37    15.97        Baixista  False  Transição
+2024-07-23 20:45:00+00:00  15:45:00   False   False    24.24    20.37        Baixista  False  Transição
+2024-07-23 20:50:00+00:00  15:50:00   False   False    25.00    23.20        Baixista  False  Transição
+2024-07-23 20:55:00+00:00  15:55:00   False   False    25.59    24.94        Baixista  False  Transição
+2024-07-23 21:00:00+00:00  16:00:00   False    True    23.20    24.60        Baixista  False   Baixista
+2024-07-23 21:05:00+00:00  16:05:00   False    True    21.85    23.55        Baixista  False   Baixista
+2024-07-23 21:10:00+00:00  16:10:00   False   False    20.93    21.99        Baixista  False   Baixista
+2024-07-23 21:15:00+00:00  16:15:00   False   False    26.85    23.21        Baixista  False  Transição
+2024-07-23 21:20:00+00:00  16:20:00   False   False    33.22    27.00        Baixista  False  Transição
+2024-07-23 21:25:00+00:00  16:25:00   False   False    37.15    32.41        Baixista  False  Transição
+2024-07-23 21:30:00+00:00  16:30:00   False   False    41.67    37.35        Baixista  False  Transição
+2024-07-23 21:35:00+00:00  16:35:00   False   False    39.58    39.47        Baixista  False  Transição
+2024-07-23 21:40:00+00:00  16:40:00   False    True    36.46    39.24        Baixista  False           
+2024-07-23 21:45:00+00:00  16:45:00   False    True    29.17    35.07        Baixista  False           
+2024-07-23 21:50:00+00:00  16:50:00   False   False    26.04    30.56                  False           
+2024-07-23 21:55:00+00:00  16:55:00   False    True    20.03    25.08        Baixista  False   Baixista
+2024-07-23 22:00:00+00:00  17:00:00    True   False    19.39    21.82                  False   Baixista
+2024-07-23 22:05:00+00:00  17:05:00   False   False    19.50    19.64        Baixista  False   Baixista
+2024-07-23 22:10:00+00:00  17:10:00   False   False    26.99    21.96        Baixista  False           
+2024-07-23 22:15:00+00:00  17:15:00   False   False    22.81    23.10        Baixista  False           
+2024-07-23 22:20:00+00:00  17:20:00   False   False    21.05    23.62        Baixista  False           
+2024-07-23 22:25:00+00:00  17:25:00   False   False    19.30    21.05        Baixista  False           
+2024-07-23 22:30:00+00:00  17:30:00   False   False    28.07    22.81        Baixista  False  Transição
+2024-07-23 22:35:00+00:00  17:35:00   False   False    35.09    27.49                  False  Transição
+2024-07-23 22:40:00+00:00  17:40:00   False   False    43.86    35.67        Baixista  False  Transição
+2024-07-23 22:45:00+00:00  17:45:00   False   False    47.37    42.11                  False  Transição
+2024-07-23 22:50:00+00:00  17:50:00   False    True    35.09    42.11        Baixista  False  Transição
+2024-07-23 22:55:00+00:00  17:55:00   False    True    36.51    39.66  True  Baixista  False   Baixista
+2024-07-23 23:00:00+00:00  18:00:00   False    True    30.09    33.90        Baixista  False   Baixista
+2024-07-23 23:05:00+00:00  18:05:00   False    True    35.94    34.18        Baixista  False   Baixista
+2024-07-23 23:10:00+00:00  18:10:00   False    True    23.07    29.70        Baixista  False   Baixista
+2024-07-23 23:15:00+00:00  18:15:00   False    True    21.31    26.78        Baixista  False           
+2024-07-23 23:20:00+00:00  18:20:00   False    True    18.38    20.92        Baixista  False           
+
+__________ advices_trading __________________________________________________
+BAIXISTA   - EMA20
+BAIXISTA com ADX/DI- - Tendência forte de baixa
+....................................................................................................
+
+-- Rates of GOLD with mt5 in 2024-07-23 21:33:50.581940 --
+-- GOLD Período disponível: 2024-07-23 04:45:00+00:00 a 2024-07-24 02:30:00+00:00
+
+__________ print_dataframe __________________________________________________
+    zone  adx_up  adx_dw  stoch_k  stoch_d atrs   ema20   afs     aroon
+20:20:00    True   False    40.97    30.38      Altista False          
+20:25:00    True   False    56.42    40.96      Altista False          
+20:30:00   False   False    57.17    51.52      Altista False          
+20:35:00   False   False    58.85    57.48      Altista False Transição
+20:40:00    True   False    61.27    59.09      Altista False Transição
+20:45:00   False   False    58.47    59.53      Altista False Transição
+20:50:00   False   False    60.71    60.15              False          
+20:55:00   False   False    49.91    56.36              False          
+21:00:00    True   False    60.99    57.20              False          
+21:05:00   False   False    68.00    59.63      Altista False          
+21:10:00    True   False    87.45    72.15      Altista False   Altista
+21:15:00   False   False    80.38    78.61      Altista False   Altista
+21:20:00   False   False    73.32    80.38      Altista False   Altista
+21:25:00   False   False    63.43    72.38      Altista False   Altista
+21:30:00   False   False    67.25    68.00      Altista False Transição
+
+__________ advices_trading __________________________________________________
+ALTISTA    - EMA20
+TRANSIÇÃO  - AROON - Tendência ativada
+....................................................................................................
+
+-- Rates of EURUSD with mt5 in 2024-07-23 21:34:25.887088 --
+-- EURUSD Período disponível: 2024-07-23 05:45:00+00:00 a 2024-07-24 02:30:00+00:00
+
+__________ print_dataframe __________________________________________________
+                               zone  adx_up  adx_dw  stoch_k  stoch_d  atrs     ema20    afs      aroon
+time                                                                                                   
+2024-07-23 05:45:00+00:00  00:45:00   False   False      NaN      NaN                  False           
+2024-07-23 05:50:00+00:00  00:50:00   False   False      NaN      NaN                  False           
+2024-07-23 05:55:00+00:00  00:55:00   False   False      NaN      NaN                  False           
+2024-07-23 06:00:00+00:00  01:00:00   False   False      NaN      NaN                  False           
+2024-07-23 06:05:00+00:00  01:05:00   False   False      NaN      NaN                  False           
+2024-07-23 06:10:00+00:00  01:10:00   False   False      NaN      NaN                  False           
+2024-07-23 06:15:00+00:00  01:15:00   False   False      NaN      NaN                  False           
+2024-07-23 06:20:00+00:00  01:20:00   False   False      NaN      NaN                  False           
+2024-07-23 06:25:00+00:00  01:25:00   False   False      NaN      NaN                  False           
+2024-07-23 06:30:00+00:00  01:30:00   False    True      NaN      NaN                  False           
+2024-07-23 06:35:00+00:00  01:35:00   False    True      NaN      NaN        Baixista  False           
+2024-07-23 06:40:00+00:00  01:40:00   False   False      NaN      NaN                  False           
+2024-07-23 06:45:00+00:00  01:45:00   False   False      NaN      NaN        Baixista  False           
+2024-07-23 06:50:00+00:00  01:50:00   False    True      NaN      NaN        Baixista  False           
+2024-07-23 06:55:00+00:00  01:55:00   False    True      NaN      NaN        Baixista  False   Baixista
+2024-07-23 07:00:00+00:00  02:00:00   False    True     3.50      NaN        Baixista  False   Baixista
+2024-07-23 07:05:00+00:00  02:05:00   False    True     5.40      NaN        Baixista  False   Baixista
+2024-07-23 07:10:00+00:00  02:10:00   False    True     4.56     4.49        Baixista  False   Baixista
+2024-07-23 07:15:00+00:00  02:15:00   False    True     3.79     4.59        Baixista  False   Baixista
+2024-07-23 07:20:00+00:00  02:20:00   False    True     2.10     3.48        Baixista  False   Baixista
+2024-07-23 07:25:00+00:00  02:25:00   False   False     3.17     3.02        Baixista  False   Baixista
+2024-07-23 07:30:00+00:00  02:30:00   False   False     5.34     3.54        Baixista  False   Baixista
+2024-07-23 07:35:00+00:00  02:35:00   False   False     8.06     5.52        Baixista  False   Baixista
+2024-07-23 07:40:00+00:00  02:40:00   False   False    10.97     8.13        Baixista  False   Baixista
+2024-07-23 07:45:00+00:00  02:45:00   False   False    16.19    11.74        Baixista  False   Baixista
+2024-07-23 07:50:00+00:00  02:50:00   False   False    17.88    15.02        Baixista  False  Transição
+2024-07-23 07:55:00+00:00  02:55:00    True   False    29.27    21.12                  False  Transição
+2024-07-23 08:00:00+00:00  03:00:00   False    True    22.91    23.36                  False   Baixista
+2024-07-23 08:05:00+00:00  03:05:00   False    True    25.01    25.73        Baixista  False   Baixista
+2024-07-23 08:10:00+00:00  03:10:00   False    True    10.74    19.55        Baixista  False   Baixista
+2024-07-23 08:15:00+00:00  03:15:00   False    True    14.92    16.89        Baixista  False           
+2024-07-23 08:20:00+00:00  03:20:00   False    True    16.76    14.14        Baixista  False           
+2024-07-23 08:25:00+00:00  03:25:00   False    True    16.97    16.21        Baixista  False           
+2024-07-23 08:30:00+00:00  03:30:00   False    True    12.19    15.31        Baixista  False           
+2024-07-23 08:35:00+00:00  03:35:00   False    True    12.95    14.04        Baixista  False           
+2024-07-23 08:40:00+00:00  03:40:00   False    True    25.88    17.01        Baixista  False           
+2024-07-23 08:45:00+00:00  03:45:00   False    True    33.33    24.05        Baixista  False           
+2024-07-23 08:50:00+00:00  03:50:00   False    True    30.72    29.98        Baixista  False  Transição
+2024-07-23 08:55:00+00:00  03:55:00   False   False    32.46    32.17        Baixista  False  Transição
+2024-07-23 09:00:00+00:00  04:00:00    True   False    42.32    35.17                  False  Transição
+2024-07-23 09:05:00+00:00  04:05:00    True   False    60.68    45.15                  False  Transição
+2024-07-23 09:10:00+00:00  04:10:00   False   False    63.10    55.37                  False  Transição
+2024-07-23 09:15:00+00:00  04:15:00   False    True    53.26    59.01        Baixista  False           
+2024-07-23 09:20:00+00:00  04:20:00   False    True    37.54    51.30        Baixista  False           
+2024-07-23 09:25:00+00:00  04:25:00   False    True    19.94    36.92        Baixista  False           
+2024-07-23 09:30:00+00:00  04:30:00   False    True    16.69    24.72        Baixista  False           
+2024-07-23 09:35:00+00:00  04:35:00   False    True     8.84    15.16        Baixista  False           
+2024-07-23 09:40:00+00:00  04:40:00   False    True    13.72    13.08        Baixista  False           
+2024-07-23 09:45:00+00:00  04:45:00   False    True    16.10    12.89        Baixista  False           
+2024-07-23 09:50:00+00:00  04:50:00   False   False    21.78    17.20        Baixista  False           
+2024-07-23 09:55:00+00:00  04:55:00   False   False    20.67    19.52        Baixista  False  Transição
+2024-07-23 10:00:00+00:00  05:00:00   False    True    14.32    18.92  True  Baixista  False           
+2024-07-23 10:05:00+00:00  05:05:00   False    True    11.71    15.57        Baixista  False           
+2024-07-23 10:10:00+00:00  05:10:00   False    True    14.86    13.63        Baixista  False   Baixista
+2024-07-23 10:15:00+00:00  05:15:00   False    True    25.08    17.22        Baixista  False   Baixista
+2024-07-23 10:20:00+00:00  05:20:00   False   False    33.64    24.52        Baixista  False  Transição
+2024-07-23 10:25:00+00:00  05:25:00   False   False    43.42    34.04        Baixista  False  Transição
+2024-07-23 10:30:00+00:00  05:30:00   False   False    55.21    44.09                  False  Transição
+2024-07-23 10:35:00+00:00  05:35:00   False   False    73.38    57.33                  False  Transição
+2024-07-23 10:40:00+00:00  05:40:00    True   False    85.76    71.45         Altista  False           
+2024-07-23 10:45:00+00:00  05:45:00    True   False    83.35    80.83  True            False           
+2024-07-23 10:50:00+00:00  05:50:00   False   False    74.72    81.28                  False           
+2024-07-23 10:55:00+00:00  05:55:00   False   False    66.89    74.99                  False  Transição
+2024-07-23 11:00:00+00:00  06:00:00   False    True    59.96    67.19                  False  Transição
+2024-07-23 11:05:00+00:00  06:05:00   False    True    48.32    58.39        Baixista  False  Transição
+2024-07-23 11:10:00+00:00  06:10:00   False    True    34.00    47.43        Baixista  False  Transição
+2024-07-23 11:15:00+00:00  06:15:00   False    True    22.82    35.05        Baixista  False  Transição
+2024-07-23 11:20:00+00:00  06:20:00    True   False    23.33    26.72        Baixista  False           
+2024-07-23 11:25:00+00:00  06:25:00   False   False    25.27    23.81        Baixista  False           
+2024-07-23 11:30:00+00:00  06:30:00   False   False    28.23    25.61        Baixista  False  Transição
+2024-07-23 11:35:00+00:00  06:35:00   False    True    18.19    23.89        Baixista  False           
+2024-07-23 11:40:00+00:00  06:40:00   False    True    15.21    20.54        Baixista  False   Baixista
+2024-07-23 11:45:00+00:00  06:45:00   False   False    13.70    15.70        Baixista  False   Baixista
+2024-07-23 11:50:00+00:00  06:50:00   False    True    12.26    13.72  True  Baixista  False   Baixista
+2024-07-23 11:55:00+00:00  06:55:00   False    True     8.38    11.45        Baixista  False   Baixista
+2024-07-23 12:00:00+00:00  07:00:00   False   False    10.38    10.34        Baixista  False   Baixista
+2024-07-23 12:05:00+00:00  07:05:00   False    True     9.49     9.42  True  Baixista  False   Baixista
+2024-07-23 12:10:00+00:00  07:10:00   False    True     6.13     8.67        Baixista  False   Baixista
+2024-07-23 12:15:00+00:00  07:15:00   False    True     5.69     7.11        Baixista  False           
+2024-07-23 12:20:00+00:00  07:20:00   False    True     8.24     6.69        Baixista  False   Baixista
+2024-07-23 12:25:00+00:00  07:25:00   False    True    10.02     7.98        Baixista  False   Baixista
+2024-07-23 12:30:00+00:00  07:30:00   False    True    10.07     9.44        Baixista  False   Baixista
+2024-07-23 12:35:00+00:00  07:35:00   False   False    15.76    11.95        Baixista  False   Baixista
+2024-07-23 12:40:00+00:00  07:40:00   False    True    16.56    14.13        Baixista  False   Baixista
+2024-07-23 12:45:00+00:00  07:45:00   False   False    13.98    15.43        Baixista  False   Baixista
+2024-07-23 12:50:00+00:00  07:50:00   False   False    13.97    14.83        Baixista  False   Baixista
+2024-07-23 12:55:00+00:00  07:55:00   False   False    22.64    16.86        Baixista  False   Baixista
+2024-07-23 13:00:00+00:00  08:00:00   False   False    35.64    24.09        Baixista  False   Baixista
+2024-07-23 13:05:00+00:00  08:05:00    True   False    49.80    36.03                  False  Transição
+2024-07-23 13:10:00+00:00  08:10:00    True   False    61.86    49.10                  False  Transição
+2024-07-23 13:15:00+00:00  08:15:00    True   False    79.04    63.56         Altista  False  Transição
+2024-07-23 13:20:00+00:00  08:20:00    True   False    89.14    76.68         Altista  False           
+2024-07-23 13:25:00+00:00  08:25:00    True   False    93.20    87.13         Altista  False           
+2024-07-23 13:30:00+00:00  08:30:00   False    True    78.57    86.97                  False           
+2024-07-23 13:35:00+00:00  08:35:00   False    True    58.54    76.77        Baixista  False           
+2024-07-23 13:40:00+00:00  08:40:00   False    True    39.30    58.80        Baixista  False  Transição
+2024-07-23 13:45:00+00:00  08:45:00   False    True    34.96    44.26        Baixista  False  Transição
+2024-07-23 13:50:00+00:00  08:50:00   False    True    35.23    36.50        Baixista  False  Transição
+2024-07-23 13:55:00+00:00  08:55:00   False    True    30.75    33.65        Baixista  False           
+2024-07-23 14:00:00+00:00  09:00:00   False    True    26.28    30.75        Baixista  False           
+2024-07-23 14:05:00+00:00  09:05:00    True   False    23.96    26.99                  False           
+2024-07-23 14:10:00+00:00  09:10:00   False   False    32.55    27.60                  False           
+2024-07-23 14:15:00+00:00  09:15:00   False   False    33.33    29.95        Baixista  False  Transição
+2024-07-23 14:20:00+00:00  09:20:00   False   False    38.02    34.64                  False  Transição
+2024-07-23 14:25:00+00:00  09:25:00   False   False    39.84    37.07                  False  Transição
+2024-07-23 14:30:00+00:00  09:30:00   False   False    39.58    39.15        Baixista  False  Transição
+2024-07-23 14:35:00+00:00  09:35:00   False    True    32.27    37.23        Baixista  False  Transição
+2024-07-23 14:40:00+00:00  09:40:00   False   False    36.09    35.98        Baixista  False           
+2024-07-23 14:45:00+00:00  09:45:00   False   False    38.66    35.67        Baixista  False           
+2024-07-23 14:50:00+00:00  09:50:00   False    True    36.49    37.08        Baixista  False           
+2024-07-23 14:55:00+00:00  09:55:00   False    True    24.22    33.13        Baixista  False           
+2024-07-23 15:00:00+00:00  10:00:00   False    True    12.23    24.31        Baixista  False           
+2024-07-23 15:05:00+00:00  10:05:00   False    True     7.51    14.65        Baixista  False   Baixista
+2024-07-23 15:10:00+00:00  10:10:00   False    True     5.47     8.40        Baixista  False   Baixista
+2024-07-23 15:15:00+00:00  10:15:00   False    True     9.13     7.37        Baixista  False   Baixista
+2024-07-23 15:20:00+00:00  10:20:00   False   False    16.26    10.29        Baixista  False   Baixista
+2024-07-23 15:25:00+00:00  10:25:00   False    True    15.35    13.58        Baixista  False   Baixista
+2024-07-23 15:30:00+00:00  10:30:00   False    True    11.65    14.42        Baixista  False   Baixista
+2024-07-23 15:35:00+00:00  10:35:00   False    True    11.12    12.70        Baixista  False   Baixista
+2024-07-23 15:40:00+00:00  10:40:00   False    True    17.78    13.51        Baixista  False   Baixista
+2024-07-23 15:45:00+00:00  10:45:00   False    True    20.09    16.33        Baixista  False   Baixista
+2024-07-23 15:50:00+00:00  10:50:00   False    True    16.12    18.00        Baixista  False   Baixista
+2024-07-23 15:55:00+00:00  10:55:00   False   False    16.14    17.45        Baixista  False   Baixista
+2024-07-23 16:00:00+00:00  11:00:00    True   False    33.18    21.81                  False   Baixista
+2024-07-23 16:05:00+00:00  11:05:00    True   False    57.90    35.74                  False  Transição
+2024-07-23 16:10:00+00:00  11:10:00    True   False    75.43    55.50                  False  Transição
+2024-07-23 16:15:00+00:00  11:15:00   False   False    80.98    71.43                  False  Transição
+2024-07-23 16:20:00+00:00  11:20:00   False   False    69.05    75.15                  False  Transição
+2024-07-23 16:25:00+00:00  11:25:00   False   False    64.29    71.44                  False  Transição
+2024-07-23 16:30:00+00:00  11:30:00   False   False    55.80    63.04        Baixista  False           
+2024-07-23 16:35:00+00:00  11:35:00   False    True    43.94    54.67        Baixista  False           
+2024-07-23 16:40:00+00:00  11:40:00   False    True    34.86    44.86        Baixista  False           
+2024-07-23 16:45:00+00:00  11:45:00   False    True    28.71    35.84        Baixista  False           
+2024-07-23 16:50:00+00:00  11:50:00   False    True    27.27    30.28        Baixista  False           
+2024-07-23 16:55:00+00:00  11:55:00   False    True    17.69    24.56        Baixista  False           
+2024-07-23 17:00:00+00:00  12:00:00   False   False    19.70    21.55        Baixista  False           
+2024-07-23 17:05:00+00:00  12:05:00   False   False    30.46    22.62        Baixista  False           
+2024-07-23 17:10:00+00:00  12:10:00   False   False    45.11    31.76                  False  Transição
+2024-07-23 17:15:00+00:00  12:15:00    True   False    56.90    44.16                  False  Transição
+2024-07-23 17:20:00+00:00  12:20:00    True   False    76.44    59.48         Altista  False  Transição
+2024-07-23 17:25:00+00:00  12:25:00    True   False    87.90    73.74         Altista  False           
+2024-07-23 17:30:00+00:00  12:30:00    True   False    93.04    85.79         Altista  False           
+2024-07-23 17:35:00+00:00  12:35:00    True   False    92.03    90.99         Altista  False           
+2024-07-23 17:40:00+00:00  12:40:00    True   False    93.42    92.83         Altista  False           
+2024-07-23 17:45:00+00:00  12:45:00    True   False    94.94    93.47         Altista  False           
+2024-07-23 17:50:00+00:00  12:50:00   False   False    91.19    93.18         Altista  False           
+2024-07-23 17:55:00+00:00  12:55:00   False    True    85.48    90.54                  False  Transição
+2024-07-23 18:00:00+00:00  13:00:00   False   False    74.76    83.81                  False  Transição
+2024-07-23 18:05:00+00:00  13:05:00   False   False    70.07    76.77                  False  Transição
+2024-07-23 18:10:00+00:00  13:10:00    True   False    77.57    74.13                  False  Transição
+2024-07-23 18:15:00+00:00  13:15:00   False   False    79.66    75.77         Altista  False    Altista
+2024-07-23 18:20:00+00:00  13:20:00   False   False    72.03    76.42                  False    Altista
+2024-07-23 18:25:00+00:00  13:25:00   False   False    48.59    66.76                  False    Altista
+2024-07-23 18:30:00+00:00  13:30:00   False   False    27.73    49.45        Baixista  False           
+2024-07-23 18:35:00+00:00  13:35:00   False   False    19.13    31.81                  False           
+2024-07-23 18:40:00+00:00  13:40:00    True   False    25.68    24.18                  False           
+2024-07-23 18:45:00+00:00  13:45:00   False   False    28.42    24.41                  False           
+2024-07-23 18:50:00+00:00  13:50:00   False   False    30.05    28.05                  False           
+2024-07-23 18:55:00+00:00  13:55:00   False   False    22.40    26.96                  False           
+2024-07-23 19:00:00+00:00  14:00:00   False   False    34.43    28.96                  False           
+2024-07-23 19:05:00+00:00  14:05:00    True   False    42.62    33.15                  False           
+2024-07-23 19:10:00+00:00  14:10:00   False   False    50.82    42.62         Altista  False  Transição
+2024-07-23 19:15:00+00:00  14:15:00   False   False    53.01    48.82         Altista  False  Transição
+2024-07-23 19:20:00+00:00  14:20:00   False   False    46.45    50.09                  False  Transição
+2024-07-23 19:25:00+00:00  14:25:00   False   False    43.94    47.80                  False  Transição
+2024-07-23 19:30:00+00:00  14:30:00   False   False    30.37    40.26                  False           
+2024-07-23 19:35:00+00:00  14:35:00   False   False    26.39    33.57                  False  Transição
+2024-07-23 19:40:00+00:00  14:40:00   False    True    17.02    24.59        Baixista  False           
+2024-07-23 19:45:00+00:00  14:45:00   False   False    19.80    21.07        Baixista  False           
+2024-07-23 19:50:00+00:00  14:50:00   False   False    21.99    19.60        Baixista  False           
+2024-07-23 19:55:00+00:00  14:55:00   False   False    31.99    24.59                  False           
+2024-07-23 20:00:00+00:00  15:00:00   False   False    38.17    30.72                  False           
+2024-07-23 20:05:00+00:00  15:05:00   False   False    40.86    37.01                  False  Transição
+2024-07-23 20:10:00+00:00  15:10:00    True   False    45.70    41.58                  False  Transição
+2024-07-23 20:15:00+00:00  15:15:00    True   False    51.08    45.88                  False  Transição
+2024-07-23 20:20:00+00:00  15:20:00   False   False    58.60    51.79         Altista  False  Transição
+2024-07-23 20:25:00+00:00  15:25:00   False   False    53.76    54.48                  False  Transição
+2024-07-23 20:30:00+00:00  15:30:00   False   False    47.87    53.41                  False           
+2024-07-23 20:35:00+00:00  15:35:00   False   False    40.52    47.38                  False  Transição
+2024-07-23 20:40:00+00:00  15:40:00   False   False    38.67    42.35        Baixista  False  Transição
+2024-07-23 20:45:00+00:00  15:45:00    True   False    42.00    40.39                  False  Transição
+2024-07-23 20:50:00+00:00  15:50:00   False   False    41.33    40.67                  False           
+2024-07-23 20:55:00+00:00  15:55:00   False   False    39.33    40.89        Baixista  False           
+2024-07-23 21:00:00+00:00  16:00:00   False   False    24.27    34.98        Baixista  False           
+2024-07-23 21:05:00+00:00  16:05:00   False    True    15.72    26.44        Baixista  False           
+2024-07-23 21:10:00+00:00  16:10:00   False   False     8.45    16.15        Baixista  False   Baixista
+2024-07-23 21:15:00+00:00  16:15:00   False   False    10.67    11.61        Baixista  False   Baixista
+2024-07-23 21:20:00+00:00  16:20:00   False   False    15.08    11.40        Baixista  False   Baixista
+2024-07-23 21:25:00+00:00  16:25:00   False   False    14.45    13.40        Baixista  False   Baixista
+2024-07-23 21:30:00+00:00  16:30:00   False    True    11.16    13.56        Baixista  False           
+2024-07-23 21:35:00+00:00  16:35:00   False    True     9.72    11.78        Baixista  False           
+2024-07-23 21:40:00+00:00  16:40:00   False   False    13.83    11.57        Baixista  False           
+2024-07-23 21:45:00+00:00  16:45:00   False   False    23.56    15.70                  False   Baixista
+2024-07-23 21:50:00+00:00  16:50:00   False   False    23.56    20.32        Baixista  False  Transição
+2024-07-23 21:55:00+00:00  16:55:00   False   False    30.34    25.82        Baixista  False  Transição
+2024-07-23 22:00:00+00:00  17:00:00   False   False    36.59    30.17                  False  Transição
+2024-07-23 22:05:00+00:00  17:05:00    True   False    52.06    39.66                  False  Transição
+2024-07-23 22:10:00+00:00  17:10:00   False   False    61.72    50.12                  False  Transição
+2024-07-23 22:15:00+00:00  17:15:00    True   False    74.55    62.77         Altista  False           
+2024-07-23 22:20:00+00:00  17:20:00   False   False    77.78    71.35                  False  Transição
+2024-07-23 22:25:00+00:00  17:25:00    True   False    87.78    80.03                  False           
+2024-07-23 22:30:00+00:00  17:30:00   False   False    90.13    85.23         Altista  False           
+2024-07-23 22:35:00+00:00  17:35:00   False   False    96.08    91.33         Altista  False    Altista
+2024-07-23 22:40:00+00:00  17:40:00    True   False    95.40    93.87         Altista  False    Altista
+2024-07-23 22:45:00+00:00  17:45:00    True   False    95.05    95.51         Altista  False    Altista
+2024-07-23 22:50:00+00:00  17:50:00    True   False    94.40    94.95         Altista  False           
+2024-07-23 22:55:00+00:00  17:55:00    True   False    82.77    90.74                  False           
+2024-07-23 23:00:00+00:00  18:00:00   False   False    69.23    82.13                  False    Altista
+2024-07-23 23:05:00+00:00  18:05:00   False   False    56.92    69.64                  False  Transição
+2024-07-23 23:10:00+00:00  18:10:00   False    True    52.88    59.68                  False  Transição
+2024-07-23 23:15:00+00:00  18:15:00   False    True    51.40    53.73                  False  Transição
+2024-07-23 23:20:00+00:00  18:20:00   False   False    51.30    51.86                  False  Transição
+2024-07-23 23:25:00+00:00  18:25:00   False   False    51.65    51.45                  False           
+2024-07-23 23:30:00+00:00  18:30:00   False   False    54.67    52.54         Altista  False  Transição
+2024-07-23 23:35:00+00:00  18:35:00   False   False    57.33    54.55         Altista  False  Transição
+2024-07-23 23:40:00+00:00  18:40:00   False   False    60.67    57.56         Altista  False  Transição
+2024-07-23 23:45:00+00:00  18:45:00   False   False    60.67    59.56         Altista  False  Transição
+2024-07-23 23:50:00+00:00  18:50:00   False   False    62.00    61.11         Altista  False           
+2024-07-23 23:55:00+00:00  18:55:00   False   False    62.00    61.56         Altista  False           
+2024-07-24 00:00:00+00:00  19:00:00   False    True    44.05    56.02  True            False   Baixista
+2024-07-24 00:05:00+00:00  19:05:00   False    True    36.82    47.62        Baixista  False   Baixista
+2024-07-24 00:10:00+00:00  19:10:00   False    True    20.64    33.84        Baixista  False           
+2024-07-24 00:15:00+00:00  19:15:00   False    True    23.08    26.85        Baixista  False           
+2024-07-24 00:20:00+00:00  19:20:00   False    True    13.46    19.06        Baixista  False  Transição
+2024-07-24 00:25:00+00:00  19:25:00   False    True    14.74    17.09        Baixista  False  Transição
+2024-07-24 00:30:00+00:00  19:30:00   False   False    19.23    15.81        Baixista  False  Transição
+2024-07-24 00:35:00+00:00  19:35:00   False   False    26.28    20.09        Baixista  False  Transição
+2024-07-24 00:40:00+00:00  19:40:00   False   False    32.69    26.07        Baixista  False           
+2024-07-24 00:45:00+00:00  19:45:00   False   False    37.18    32.05        Baixista  False           
+2024-07-24 00:50:00+00:00  19:50:00   False   False    40.02    36.63                  False           
+2024-07-24 00:55:00+00:00  19:55:00   False   False    38.95    38.72                  False           
+2024-07-24 01:00:00+00:00  20:00:00   False    True    28.10    35.69        Baixista  False           
+2024-07-24 01:05:00+00:00  20:05:00   False    True    17.65    28.23        Baixista  False           
+2024-07-24 01:10:00+00:00  20:10:00    True   False    27.17    24.31                  False           
+2024-07-24 01:15:00+00:00  20:15:00    True   False    52.89    32.57                  False   Baixista
+2024-07-24 01:20:00+00:00  20:20:00   False   False    77.30    52.45         Altista  False           
+2024-07-24 01:25:00+00:00  20:25:00   False   False    86.67    72.29                  False           
+2024-07-24 01:30:00+00:00  20:30:00   False   False    85.00    82.99                  False           
+2024-07-24 01:35:00+00:00  20:35:00   False   False    85.00    85.56                  False           
+2024-07-24 01:40:00+00:00  20:40:00    True   False    85.67    85.22         Altista  False           
+2024-07-24 01:45:00+00:00  20:45:00   False   False    87.21    85.96                  False           
+2024-07-24 01:50:00+00:00  20:50:00   False   False    85.79    86.22                  False           
+2024-07-24 01:55:00+00:00  20:55:00   False    True    65.04    79.35  True            False           
+2024-07-24 02:00:00+00:00  21:00:00   False    True    39.54    63.46        Baixista  False           
+2024-07-24 02:05:00+00:00  21:05:00   False    True    15.64    40.07        Baixista  False           
+2024-07-24 02:10:00+00:00  21:10:00   False    True     5.73    20.30        Baixista  False           
+2024-07-24 02:15:00+00:00  21:15:00   False    True     5.81     9.06        Baixista  False           
+2024-07-24 02:20:00+00:00  21:20:00   False    True     8.63     6.72        Baixista  False           
+2024-07-24 02:25:00+00:00  21:25:00   False    True    18.57    11.00        Baixista  False           
+2024-07-24 02:30:00+00:00  21:30:00   False   False    17.46    14.88        Baixista  False           
+
+__________ advices_trading __________________________________________________
+BAIXISTA   - EMA20

@@ -1,3 +1,4 @@
+import sys
 from datetime import datetime
 
 import pandas as pd
@@ -21,11 +22,12 @@ loggs = Loggs().logger
 
 class TickReceiver:
 
-    def __init__(self, servicemanager, symbols, timeframe):
+    def __init__(self, servicemanager, symbols, today, timeframe=5):
         self.symbol = symbols
         self.df = pd.DataFrame()
         self.scheduler = Scheduler()
         self.from_date = datetime.now()
+        self.today = today
         self.servicemanager = servicemanager
         self.rates = MT5_Service(servicemanager, timeframe)
 
@@ -70,7 +72,10 @@ class TickReceiver:
         df = self.df.loc[:, ~self.df.columns.isin(["close", "open", "high", "low"])]
         loggs.info(f"-- {self.symbol} Período disponível: {df.index.min()} a {df.index.max()}")
         loggs.info(f"\n{'_' * 10} print_dataframe {'_' * 50}")
-        loggs.info(df[self.df.index >= pd.Timestamp.now(tz="UTC").normalize()].tail(15).to_string(index=False))
+        if self.today:
+            loggs.info(df[self.df.index >= pd.Timestamp.now(tz="UTC").normalize()].tail(15).to_string(index=False))
+        else:
+            loggs.info(df)
         # print(df[["tick_volume"]].sort_values("tick_volume", ascending=False).tail(100))
 
     def one_last_dataframe(self):
@@ -104,8 +109,14 @@ class TickReceiver:
 
 
 if __name__ == "__main__":
-    service = ["yfinance", "mt5", "mt5", "mt5"]
+    service = ["yf", "mt5", "mt5", "mt5"]
     symbol = ["^SPX", "GOLD", "MinDolAug24", "HKInd"]
-    item = 0
-    tick_receiver = TickReceiver(service[item], symbol[item], 5)
+    item = 1
+    tday = True
+    if len(sys.argv) > 2:  # python .\app.py mt5 EURUSD False
+        service[item] = sys.argv[1]
+        symbol[item] = sys.argv[2]
+    if len(sys.argv) > 3:  # python .\app.py mt5 EURUSD False
+        tday = eval(sys.argv[3])
+    tick_receiver = TickReceiver(service[item], symbol[item], tday)
     tick_receiver.run()  # run scheduler

@@ -4,7 +4,7 @@ import pandas_ta as ta
 import yfinance as yf
 
 # Baixar dados do S&P 500 (^GSPC)
-ticker = "^GSPC"
+ticker = "GC=F"
 df = yf.download(ticker, period="5d", interval=f"5m")
 # Show only today
 backDays = pd.Timedelta(days=1)  # today + x days
@@ -33,9 +33,12 @@ apds = [
 mpf.plot(
     data,
     type="candle",
+    style="yahoo",
     addplot=apds,
-    fontscale=0.65,
-    figsize=(12, 8),
-    tight_layout=True,
+    fontscale=0.7,
+    figsize=(16, 8),
+    # tight_layout=True,
+    volume=True,
     title=f"{ticker} - {data.index.min()} a {data.index.max()}",
+    savefig="plot.png",
 )

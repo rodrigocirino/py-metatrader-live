@@ -9,19 +9,19 @@ class MT5_Service:
         self.timeframe = timeframe  # in minutes
         self.mt5 = mt5 if (service == "mt5" or service == "mt5_ticks") else None
 
-    def rates_from(self, symbol, num_bars=500):
+    def rates_from(self, symbol, num_bars=250):
         # MetaTrader 5 stores tick and bar open time in "Etc/UTC" zone (without the shift)
         if self.service == "mt5":
             return mt5.copy_rates_from_pos(symbol, self.timeframe, 0, num_bars)
         if self.service == "mt5_ticks":
             return mt5.symbol_info(symbol)
-        if self.service == "yfinance":
+        if self.service == "yf":
             return self.online_yf_intraday([symbol])
 
     def online_yf_intraday(self, stocks):
         # timeframe = interval valid 1m,2m,5m,15m,30m,60m,90m,1h
         # stocks = [stock + ".SA" if not stock.endswith(".SA") and "^" not in stock else stock for stock in stocks]
-        df = yf.download(stocks, period="5d", interval=f"{self.timeframe }m")
+        df = yf.download(stocks, period="2d", interval=f"{self.timeframe }m")
         df.drop(["Close", "Volume"], axis=1, inplace=True)
         df.index.names = ["time"]  # rename index
         df.rename(columns={"Open": "open", "High": "high", "Low": "low", "Adj Close": "close"}, inplace=True)
@@ -51,7 +51,7 @@ class MT5_Service:
             else:
                 print("MetaTrader 5 initialized successfully")
                 return True
-        elif self.service == "yfinance":
+        elif self.service == "yf":
             print("Yfinance initializing.....")
             return True
         else:
