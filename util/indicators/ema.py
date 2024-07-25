@@ -24,4 +24,4 @@ class Ema(Command):
     def afastamento(self, s=20):
         ema = self.df["close"].ewm(span=s).mean()
         afs_ema20 = (self.df["close"] - ema) / ema * 100
-        self.df["afs"] = abs(afs_ema20) > 0.25
+        self.df["afs"] = abs(afs_ema20) > 0.20

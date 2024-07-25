@@ -1,3 +1,5 @@
+from datetime import datetime
+
 import MetaTrader5 as mt5
 import yfinance as yf
 
@@ -7,6 +9,7 @@ class MT5_Service:
     def __init__(self, service, timeframe):
         self.service = service
         self.timeframe = timeframe  # in minutes
+        self.servertime = ""
         self.mt5 = mt5 if (service == "mt5" or service == "mt5_ticks") else None
 
     def rates_from(self, symbol, num_bars=250):
@@ -18,10 +21,19 @@ class MT5_Service:
         if self.service == "yf":
             return self.online_yf_intraday([symbol])
 
+    def server_time(self, symbol):
+        # display symbol properties
+        if self.service.startswith("mt5"):
+            symbol_info = mt5.symbol_info(symbol)
+            return datetime.fromtimestamp(symbol_info.time)
+        else:
+            return datetime.now()
+
     def online_yf_intraday(self, stocks):
         # timeframe = interval valid 1m,2m,5m,15m,30m,60m,90m,1h
         # stocks = [stock + ".SA" if not stock.endswith(".SA") and "^" not in stock else stock for stock in stocks]
-        df = yf.download(stocks, period="2d", interval=f"{self.timeframe }m")
+        # period = ['1d', '5d', '1mo', '3mo', '6mo', '1y', '2y', '5y', '10y', 'ytd', 'max']
+        df = yf.download(stocks, period="5d", interval=f"{self.timeframe }m")
         df.drop(["Close", "Volume"], axis=1, inplace=True)
         df.index.names = ["time"]  # rename index
         df.rename(columns={"Open": "open", "High": "high", "Low": "low", "Adj Close": "close"}, inplace=True)

@@ -22,11 +22,10 @@ loggs = Loggs().logger
 
 class TickReceiver:
 
-    def __init__(self, servicemanager, symbols, today, timeframe=5):
+    def __init__(self, servicemanager, symbols, today=True, timeframe=5):
         self.symbol = symbols
         self.df = pd.DataFrame()
         self.scheduler = Scheduler()
-        self.from_date = datetime.now()
         self.today = today
         self.servicemanager = servicemanager
         self.rates = MT5_Service(servicemanager, timeframe)
@@ -49,6 +48,11 @@ class TickReceiver:
         bars = self.rates.rates_from(self.symbol)
         if bars is None:
             print(f"Não foi possível obter informações sobre o símbolo {self.symbol}")
+        elif len(bars) <= 20:
+            print(
+                f"{bars} \nWarning: Simbolo tem somente {len(bars)} registros,"
+                f"menos de 20 necessários para análise com indicadores {self.symbol}\n\n"
+            )
         else:
             loggs.info(f"-- Rates of {self.symbol} with {self.servicemanager} in {datetime.now()} --")
             self.mining_dataframe(bars)
@@ -60,8 +64,8 @@ class TickReceiver:
             # self.one_last_dataframe()
 
             AdviceTrading(self.df)
-        # Update Scheduler
-        self.scheduler.renew(self.process_ticks)
+            # Update Scheduler
+            self.scheduler.renew(self.process_ticks, self.rates.server_time(self.symbol))
 
     def print_dataframe(self):
         self.df.drop(
@@ -112,11 +116,11 @@ if __name__ == "__main__":
     service = ["yf", "mt5", "mt5", "mt5"]
     symbol = ["^SPX", "GOLD", "MinDolAug24", "HKInd"]
     item = 1
-    tday = True
+    show_today = True
     if len(sys.argv) > 2:  # python .\app.py mt5 EURUSD False
         service[item] = sys.argv[1]
         symbol[item] = sys.argv[2]
     if len(sys.argv) > 3:  # python .\app.py mt5 EURUSD False
-        tday = eval(sys.argv[3])
-    tick_receiver = TickReceiver(service[item], symbol[item], tday)
+        show_today = eval(sys.argv[3])
+    tick_receiver = TickReceiver(service[item], symbol[item], show_today)
     tick_receiver.run()  # run scheduler

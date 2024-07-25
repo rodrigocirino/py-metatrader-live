@@ -10,9 +10,12 @@ class Dmi(Command):
         self.execute()
 
     def execute(self):
-        cut = 27
-        df = self.df
-        df = ta.adx(df.high, df.low, df.close, length=6, lensig=6, mamode="ema")
-        #  ADX_lensig, DMP_length, DMN_length
-        self.df["adx_up"] = (df["ADX_6"] > cut) & (df["DMP_6"] > df["DMN_6"]) & (df["DMP_6"] > cut)
-        self.df["adx_dw"] = (df["ADX_6"] > cut) & (df["DMP_6"] < df["DMN_6"]) & (df["DMN_6"] > cut)
+        cut_adx = 25
+        cut_di = 25
+        dmi = ta.adx(self.df.high, self.df.low, self.df.close, length=12, lensig=12, mamode="ema")
+        if dmi is not None:
+            adx, diplus, diminus = dmi.columns
+            dmi.rename(columns={adx: "ADX", diplus: "DP", diminus: "DM"}, inplace=True)
+            #  ADX_lensig, DMP_length, DMN_length
+            self.df["adx_up"] = (dmi["ADX"] >= cut_adx) & (dmi["DP"] > dmi["DM"]) & (dmi["DP"] >= cut_di)
+            self.df["adx_dw"] = (dmi["ADX"] >= cut_adx) & (dmi["DP"] < dmi["DM"]) & (dmi["DM"] >= cut_di)
