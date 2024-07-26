@@ -2,6 +2,8 @@ import sched
 import time
 from datetime import datetime, timedelta
 
+from service.loggs import Loggs
+
 
 class Scheduler:
 
@@ -13,6 +15,9 @@ class Scheduler:
         self.scheduler.run()
 
     def schedule_next_minute(self, server_dttime):
+        # initialize logs service
+        loggs = Loggs().logger
+
         timer_min = 1  # 1 minute to waiting
         lazy_secs = 3  # plus seconds to waiting
         # Use Server time, not local time to update scheduler
@@ -22,9 +27,9 @@ class Scheduler:
         # Ok If time adjusted with server_time now waiting for 5 minutes
         if delay >= 59:
             delay = ((5 - server_dttime.minute % 5) * 60) + lazy_secs - server_dttime.second
-        print(
+        loggs.info(
             f"\n\nServer time {server_dttime.strftime('%H:%M:%S')}, "
             f"Local time {datetime.now().strftime('%H:%M:%S')}, "
-            f"Updating in {int(delay)} secs ....\n"
+            f"Updating in {int(delay)} secs ....\n\n\n"
         )
         return delay

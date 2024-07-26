@@ -19,17 +19,31 @@ class Stochastic(Command):
         smooth_k (int): The Slow %D period. Default: 3
         mamode (str): See ```help(ta.ma)```. Default: 'sma'
         """
-        stoch = ta.stoch(self.df.high, self.df.low, self.df.close)
-        # Renomeando as colunas para nomes mais simples
+        stoch = ta.stoch(self.df.high, self.df.low, self.df.close, 14, 6, 6)
         if stoch is not None:
+            # Renomeando as colunas para nomes mais simples
             k_name, d_name = stoch.columns
             stoch.rename(columns={k_name: "stoch_k", d_name: "stoch_d"}, inplace=True)
-            self.df["stoch_k"] = stoch["stoch_k"].apply(lambda x: round(x, 2))
-            self.df["stoch_d"] = stoch["stoch_d"].round(2)
+            # self.df["stoch_k"] = stoch["stoch_k"].apply(lambda x: round(x, 2))
+            # self.df["stoch_d"] = stoch["stoch_d"].round(2)
 
-            """
-            zscore = ta.zscore(self.df.close, length=20)
-            print(zscore)
-            stochrsi = ta.stochrsi(self.df.close)
-            print(stochrsi)
-            """
+            self.df["stoch"] = stoch.apply(
+                lambda row: self.define_strength(row["stoch_k"], row["stoch_d"]),
+                axis=1,
+            )
+
+    def define_strength(self, k, d):
+        if k > 80 and d > 80:
+            return "Altista"
+        elif k < 20 and d < 20:
+            return "Baixista"
+        else:
+            return ""
+
+
+"""
+zscore = ta.zscore(self.df.close, length=20)
+print(zscore)
+stochrsi = ta.stochrsi(self.df.close)
+print(stochrsi)
+"""

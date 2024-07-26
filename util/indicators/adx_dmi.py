@@ -3,7 +3,7 @@ import pandas_ta as ta
 from util.indicators.command import Command
 
 
-class Dmi(Command):
+class AdxDmi(Command):
 
     def __init__(self, bars):
         self.df = bars

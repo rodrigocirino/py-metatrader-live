@@ -8,9 +8,9 @@ from service.mt5_service import MT5_Service
 from service.pandas_options import PandasConfig
 from service.scheduler import Scheduler
 from util.indicators.advice_trading import AdviceTrading
+from util.indicators.adx_dmi import AdxDmi
 from util.indicators.aroon import Aroon
 from util.indicators.command import CommandController
-from util.indicators.dmi import Dmi
 from util.indicators.ema import Ema
 from util.indicators.stochastic import Stochastic
 from util.indicators.true_range import TrueRange
@@ -22,7 +22,7 @@ loggs = Loggs().logger
 
 class TickReceiver:
 
-    def __init__(self, servicemanager, symbols, today=True, timeframe=5):
+    def __init__(self, servicemanager, symbols, today, timeframe=5):
         self.symbol = symbols
         self.df = pd.DataFrame()
         self.scheduler = Scheduler()
@@ -40,11 +40,11 @@ class TickReceiver:
             self.df["zone"] = self.df.index.tz_convert("Etc/GMT+5")
         else:
             self.df["zone"] = self.df.index.tz_convert("America/Sao_Paulo")
-        self.df["zone"] = self.df["zone"].dt.strftime("%H:%M:%S")
+        self.df["zone"] = self.df["zone"].dt.strftime("%H:%M:%S")  # %Y/%m/%d %H:%M:%S
         # Etc/GMT+3, Brazil/East, America/Sao_Paulo
 
     def process_ticks(self):
-        loggs.info(f"{'.' * 100}\n")
+        loggs.info(f"{'_.#._' * 20}")
         bars = self.rates.rates_from(self.symbol)
         if bars is None:
             print(f"Não foi possível obter informações sobre o símbolo {self.symbol}")
@@ -73,13 +73,13 @@ class TickReceiver:
             errors="ignore",
             inplace=True,
         )
-        df = self.df.loc[:, ~self.df.columns.isin(["close", "open", "high", "low"])]
+        df = self.df.loc[:, ~self.df.columns.isin(["open", "high", "low"])]
         loggs.info(f"-- {self.symbol} Período disponível: {df.index.min()} a {df.index.max()}")
         loggs.info(f"\n{'_' * 10} print_dataframe {'_' * 50}")
         if self.today:
-            loggs.info(df[self.df.index >= pd.Timestamp.now(tz="UTC").normalize()].tail(15).to_string(index=False))
+            loggs.info(df[self.df.index >= pd.Timestamp.now(tz="UTC").normalize()].tail(150).to_string(index=False))
         else:
-            loggs.info(df)
+            loggs.info(df.tail(150))
         # print(df[["tick_volume"]].sort_values("tick_volume", ascending=False).tail(100))
 
     def one_last_dataframe(self):
@@ -95,7 +95,7 @@ class TickReceiver:
         controller.add_command(TrueRange(self.df))
         controller.add_command(Ema(self.df))
         controller.add_command(Aroon(self.df))
-        controller.add_command(Dmi(self.df))
+        controller.add_command(AdxDmi(self.df))
         controller.add_command(Stochastic(self.df))
         # Processa os comandos
         controller.process_command()
@@ -113,14 +113,14 @@ class TickReceiver:
 
 
 if __name__ == "__main__":
-    service = ["yf", "mt5", "mt5", "mt5"]
-    symbol = ["^SPX", "GOLD", "MinDolAug24", "HKInd"]
-    item = 1
-    show_today = True
+    service: object = ["yf", "mt5", "mt5", "mt5"]
+    symbol: object = ["^SPX", "GOLD", "MinDolAug24", "HKInd"]
+    item: int = 1
+    show_today: bool = False
     if len(sys.argv) > 2:  # python .\app.py mt5 EURUSD False
         service[item] = sys.argv[1]
         symbol[item] = sys.argv[2]
-    if len(sys.argv) > 3:  # python .\app.py mt5 EURUSD False
-        show_today = eval(sys.argv[3])
+    if len(sys.argv) > 3 and sys.argv[3] == "--today":
+        show_today = True
     tick_receiver = TickReceiver(service[item], symbol[item], show_today)
     tick_receiver.run()  # run scheduler
