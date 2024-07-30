@@ -2,6 +2,17 @@ import pandas_ta as ta
 
 from util.indicators.command import Command
 
+"""
+- Indicador desabilitado: Não utilizar
+Após testar diversas configurações, analisei que:
+1. Em gaps demora muito a se ajustar, indices futuros tem muitos gaps de abertura.
+2. Continua em sobrepreço mesmo após o preço reverter totalmente, revertendo todos os ganhos.
+3. Inconsistência ao definir se o sobrepreço é exaustão ou tendência forte.
+Configurações melhores podem surgir com ADX+Slow Stochastic auxiliada por uma EMA.
+Preferi usar Aroon ou Estocástico
+"""
+
+
 
 class AdxDmi(Command):
 

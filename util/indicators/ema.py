@@ -1,3 +1,5 @@
+import numpy as np
+
 from util.indicators.command import Command
 
 """
@@ -24,4 +26,5 @@ class Ema(Command):
     def afastamento(self, s=20):
         ema = self.df["close"].ewm(span=s).mean()
         afs_ema20 = (self.df["close"] - ema) / ema * 100
-        self.df["afs"] = abs(afs_ema20) > 0.20
+        self.df["afs"] = abs(afs_ema20) > 0.2
+        self.df["afs"] = np.where(self.df["afs"], True, "")

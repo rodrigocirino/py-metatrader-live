@@ -19,7 +19,7 @@ class Stochastic(Command):
         smooth_k (int): The Slow %D period. Default: 3
         mamode (str): See ```help(ta.ma)```. Default: 'sma'
         """
-        stoch = ta.stoch(self.df.high, self.df.low, self.df.close, 14, 6, 6)
+        stoch = ta.stoch(self.df.high, self.df.low, self.df.close, 14, 6, 4)
         if stoch is not None:
             # Renomeando as colunas para nomes mais simples
             k_name, d_name = stoch.columns

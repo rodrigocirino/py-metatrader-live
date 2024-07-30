@@ -8,7 +8,6 @@ from service.mt5_service import MT5_Service
 from service.pandas_options import PandasConfig
 from service.scheduler import Scheduler
 from util.indicators.advice_trading import AdviceTrading
-from util.indicators.adx_dmi import AdxDmi
 from util.indicators.aroon import Aroon
 from util.indicators.command import CommandController
 from util.indicators.ema import Ema
@@ -64,6 +63,7 @@ class TickReceiver:
             # self.one_last_dataframe()
 
             AdviceTrading(self.df)
+
             # Update Scheduler
             self.scheduler.renew(self.process_ticks, self.rates.server_time(self.symbol))
 
@@ -76,10 +76,13 @@ class TickReceiver:
         df = self.df.loc[:, ~self.df.columns.isin(["open", "high", "low"])]
         loggs.info(f"-- {self.symbol} Período disponível: {df.index.min()} a {df.index.max()}")
         loggs.info(f"\n{'_' * 10} print_dataframe {'_' * 50}")
+        # Reorder columns
+        df = df.reindex(columns=["zone", "close", "atrs", "afs", "ema20", "stoch", "aroon"])
+        # If false return string vazia
         if self.today:
-            loggs.info(df[self.df.index >= pd.Timestamp.now(tz="UTC").normalize()].tail(150).to_string(index=False))
+            loggs.info(df[self.df.index >= pd.Timestamp.now(tz="UTC").normalize()].tail(150).to_string(index=True))
         else:
-            loggs.info(df.tail(150))
+            loggs.info(df)
         # print(df[["tick_volume"]].sort_values("tick_volume", ascending=False).tail(100))
 
     def one_last_dataframe(self):
@@ -95,7 +98,6 @@ class TickReceiver:
         controller.add_command(TrueRange(self.df))
         controller.add_command(Ema(self.df))
         controller.add_command(Aroon(self.df))
-        controller.add_command(AdxDmi(self.df))
         controller.add_command(Stochastic(self.df))
         # Processa os comandos
         controller.process_command()
@@ -115,7 +117,7 @@ class TickReceiver:
 if __name__ == "__main__":
     service: object = ["yf", "mt5", "mt5", "mt5"]
     symbol: object = ["^SPX", "GOLD", "MinDolAug24", "HKInd"]
-    item: int = 1
+    item: int = 0
     show_today: bool = False
     if len(sys.argv) > 2:  # python .\app.py mt5 EURUSD False
         service[item] = sys.argv[1]

@@ -21,5 +21,4 @@ class TrueRange(Command):
 
     def is_atr_over(self, true_range):
         mult = 1.50
-        # self.df["atrs"] = (abs(self.df["open"] - self.df["close"]) > (true_range.shift() * mult)) ? True : No   ne
         self.df["atrs"] = np.where(abs(self.df["open"] - self.df["close"]) > (true_range.shift() * mult), True, "")
